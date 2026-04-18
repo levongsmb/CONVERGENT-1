@@ -28,9 +28,13 @@ components:
     path: "config/cross_check_schemas/"
     version: "2026.04.18"
 
-# Migration plan
-# rules_cache_bootstrap/federal/*.yaml and rules_cache_bootstrap/california/*.yaml are
-# signed off under the prior Phase 0 gate. Phase 1 of this build migrates those files
-# into config/rules_cache/2026/federal/ and config/rules_cache/2026/california/ without
-# duplication. The legacy directory remains in place until migration is complete; it is
-# then removed.
+# Migration status (2026-04-18, Phase 3a opening):
+# rules_cache_bootstrap/federal/*.yaml and rules_cache_bootstrap/california/*.yaml
+# have been copied into config/rules_cache/2026/federal/ and
+# config/rules_cache/2026/california/. The 20 runtime parameter files (16 federal +
+# 4 California) live here as the canonical source; evaluators read them via
+# app.config.rules.get_rule(key, year). SIGNOFF.md companions and the review
+# checklist remain under rules_cache_bootstrap/ as the audit trail for the prior
+# Phase 0 sign-off. The legacy directory is preserved for reference and may be
+# removed in a later cleanup pass once evaluators are fully green against
+# config/rules_cache/.

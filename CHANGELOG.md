@@ -6,6 +6,48 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### G5 — Phase 3a MVP Evaluator Pattern (2026-04-18)
+
+G4 signed off by Levon Galstian, CPA on 2026-04-18. First 5 evaluators
+built per spec §5.5. Halts at G5 for user pattern review before
+evaluators 6-50.
+
+- **Migrated:** `rules_cache_bootstrap/{federal,california}/*.yaml` →
+  `config/rules_cache/2026/{federal,california}/*.yaml` (20 YAMLs: 16
+  federal + 4 California). Prior SIGNOFF.md companions and review
+  checklist remain under `rules_cache_bootstrap/` as the Phase 0 audit
+  trail. `config/VERSION.yaml` migration note updated.
+- **Added:** `app/evaluators/_base.py` with `TaxImpact` and
+  `StrategyResult` dataclasses, `RulesCache` and `Evaluator` protocols,
+  `BaseEvaluator` class (with `_not_applicable()` helper), and
+  `ConfigRulesAdapter` production rules-cache adapter.
+- **Added:** `app/evaluators/_registry.py` with idempotent
+  `register_all()` auto-discovery, `reset()` test hook, `get(code)`,
+  `all_evaluators()`.
+- **Added:** Five evaluators with 38 tests passing (7 + 7 + 7 + 8 + 9):
+  `CAP_EST_TAX_SAFE_HARBORS` (§6654 safe harbors with elevated-pct
+  detection and lumpy-income flag), `COMP_REASONABLE_COMP` (three-band
+  classification RISK / DEFENSIBLE / EXCESSIVE with Mulcahy / Watson
+  citations and quantified FICA savings on excessive posture),
+  `COMP_WAGE_DIST_SPLIT` (OASDI base anchor with graceful degradation
+  when base is awaiting user input, Medicare-delta math on above-base
+  wage), `QBI_SCORP_WAGE_BALANCE` (spec §5.3 reference pattern — W-2
+  and W-2+UBIA ceiling computation with binding detection),
+  `CA_PTET_ELECTION` (SB 132 regime with 9.3% rate, SALT-cap overlap
+  reduction, both S-corp and partnership applicability).
+- **Added:** `app/evaluators/MVP_PATTERN_SIGNOFF.md` documenting the
+  evaluator pattern, test shape, architectural invariants, and
+  divergences from spec §5.3 with rationale; lists the remaining 45
+  evaluators (6-50) in order for Phase 3a continuation.
+- **Changed:** `__strategy_library/_audit/cross_check_summary.md`
+  signed 2026-04-18 by Levon Galstian, CPA (G4 closed).
+- **Gate status:** G4 closed. G5 sign-off pending at
+  `app/evaluators/MVP_PATTERN_SIGNOFF.md`. Evaluators 6-50 blocked
+  until G5 signed.
+- **Test suite totals:** `pytest app/tests/` → 86 passed in 2.01s.
+  Registry auto-discovery verified: 5 evaluators self-register and
+  address correctly by SUBCATEGORY_CODE.
+
 ### G4 — Phase 2 Cross-Check Protocol (2026-04-18)
 
 G3 signed off by Levon Galstian, CPA on 2026-04-18. Phase 2 infrastructure

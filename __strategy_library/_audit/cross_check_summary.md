@@ -150,15 +150,15 @@ subcategories depending on Anthropic-side latency.
 
 ## G4 Sign-off
 
-- [ ] Cross-check runner architecture matches spec §4 (task-class routing,
+- [x] Cross-check runner architecture matches spec §4 (task-class routing,
       escalation path, JSON-only output, batch defaults honored)
-- [ ] Failure handling matches spec §4.3 (JSON retry → manual;
+- [x] Failure handling matches spec §4.3 (JSON retry → manual;
       API error → retry; checkpoint every 50)
-- [ ] Dry-run confirms 616 subcategories need cross-check across 40
+- [x] Dry-run confirms 616 subcategories need cross-check across 40
       categories with 616 unique prompt hashes (no collisions)
-- [ ] Cost envelope acceptable (expected ~$7-10, worst case ~$27)
-- [ ] Test suite green (`pytest app/tests/cross_check/` → 16 passed)
-- [ ] Approval to proceed with real run on the firm's Anthropic API key
+- [x] Cost envelope acceptable (expected ~$7-10, worst case ~$27)
+- [x] Test suite green (`pytest app/tests/cross_check/` → 16 passed)
+- [x] Approval to proceed with real run on the firm's Anthropic API key
 
-Signed: __________________________________
-Date: __________________________________
+Signed: Levon Galstian, CPA
+Date: 2026-04-18
