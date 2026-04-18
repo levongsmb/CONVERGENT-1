@@ -1,0 +1,62 @@
+# Single W-2 earner; no entities; no dependents. Reference baseline for
+# evaluators that must short-circuit when no business or investment activity
+# triggers applicability.
+
+scenario_id: "FIX-001-single-1040"
+scenario_name: "Single W-2 earner, LA metro, standard 1040"
+prepared_by: "Levon Galstian, CPA"
+prepared_date: 2026-04-18
+
+identity:
+  filing_status: SINGLE
+  tax_year: 2026
+  primary_dob: 1991-06-14
+  primary_state_domicile: CA
+  dependents: []
+  blind_primary: false
+
+income:
+  wages_primary: 142500.00
+  interest_ordinary: 3480.00
+  dividends_ordinary: 220.00
+  dividends_qualified: 1060.00
+  capital_gains_long_term: 2150.00
+  other_income: []
+  k1_income: []
+
+entities: []
+
+assets:
+  - asset_code: "RSU_LOT_2025"
+    description: "Employer RSU vested 2025-08"
+    asset_type: STOCK_PUBLIC
+    acquisition_date: 2025-08-15
+    cost_basis: 18400.00
+    adjusted_basis: 18400.00
+    fmv: 24900.00
+    fmv_as_of_date: 2026-04-01
+    location_state: CA
+
+deductions:
+  salt_paid_state_income: 9200.00
+  salt_paid_property_personal: 0.00
+  mortgage_interest_acquisition: 0.00
+  charitable_cash_public: 2400.00
+  charitable_cash_daf: 0.00
+
+planning:
+  objectives:
+    - MINIMIZE_CURRENT_YEAR
+    - CASH_FLOW_PRESERVATION
+  time_horizon_years: 3
+  risk_tolerance: LOW
+  preparer_confidence_threshold: HIGH
+
+prior_year:
+  prior_tax_year: 2025
+  agi: 131700.00
+  taxable_income: 113200.00
+  total_federal_tax: 19850.00
+  total_state_tax_by_state:
+    CA: 8710.00
+  capital_loss_carryforward_long_term: 1400.00

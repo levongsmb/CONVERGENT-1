@@ -1,0 +1,106 @@
+# Single founder of a pre-IPO California C corp. Two QSBS lots held:
+#   (a) Pre-OBBBA lot issued 2022-03 under prior §1202 rules ($10M cap,
+#       $50M gross assets, strict 5-year hold for 100% exclusion).
+#   (b) Post-OBBBA lot issued 2025-09 under P.L. 119-21 §70431 rules
+#       (tiered exclusion at 3/4/5 years, $15M cap, $75M gross assets).
+# Triggers QSBS holding-period tiering, pre-OBBBA vs post-OBBBA tracking,
+# CA nonconformity, gift-and-stack planning analysis, and §1045 rollover
+# consideration. Planning horizon is 3-5 years toward a liquidity event.
+
+scenario_id: "FIX-005-qsbs-founder"
+scenario_name: "Single founder, pre-IPO C corp QSBS, pre- and post-OBBBA lots"
+prepared_by: "Levon Galstian, CPA"
+prepared_date: 2026-04-18
+
+identity:
+  filing_status: SINGLE
+  tax_year: 2026
+  primary_dob: 1988-04-26
+  primary_state_domicile: CA
+  dependents: []
+  blind_primary: false
+
+income:
+  wages_primary: 240000.00              # salary from the C corp
+  interest_ordinary: 22400.00
+  dividends_qualified: 7800.00
+  capital_gains_long_term: 18600.00
+  k1_income: []                         # C corp income does not pass through
+  other_income: []
+
+entities:
+  - code: "CCORP_FOUNDER"
+    legal_name: "Larkspur AI, Inc."
+    type: C_CORP
+    ein: "99-3345210"
+    formation_state: DE
+    operating_states: [CA, DE]
+    ownership_pct_by_taxpayer: 42.50    # post-Series B dilution
+    tax_year_end: 2026-12-31
+    accumulated_ep: 0.00                # early-stage C corp, operating at loss for tax
+    is_sstb: false
+    is_qualified_trade_business: true
+    gross_receipts_prior_3_avg: 4800000.00
+    gross_receipts_prior_year: 7200000.00
+    accounting_method: ACCRUAL
+
+assets:
+  # Pre-OBBBA QSBS lot — founder common, 2022 issuance. $10M cap, 5-year hold.
+  - asset_code: "QSBS_PRE_2022"
+    description: "Founder common, pre-OBBBA, 2022 issuance"
+    asset_type: STOCK_QSBS
+    acquisition_date: 2022-03-14
+    cost_basis: 525000.00
+    adjusted_basis: 525000.00
+    fmv: 4200000.00
+    fmv_as_of_date: 2026-02-15
+    location_state: CA
+    state_nonconformity_basis:
+      CA: 525000.00
+    is_qsbs: true
+    qsbs_issuance_date: 2022-03-14
+    qsbs_issuer_ein: "99-3345210"
+    qsbs_pre_or_post_obbba: PRE
+
+  # Post-OBBBA QSBS lot — additional founder issuance 2025-09 under revised §1202.
+  - asset_code: "QSBS_POST_2025"
+    description: "Founder additional issuance, post-OBBBA"
+    asset_type: STOCK_QSBS
+    acquisition_date: 2025-09-20
+    cost_basis: 200000.00
+    adjusted_basis: 200000.00
+    fmv: 1250000.00
+    fmv_as_of_date: 2026-02-15
+    location_state: CA
+    state_nonconformity_basis:
+      CA: 200000.00
+    is_qsbs: true
+    qsbs_issuance_date: 2025-09-20
+    qsbs_issuer_ein: "99-3345210"
+    qsbs_pre_or_post_obbba: POST
+
+deductions:
+  salt_paid_state_income: 22100.00
+  salt_paid_property_personal: 0.00
+  charitable_cash_public: 4500.00
+
+planning:
+  objectives:
+    - MINIMIZE_LIFETIME
+    - LIQUIDITY_EVENT_PREP
+    - WEALTH_TRANSFER
+  time_horizon_years: 5
+  liquidity_event_planned:
+    target_close_date: 2029-06-30
+    expected_proceeds: 45000000.00
+    structure: "STOCK_SALE_OR_IPO"
+  risk_tolerance: HIGH
+  preparer_confidence_threshold: MEDIUM
+
+prior_year:
+  prior_tax_year: 2025
+  agi: 274800.00
+  taxable_income: 240100.00
+  total_federal_tax: 56200.00
+  total_state_tax_by_state:
+    CA: 21900.00

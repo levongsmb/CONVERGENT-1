@@ -1,0 +1,100 @@
+# MFJ; primary spouse is 35% member in a multi-member LLC taxed as a
+# partnership, actively participating. Triggers §1402(a)(13) Soroban
+# posture analysis, §704(d) outside-basis check, guaranteed-payments vs
+# distributive share analysis, and CA PTET election modeling. Spouse
+# has a separate W-2 role.
+
+scenario_id: "FIX-003-partnership-owner"
+scenario_name: "MFJ, 35% active member of multi-member LLC taxed as partnership"
+prepared_by: "Levon Galstian, CPA"
+prepared_date: 2026-04-18
+
+identity:
+  filing_status: MFJ
+  tax_year: 2026
+  primary_dob: 1975-02-18
+  primary_state_domicile: CA
+  spouse_dob: 1978-07-30
+  spouse_state_domicile: CA
+  dependents:
+    - {relationship: "CHILD", dob: 2010-04-22}
+  blind_primary: false
+  blind_spouse: false
+
+income:
+  wages_primary: 0.00
+  wages_spouse: 184000.00
+  interest_ordinary: 8400.00
+  dividends_qualified: 4100.00
+  capital_gains_long_term: 21500.00
+  k1_income:
+    - entity_code: "LLC_PARTNERSHIP_MAIN"
+      entity_type: LLC_PARTNERSHIP
+      ownership_pct: 35.00
+      ordinary_business_income: 340000.00
+      guaranteed_payments: 60000.00
+      qualified_business_income: 340000.00
+      w2_wages_allocated: 210000.00
+      ubia_allocated: 95000.00
+      is_sstb: false
+      self_employment_earnings: 400000.00    # active member, Soroban-risk posture
+      state_pte_credit_attributable:
+        CA: 37200.00
+  other_income: []
+
+entities:
+  - code: "LLC_PARTNERSHIP_MAIN"
+    legal_name: "Verdugo Media Partners, LLC"
+    type: LLC_PARTNERSHIP
+    ein: "88-1104456"
+    formation_state: CA
+    operating_states: [CA]
+    ownership_pct_by_taxpayer: 35.00
+    tax_year_end: 2026-12-31
+    outside_basis: 215000.00
+    is_sstb: false
+    is_qualified_trade_business: true
+    w2_wages: 600000.00
+    ubia: 272000.00
+    qbi: 971000.00
+    gross_receipts_prior_3_avg: 3850000.00
+    gross_receipts_prior_year: 4210000.00
+    accounting_method: CASH
+
+assets:
+  - asset_code: "PERS_RES_LA"
+    description: "Primary residence, Glendale"
+    asset_type: REAL_PROPERTY_RESIDENTIAL
+    acquisition_date: 2016-11-04
+    cost_basis: 1120000.00
+    adjusted_basis: 1120000.00
+    fmv: 1780000.00
+    fmv_as_of_date: 2026-01-15
+    location_state: CA
+
+deductions:
+  mortgage_interest_acquisition: 22900.00
+  salt_paid_state_income: 44800.00
+  salt_paid_property_residence: 20900.00
+  charitable_cash_public: 6200.00
+  charitable_cash_daf: 0.00
+
+planning:
+  objectives:
+    - MINIMIZE_CURRENT_YEAR
+    - AUDIT_RISK_REDUCTION
+    - CASH_FLOW_PRESERVATION
+  time_horizon_years: 7
+  risk_tolerance: MEDIUM
+  preparer_confidence_threshold: HIGH
+
+prior_year:
+  prior_tax_year: 2025
+  agi: 618000.00
+  taxable_income: 522600.00
+  total_federal_tax: 142800.00
+  total_state_tax_by_state:
+    CA: 51400.00
+  suspended_704d_carryover: 0.00
+  pte_credit_carryforwards:
+    CA: 21800.00

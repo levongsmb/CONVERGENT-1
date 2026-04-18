@@ -1,0 +1,1072 @@
+# Auto-generated from app.scenario.models.ClientScenario.model_json_schema().
+# Source of truth is models.py. Regenerate with:
+#   python -c "from app.scenario.models import ClientScenario; import yaml; print(yaml.safe_dump(ClientScenario.model_json_schema(), sort_keys=False))" > app/scenario/schema.yaml
+#
+$defs:
+  Asset:
+    properties:
+      asset_code:
+        title: Asset Code
+        type: string
+      description:
+        title: Description
+        type: string
+      asset_type:
+        $ref: '#/$defs/AssetType'
+      placed_in_service:
+        anyOf:
+        - format: date
+          type: string
+        - type: 'null'
+        default: null
+        title: Placed In Service
+      acquisition_date:
+        anyOf:
+        - format: date
+          type: string
+        - type: 'null'
+        default: null
+        title: Acquisition Date
+      cost_basis:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        title: Cost Basis
+      adjusted_basis:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        title: Adjusted Basis
+      accumulated_depreciation:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Accumulated Depreciation
+      depreciation_method:
+        anyOf:
+        - type: string
+        - type: 'null'
+        default: null
+        title: Depreciation Method
+      recovery_period_years:
+        anyOf:
+        - type: integer
+        - type: 'null'
+        default: null
+        title: Recovery Period Years
+      fmv:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Fmv
+      fmv_as_of_date:
+        anyOf:
+        - format: date
+          type: string
+        - type: 'null'
+        default: null
+        title: Fmv As Of Date
+      location_state:
+        anyOf:
+        - $ref: '#/$defs/StateCode'
+        - type: 'null'
+        default: null
+      state_nonconformity_basis:
+        additionalProperties:
+          anyOf:
+          - type: number
+          - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+            type: string
+        propertyNames:
+          $ref: '#/$defs/StateCode'
+        title: State Nonconformity Basis
+        type: object
+      is_qsbs:
+        default: false
+        title: Is Qsbs
+        type: boolean
+      qsbs_issuance_date:
+        anyOf:
+        - format: date
+          type: string
+        - type: 'null'
+        default: null
+        title: Qsbs Issuance Date
+      qsbs_issuer_ein:
+        anyOf:
+        - type: string
+        - type: 'null'
+        default: null
+        title: Qsbs Issuer Ein
+      qsbs_pre_or_post_obbba:
+        anyOf:
+        - enum:
+          - PRE
+          - POST
+          type: string
+        - type: 'null'
+        default: null
+        title: Qsbs Pre Or Post Obbba
+      is_1031_eligible:
+        default: false
+        title: Is 1031 Eligible
+        type: boolean
+      is_opportunity_zone_investment:
+        default: false
+        title: Is Opportunity Zone Investment
+        type: boolean
+    required:
+    - asset_code
+    - description
+    - asset_type
+    - cost_basis
+    - adjusted_basis
+    title: Asset
+    type: object
+  AssetType:
+    enum:
+    - REAL_PROPERTY_RESIDENTIAL
+    - REAL_PROPERTY_COMMERCIAL
+    - REAL_PROPERTY_LAND
+    - REAL_PROPERTY_FARMLAND
+    - EQUIPMENT
+    - VEHICLE
+    - INTANGIBLE
+    - STOCK_PUBLIC
+    - STOCK_PRIVATE
+    - STOCK_QSBS
+    - CRYPTO
+    - COLLECTIBLE
+    - PARTNERSHIP_INTEREST
+    - S_CORP_STOCK
+    title: AssetType
+    type: string
+  Deductions:
+    properties:
+      mortgage_interest_acquisition:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Mortgage Interest Acquisition
+      mortgage_interest_home_equity:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Mortgage Interest Home Equity
+      investment_interest:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Investment Interest
+      salt_paid_state_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Salt Paid State Income
+      salt_paid_property_residence:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Salt Paid Property Residence
+      salt_paid_property_personal:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Salt Paid Property Personal
+      salt_paid_sales_tax:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Salt Paid Sales Tax
+      medical_expenses:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Medical Expenses
+      charitable_cash_public:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Charitable Cash Public
+      charitable_cash_pf_non_operating:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Charitable Cash Pf Non Operating
+      charitable_cash_daf:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Charitable Cash Daf
+      charitable_appreciated_public:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Charitable Appreciated Public
+      charitable_appreciated_private:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Charitable Appreciated Private
+      casualty_loss_federal_disaster:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Casualty Loss Federal Disaster
+    title: Deductions
+    type: object
+  Entity:
+    properties:
+      code:
+        title: Code
+        type: string
+      legal_name:
+        title: Legal Name
+        type: string
+      type:
+        $ref: '#/$defs/EntityType'
+      ein:
+        anyOf:
+        - type: string
+        - type: 'null'
+        default: null
+        title: Ein
+      formation_state:
+        $ref: '#/$defs/StateCode'
+      operating_states:
+        items:
+          $ref: '#/$defs/StateCode'
+        title: Operating States
+        type: array
+      ownership_pct_by_taxpayer:
+        anyOf:
+        - maximum: 100.0
+          minimum: 0.0
+          type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        title: Ownership Pct By Taxpayer
+      tax_year_end:
+        format: date
+        title: Tax Year End
+        type: string
+      stock_basis:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Stock Basis
+      debt_basis:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Debt Basis
+      aaa_balance:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Aaa Balance
+      accumulated_ep:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Accumulated Ep
+      outside_basis:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Outside Basis
+      is_sstb:
+        default: false
+        title: Is Sstb
+        type: boolean
+      is_qualified_trade_business:
+        default: true
+        title: Is Qualified Trade Business
+        type: boolean
+      w2_wages:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: W2 Wages
+      ubia:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Ubia
+      qbi:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Qbi
+      gross_receipts_prior_3_avg:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Gross Receipts Prior 3 Avg
+      gross_receipts_prior_year:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Gross Receipts Prior Year
+      accounting_method:
+        default: CASH
+        enum:
+        - CASH
+        - ACCRUAL
+        - HYBRID
+        title: Accounting Method
+        type: string
+      inventory_method:
+        anyOf:
+        - enum:
+          - 471_STANDARD
+          - 471C_NON_INCIDENTAL
+          - SPECIFIC_ID
+          - LIFO
+          - FIFO
+          type: string
+        - type: 'null'
+        default: null
+        title: Inventory Method
+    required:
+    - code
+    - legal_name
+    - type
+    - formation_state
+    - ownership_pct_by_taxpayer
+    - tax_year_end
+    title: Entity
+    type: object
+  EntityType:
+    enum:
+    - S_CORP
+    - PARTNERSHIP
+    - LLC_DISREGARDED
+    - LLC_PARTNERSHIP
+    - LLC_S_CORP
+    - LLC_C_CORP
+    - C_CORP
+    - SOLE_PROP
+    - TRUST_GRANTOR
+    - TRUST_NONGRANTOR
+    - TRUST_COMPLEX
+    - TRUST_SIMPLE
+    - ESTATE
+    title: EntityType
+    type: string
+  FilingStatus:
+    enum:
+    - MFJ
+    - MFS
+    - SINGLE
+    - HOH
+    - QSS
+    title: FilingStatus
+    type: string
+  Identity:
+    properties:
+      filing_status:
+        $ref: '#/$defs/FilingStatus'
+      tax_year:
+        maximum: 2040
+        minimum: 2020
+        title: Tax Year
+        type: integer
+      primary_dob:
+        format: date
+        title: Primary Dob
+        type: string
+      primary_state_domicile:
+        $ref: '#/$defs/StateCode'
+      spouse_dob:
+        anyOf:
+        - format: date
+          type: string
+        - type: 'null'
+        default: null
+        title: Spouse Dob
+      spouse_state_domicile:
+        anyOf:
+        - $ref: '#/$defs/StateCode'
+        - type: 'null'
+        default: null
+      residency_state_part_year:
+        anyOf:
+        - additionalProperties: true
+          type: object
+        - type: 'null'
+        default: null
+        title: Residency State Part Year
+      dependents:
+        items:
+          additionalProperties: true
+          type: object
+        title: Dependents
+        type: array
+      blind_primary:
+        default: false
+        title: Blind Primary
+        type: boolean
+      blind_spouse:
+        default: false
+        title: Blind Spouse
+        type: boolean
+    required:
+    - filing_status
+    - tax_year
+    - primary_dob
+    - primary_state_domicile
+    title: Identity
+    type: object
+  Income:
+    properties:
+      wages_primary:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Wages Primary
+      wages_spouse:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Wages Spouse
+      self_employment_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Self Employment Income
+      interest_ordinary:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Interest Ordinary
+      interest_tax_exempt_federal:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Interest Tax Exempt Federal
+      interest_tax_exempt_state_resident:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Interest Tax Exempt State Resident
+      dividends_ordinary:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Dividends Ordinary
+      dividends_qualified:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Dividends Qualified
+      capital_gains_short_term:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Capital Gains Short Term
+      capital_gains_long_term:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Capital Gains Long Term
+      collectibles_gain:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Collectibles Gain
+      unrecaptured_1250_gain:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Unrecaptured 1250 Gain
+      section_1202_gain_gross:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Section 1202 Gain Gross
+      section_1202_exclusion_claimed:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Section 1202 Exclusion Claimed
+      rental_income_net:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Rental Income Net
+      royalty_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Royalty Income
+      k1_income:
+        items:
+          $ref: '#/$defs/K1Income'
+        title: K1 Income
+        type: array
+      unemployment:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Unemployment
+      social_security_benefits:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Social Security Benefits
+      pension_ira_distributions:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Pension Ira Distributions
+      other_income:
+        items:
+          $ref: '#/$defs/IncomeItem'
+        title: Other Income
+        type: array
+    title: Income
+    type: object
+  IncomeItem:
+    properties:
+      source_entity_code:
+        anyOf:
+        - type: string
+        - type: 'null'
+        default: null
+        title: Source Entity Code
+      income_type:
+        title: Income Type
+        type: string
+      amount:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        title: Amount
+      state_sourcing:
+        anyOf:
+        - additionalProperties:
+            anyOf:
+            - type: number
+            - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+              type: string
+          propertyNames:
+            $ref: '#/$defs/StateCode'
+          type: object
+        - type: 'null'
+        default: null
+        title: State Sourcing
+    required:
+    - income_type
+    - amount
+    title: IncomeItem
+    type: object
+  K1Income:
+    properties:
+      entity_code:
+        title: Entity Code
+        type: string
+      entity_type:
+        $ref: '#/$defs/EntityType'
+      ownership_pct:
+        anyOf:
+        - maximum: 100.0
+          minimum: 0.0
+          type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        title: Ownership Pct
+      ordinary_business_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Ordinary Business Income
+      net_rental_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Net Rental Income
+      interest_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Interest Income
+      dividend_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Dividend Income
+      capital_gain_short_term:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Capital Gain Short Term
+      capital_gain_long_term:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Capital Gain Long Term
+      section_1231_gain:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Section 1231 Gain
+      unrecaptured_1250_gain:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Unrecaptured 1250 Gain
+      qualified_business_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Qualified Business Income
+      w2_wages_allocated:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: W2 Wages Allocated
+      ubia_allocated:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Ubia Allocated
+      is_sstb:
+        default: false
+        title: Is Sstb
+        type: boolean
+      self_employment_earnings:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Self Employment Earnings
+      guaranteed_payments:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Guaranteed Payments
+      state_pte_credit_attributable:
+        additionalProperties:
+          anyOf:
+          - type: number
+          - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+            type: string
+        propertyNames:
+          $ref: '#/$defs/StateCode'
+        title: State Pte Credit Attributable
+        type: object
+    required:
+    - entity_code
+    - entity_type
+    - ownership_pct
+    title: K1Income
+    type: object
+  PlanningContext:
+    properties:
+      objectives:
+        items:
+          enum:
+          - MINIMIZE_CURRENT_YEAR
+          - MINIMIZE_LIFETIME
+          - LIQUIDITY_EVENT_PREP
+          - SUCCESSION
+          - WEALTH_TRANSFER
+          - CASH_FLOW_PRESERVATION
+          - AUDIT_RISK_REDUCTION
+          type: string
+        title: Objectives
+        type: array
+      time_horizon_years:
+        maximum: 50
+        minimum: 0
+        title: Time Horizon Years
+        type: integer
+      liquidity_event_planned:
+        anyOf:
+        - additionalProperties: true
+          type: object
+        - type: 'null'
+        default: null
+        title: Liquidity Event Planned
+      risk_tolerance:
+        default: MEDIUM
+        enum:
+        - LOW
+        - MEDIUM
+        - HIGH
+        title: Risk Tolerance
+        type: string
+      preparer_confidence_threshold:
+        default: MEDIUM
+        enum:
+        - LOW
+        - MEDIUM
+        - HIGH
+        title: Preparer Confidence Threshold
+        type: string
+    required:
+    - objectives
+    - time_horizon_years
+    title: PlanningContext
+    type: object
+  PriorYearContext:
+    properties:
+      prior_tax_year:
+        title: Prior Tax Year
+        type: integer
+      agi:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Agi
+      taxable_income:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Taxable Income
+      total_federal_tax:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        - type: 'null'
+        default: null
+        title: Total Federal Tax
+      total_state_tax_by_state:
+        additionalProperties:
+          anyOf:
+          - type: number
+          - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+            type: string
+        propertyNames:
+          $ref: '#/$defs/StateCode'
+        title: Total State Tax By State
+        type: object
+      suspended_passive_losses:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Suspended Passive Losses
+      suspended_461l_carryover:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Suspended 461L Carryover
+      suspended_163j_carryover:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Suspended 163J Carryover
+      suspended_704d_carryover:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Suspended 704D Carryover
+      suspended_at_risk_carryover:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Suspended At Risk Carryover
+      nol_carryforwards:
+        items:
+          additionalProperties: true
+          type: object
+        title: Nol Carryforwards
+        type: array
+      charitable_carryforward:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Charitable Carryforward
+      credit_carryforwards:
+        items:
+          additionalProperties: true
+          type: object
+        title: Credit Carryforwards
+        type: array
+      pte_credit_carryforwards:
+        additionalProperties:
+          anyOf:
+          - type: number
+          - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+            type: string
+        propertyNames:
+          $ref: '#/$defs/StateCode'
+        title: Pte Credit Carryforwards
+        type: object
+      amt_credit_carryforward:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Amt Credit Carryforward
+      capital_loss_carryforward_short_term:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Capital Loss Carryforward Short Term
+      capital_loss_carryforward_long_term:
+        anyOf:
+        - type: number
+        - pattern: ^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$
+          type: string
+        default: '0'
+        title: Capital Loss Carryforward Long Term
+    required:
+    - prior_tax_year
+    title: PriorYearContext
+    type: object
+  StateCode:
+    enum:
+    - AL
+    - AK
+    - AZ
+    - AR
+    - CA
+    - CO
+    - CT
+    - DE
+    - FL
+    - GA
+    - HI
+    - ID
+    - IL
+    - IN
+    - IA
+    - KS
+    - KY
+    - LA
+    - ME
+    - MD
+    - MA
+    - MI
+    - MN
+    - MS
+    - MO
+    - MT
+    - NE
+    - NV
+    - NH
+    - NJ
+    - NM
+    - NY
+    - NC
+    - ND
+    - OH
+    - OK
+    - OR
+    - PA
+    - RI
+    - SC
+    - SD
+    - TN
+    - TX
+    - UT
+    - VT
+    - VA
+    - WA
+    - WV
+    - WI
+    - WY
+    - DC
+    - PR
+    - VI
+    - GU
+    - MP
+    - AS
+    title: StateCode
+    type: string
+properties:
+  scenario_id:
+    title: Scenario Id
+    type: string
+  scenario_name:
+    title: Scenario Name
+    type: string
+  prepared_by:
+    title: Prepared By
+    type: string
+  prepared_date:
+    format: date
+    title: Prepared Date
+    type: string
+  identity:
+    $ref: '#/$defs/Identity'
+  income:
+    $ref: '#/$defs/Income'
+  entities:
+    items:
+      $ref: '#/$defs/Entity'
+    title: Entities
+    type: array
+  assets:
+    items:
+      $ref: '#/$defs/Asset'
+    title: Assets
+    type: array
+  deductions:
+    $ref: '#/$defs/Deductions'
+  planning:
+    $ref: '#/$defs/PlanningContext'
+  prior_year:
+    $ref: '#/$defs/PriorYearContext'
+required:
+- scenario_id
+- scenario_name
+- prepared_by
+- prepared_date
+- identity
+- income
+- deductions
+- planning
+- prior_year
+title: ClientScenario
+type: object

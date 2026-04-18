@@ -1,0 +1,135 @@
+# MFJ; three rental properties with combined net rental loss before §469
+# limits. Cost segregation candidate on the commercial property acquired
+# late 2025. Primary spouse aims to claim real estate professional status
+# and group rentals under §469(c)(7). Tests passive-loss limitation,
+# §163(j) electing real property trade or business, OBBBA bonus
+# depreciation, and CA nonconformity to §168(k).
+
+scenario_id: "FIX-004-real-estate-investor"
+scenario_name: "MFJ, three rentals, cost seg candidate, REP status question"
+prepared_by: "Levon Galstian, CPA"
+prepared_date: 2026-04-18
+
+identity:
+  filing_status: MFJ
+  tax_year: 2026
+  primary_dob: 1972-09-28
+  primary_state_domicile: CA
+  spouse_dob: 1974-12-03
+  spouse_state_domicile: CA
+  dependents: []
+  blind_primary: false
+  blind_spouse: false
+
+income:
+  wages_primary: 0.00               # primary ceased W-2 role to manage real estate
+  wages_spouse: 285000.00
+  interest_ordinary: 14200.00
+  dividends_qualified: 9800.00
+  capital_gains_long_term: 47000.00
+  rental_income_net: -42000.00      # aggregate net rental posture before limits
+  k1_income: []
+  other_income: []
+
+entities:
+  # Each rental property is held in its own SMLLC disregarded for federal
+  # tax, reported on Schedule E via the primary taxpayer.
+  - code: "SMLLC_RENTAL_A"
+    legal_name: "Verdugo Hills Rental A, LLC"
+    type: LLC_DISREGARDED
+    ein: null
+    formation_state: CA
+    operating_states: [CA]
+    ownership_pct_by_taxpayer: 100.00
+    tax_year_end: 2026-12-31
+    accounting_method: CASH
+  - code: "SMLLC_RENTAL_B"
+    legal_name: "Verdugo Hills Rental B, LLC"
+    type: LLC_DISREGARDED
+    formation_state: CA
+    operating_states: [CA]
+    ownership_pct_by_taxpayer: 100.00
+    tax_year_end: 2026-12-31
+    accounting_method: CASH
+  - code: "SMLLC_COMMERCIAL_C"
+    legal_name: "Central Commercial Holdings, LLC"
+    type: LLC_DISREGARDED
+    formation_state: CA
+    operating_states: [CA]
+    ownership_pct_by_taxpayer: 100.00
+    tax_year_end: 2026-12-31
+    accounting_method: CASH
+
+assets:
+  - asset_code: "RENTAL_A_BLDG"
+    description: "Residential duplex, Burbank (rental)"
+    asset_type: REAL_PROPERTY_RESIDENTIAL
+    placed_in_service: 2019-06-01
+    acquisition_date: 2019-06-01
+    cost_basis: 680000.00
+    adjusted_basis: 580700.00
+    accumulated_depreciation: 99300.00
+    depreciation_method: "MACRS_27.5_SL"
+    recovery_period_years: 27
+    fmv: 935000.00
+    fmv_as_of_date: 2026-01-15
+    location_state: CA
+    state_nonconformity_basis:
+      CA: 580700.00
+
+  - asset_code: "RENTAL_B_BLDG"
+    description: "Residential single-family, Glendale (rental)"
+    asset_type: REAL_PROPERTY_RESIDENTIAL
+    placed_in_service: 2022-03-18
+    acquisition_date: 2022-03-18
+    cost_basis: 845000.00
+    adjusted_basis: 778800.00
+    accumulated_depreciation: 66200.00
+    depreciation_method: "MACRS_27.5_SL"
+    recovery_period_years: 27
+    fmv: 1045000.00
+    fmv_as_of_date: 2026-01-15
+    location_state: CA
+    state_nonconformity_basis:
+      CA: 778800.00
+
+  - asset_code: "COMMERCIAL_C_BLDG"
+    description: "Small commercial / retail strip, San Fernando"
+    asset_type: REAL_PROPERTY_COMMERCIAL
+    placed_in_service: 2025-11-04
+    acquisition_date: 2025-11-04
+    cost_basis: 2250000.00
+    adjusted_basis: 2250000.00
+    accumulated_depreciation: 0.00
+    depreciation_method: "MACRS_39_SL"    # prior to cost segregation
+    recovery_period_years: 39
+    fmv: 2250000.00
+    fmv_as_of_date: 2025-11-04
+    location_state: CA
+    state_nonconformity_basis:
+      CA: 2250000.00                      # CA does not conform to §168(k)
+
+deductions:
+  mortgage_interest_acquisition: 41200.00
+  salt_paid_state_income: 36800.00
+  salt_paid_property_residence: 14200.00
+  salt_paid_property_personal: 23400.00   # across the three rental parcels (property tax on investment-use property, not SALT-capped)
+  charitable_cash_public: 5400.00
+
+planning:
+  objectives:
+    - MINIMIZE_CURRENT_YEAR
+    - MINIMIZE_LIFETIME
+    - CASH_FLOW_PRESERVATION
+  time_horizon_years: 15
+  risk_tolerance: MEDIUM
+  preparer_confidence_threshold: HIGH
+
+prior_year:
+  prior_tax_year: 2025
+  agi: 352800.00
+  taxable_income: 288500.00
+  total_federal_tax: 62400.00
+  total_state_tax_by_state:
+    CA: 26900.00
+  suspended_passive_losses: 118400.00

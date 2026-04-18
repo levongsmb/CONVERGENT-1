@@ -1,0 +1,91 @@
+# MFJ; primary spouse is a discretionary beneficiary of a nongrantor trust
+# established by a parent. Trust distributed $87,500 in the current year
+# (ordinary + capital gain inclusion in DNI). Spouse receives W-2 from an
+# unrelated employer. Tests DNI tiering at the beneficiary level, §663(b)
+# 65-day election interaction with beneficiary bracket, §1411 threshold
+# posture, and the ESBT / QSST-adjacent trust reporting flags.
+
+scenario_id: "FIX-006-trust-beneficiary"
+scenario_name: "MFJ, beneficiary of nongrantor trust with K-1 distributions"
+prepared_by: "Levon Galstian, CPA"
+prepared_date: 2026-04-18
+
+identity:
+  filing_status: MFJ
+  tax_year: 2026
+  primary_dob: 1983-01-14
+  primary_state_domicile: CA
+  spouse_dob: 1985-08-07
+  spouse_state_domicile: CA
+  dependents:
+    - {relationship: "CHILD", dob: 2013-06-30}
+    - {relationship: "CHILD", dob: 2015-11-12}
+  blind_primary: false
+  blind_spouse: false
+
+income:
+  wages_primary: 180500.00
+  wages_spouse: 132000.00
+  interest_ordinary: 6700.00
+  dividends_qualified: 4100.00
+  capital_gains_long_term: 12400.00
+  k1_income:
+    - entity_code: "TRUST_FAMILY_NONGRANTOR"
+      entity_type: TRUST_NONGRANTOR
+      ownership_pct: 100.00                 # full distributive share this year
+      ordinary_business_income: 0.00
+      interest_income: 38200.00
+      dividend_income: 18900.00
+      capital_gain_long_term: 30400.00
+      qualified_business_income: 0.00
+      w2_wages_allocated: 0.00
+      ubia_allocated: 0.00
+      is_sstb: false
+      self_employment_earnings: 0.00
+  other_income: []
+
+entities:
+  - code: "TRUST_FAMILY_NONGRANTOR"
+    legal_name: "Karapetyan Family Irrevocable Trust (2011)"
+    type: TRUST_NONGRANTOR
+    ein: "46-7781234"
+    formation_state: CA                     # trust sitused in CA
+    operating_states: [CA]
+    ownership_pct_by_taxpayer: 100.00       # sole current beneficiary for the year
+    tax_year_end: 2026-12-31
+    accounting_method: CASH
+
+assets:
+  - asset_code: "PERS_RES_PASADENA"
+    description: "Primary residence, Pasadena"
+    asset_type: REAL_PROPERTY_RESIDENTIAL
+    acquisition_date: 2019-04-10
+    cost_basis: 1045000.00
+    adjusted_basis: 1045000.00
+    fmv: 1320000.00
+    fmv_as_of_date: 2026-01-15
+    location_state: CA
+
+deductions:
+  mortgage_interest_acquisition: 32600.00
+  salt_paid_state_income: 30100.00
+  salt_paid_property_residence: 15900.00
+  charitable_cash_public: 8400.00
+  charitable_cash_daf: 3500.00
+
+planning:
+  objectives:
+    - MINIMIZE_CURRENT_YEAR
+    - WEALTH_TRANSFER
+    - AUDIT_RISK_REDUCTION
+  time_horizon_years: 20
+  risk_tolerance: LOW
+  preparer_confidence_threshold: HIGH
+
+prior_year:
+  prior_tax_year: 2025
+  agi: 428500.00
+  taxable_income: 361700.00
+  total_federal_tax: 82100.00
+  total_state_tax_by_state:
+    CA: 32800.00

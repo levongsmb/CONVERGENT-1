@@ -1,0 +1,131 @@
+# MFJ; primary spouse owns 100% of an S corp with a planned sale in ~18
+# months. Revenue ~$6.5M, seller discretionary earnings ~$1.8M, target
+# price ~$18M enterprise value. Triggers asset vs stock sale modeling,
+# F-reorganization pre-sale analysis, §338(h)(10) election availability,
+# §754-style basis cleanup, pre-sale charitable planning, CA PTET modeling,
+# and installment-note structuring. Spouse W-2 unrelated.
+
+scenario_id: "FIX-007-liquidity-event"
+scenario_name: "MFJ, S corp owner, planned sale in 18 months, pre-sale planning"
+prepared_by: "Levon Galstian, CPA"
+prepared_date: 2026-04-18
+
+identity:
+  filing_status: MFJ
+  tax_year: 2026
+  primary_dob: 1968-10-02
+  primary_state_domicile: CA
+  spouse_dob: 1970-05-27
+  spouse_state_domicile: CA
+  dependents: []
+  blind_primary: false
+  blind_spouse: false
+
+income:
+  wages_primary: 385000.00              # officer comp from the S corp (current year, pre-sale)
+  wages_spouse: 142000.00
+  interest_ordinary: 24500.00
+  dividends_qualified: 19200.00
+  capital_gains_long_term: 34000.00
+  k1_income:
+    - entity_code: "SCORP_TARGET"
+      entity_type: S_CORP
+      ownership_pct: 100.00
+      ordinary_business_income: 1420000.00
+      qualified_business_income: 1420000.00
+      w2_wages_allocated: 685000.00
+      ubia_allocated: 420000.00
+      is_sstb: false
+      self_employment_earnings: 0.00
+      state_pte_credit_attributable:
+        CA: 132100.00
+  other_income: []
+
+entities:
+  - code: "SCORP_TARGET"
+    legal_name: "Meridian Fabrication, Inc."
+    type: S_CORP
+    ein: "77-6889230"
+    formation_state: CA
+    operating_states: [CA]
+    ownership_pct_by_taxpayer: 100.00
+    tax_year_end: 2026-12-31
+    stock_basis: 1850000.00               # built via cumulative AAA net of distributions
+    debt_basis: 0.00
+    aaa_balance: 3120000.00
+    accumulated_ep: 480000.00             # legacy C-history E&P
+    is_sstb: false
+    is_qualified_trade_business: true
+    w2_wages: 685000.00
+    ubia: 420000.00
+    qbi: 1420000.00
+    gross_receipts_prior_3_avg: 5880000.00
+    gross_receipts_prior_year: 6450000.00
+    accounting_method: ACCRUAL
+
+assets:
+  - asset_code: "PERS_RES_PASADENA"
+    description: "Primary residence, Pasadena"
+    asset_type: REAL_PROPERTY_RESIDENTIAL
+    acquisition_date: 2014-08-19
+    cost_basis: 1285000.00
+    adjusted_basis: 1285000.00
+    fmv: 2240000.00
+    fmv_as_of_date: 2026-01-15
+    location_state: CA
+
+  - asset_code: "SCORP_STOCK_BLOCK"
+    description: "100% common stock, Meridian Fabrication, Inc."
+    asset_type: S_CORP_STOCK
+    acquisition_date: 2007-01-02
+    cost_basis: 100000.00
+    adjusted_basis: 1850000.00
+    fmv: 18000000.00
+    fmv_as_of_date: 2026-03-01
+    location_state: CA
+    state_nonconformity_basis:
+      CA: 1850000.00
+
+  - asset_code: "INVEST_PORTFOLIO_LT"
+    description: "Taxable brokerage LT lots"
+    asset_type: STOCK_PUBLIC
+    acquisition_date: 2018-05-03
+    cost_basis: 1400000.00
+    adjusted_basis: 1400000.00
+    fmv: 2150000.00
+    fmv_as_of_date: 2026-03-31
+    location_state: CA
+
+deductions:
+  mortgage_interest_acquisition: 38900.00
+  salt_paid_state_income: 98400.00
+  salt_paid_property_residence: 25800.00
+  charitable_cash_public: 45000.00
+  charitable_cash_daf: 85000.00
+  charitable_appreciated_public: 125000.00
+
+planning:
+  objectives:
+    - LIQUIDITY_EVENT_PREP
+    - MINIMIZE_LIFETIME
+    - WEALTH_TRANSFER
+    - CASH_FLOW_PRESERVATION
+  time_horizon_years: 20
+  liquidity_event_planned:
+    target_close_date: 2027-10-31
+    expected_proceeds: 18000000.00
+    structure: "STOCK_OR_F_REORG_ELECTION"
+    earnout_component_pct: 15.00
+  risk_tolerance: MEDIUM
+  preparer_confidence_threshold: HIGH
+
+prior_year:
+  prior_tax_year: 2025
+  agi: 1712400.00
+  taxable_income: 1504800.00
+  total_federal_tax: 512300.00
+  total_state_tax_by_state:
+    CA: 172600.00
+  pte_credit_carryforwards:
+    CA: 68200.00
+  charitable_carryforward: 0.00

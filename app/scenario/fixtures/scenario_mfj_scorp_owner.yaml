@@ -1,0 +1,99 @@
+# MFJ; primary spouse owns 100% S corp (sole shareholder-employee) with
+# QBI exposure and reasonable-compensation analysis in play. Spouse earns
+# W-2 unrelated to the S corp. Two minor dependents. Primary client
+# archetype for SMB CPA Group.
+
+scenario_id: "FIX-002-mfj-scorp-owner"
+scenario_name: "MFJ, S corp owner with QBI and reasonable-comp analysis"
+prepared_by: "Levon Galstian, CPA"
+prepared_date: 2026-04-18
+
+identity:
+  filing_status: MFJ
+  tax_year: 2026
+  primary_dob: 1980-03-22
+  primary_state_domicile: CA
+  spouse_dob: 1982-11-09
+  spouse_state_domicile: CA
+  dependents:
+    - {relationship: "CHILD", dob: 2014-05-11}
+    - {relationship: "CHILD", dob: 2017-09-03}
+  blind_primary: false
+  blind_spouse: false
+
+income:
+  wages_primary: 195000.00        # officer comp from the S corp
+  wages_spouse: 118000.00          # unrelated W-2 role
+  interest_ordinary: 5900.00
+  dividends_qualified: 2840.00
+  capital_gains_long_term: 14200.00
+  k1_income:
+    - entity_code: "SCORP_PRIMARY"
+      entity_type: S_CORP
+      ownership_pct: 100.00
+      ordinary_business_income: 612000.00
+      qualified_business_income: 612000.00
+      w2_wages_allocated: 310000.00   # includes officer comp plus one staff
+      ubia_allocated: 185000.00
+      is_sstb: false
+  other_income: []
+
+entities:
+  - code: "SCORP_PRIMARY"
+    legal_name: "Galstian Design Studio, Inc."
+    type: S_CORP
+    ein: "87-5612340"
+    formation_state: CA
+    operating_states: [CA]
+    ownership_pct_by_taxpayer: 100.00
+    tax_year_end: 2026-12-31
+    stock_basis: 42000.00
+    debt_basis: 0.00
+    aaa_balance: 128000.00
+    accumulated_ep: 0.00
+    is_sstb: false
+    is_qualified_trade_business: true
+    w2_wages: 310000.00
+    ubia: 185000.00
+    qbi: 612000.00
+    gross_receipts_prior_3_avg: 1420000.00
+    gross_receipts_prior_year: 1610000.00
+    accounting_method: CASH
+
+assets:
+  - asset_code: "PERS_RES"
+    description: "Primary residence, Burbank"
+    asset_type: REAL_PROPERTY_RESIDENTIAL
+    acquisition_date: 2018-07-12
+    cost_basis: 945000.00
+    adjusted_basis: 945000.00
+    fmv: 1520000.00
+    fmv_as_of_date: 2026-01-15
+    location_state: CA
+
+deductions:
+  mortgage_interest_acquisition: 28400.00
+  salt_paid_state_income: 28600.00
+  salt_paid_property_residence: 16200.00
+  charitable_cash_public: 12000.00
+  charitable_cash_daf: 18000.00
+
+planning:
+  objectives:
+    - MINIMIZE_CURRENT_YEAR
+    - MINIMIZE_LIFETIME
+    - CASH_FLOW_PRESERVATION
+  time_horizon_years: 10
+  risk_tolerance: MEDIUM
+  preparer_confidence_threshold: HIGH
+
+prior_year:
+  prior_tax_year: 2025
+  agi: 792400.00
+  taxable_income: 688100.00
+  total_federal_tax: 192300.00
+  total_state_tax_by_state:
+    CA: 64100.00
+  pte_credit_carryforwards:
+    CA: 28500.00
+  charitable_carryforward: 0.00

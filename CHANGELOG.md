@@ -6,6 +6,54 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### G1 — Phase 1a Client Scenario Schema (2026-04-18)
+
+G0 signed off by Levon Galstian, CPA on 2026-04-18. Phase 1a produced.
+
+- **Added:** `app/scenario/models.py` — complete Pydantic v2 model set per
+  spec §2.2. `FilingStatus`, `EntityType`, `AssetType`, and a full
+  `StateCode` enum covering all 50 states, DC, and the five US
+  territories (PR, VI, GU, MP, AS). Models: `Identity`, `IncomeItem`,
+  `K1Income`, `Income`, `Entity`, `Asset`, `Deductions`,
+  `PlanningContext`, `PriorYearContext`, and top-level `ClientScenario`
+  with two `model_validator` methods (orphan-K-1 check and
+  filing-status/spouse check).
+- **Added:** `app/scenario/validators.py` — eight cross-field diagnostic
+  checks beyond Pydantic: entity ownership bounds, QSBS asset metadata
+  completeness, S corp `stock_basis` presence, partnership
+  `outside_basis` presence, `liquidity_event_planned` shape and
+  objective-presence coupling, state-sourcing resident-state coverage,
+  dependents shape, and informational community-property / MFS flag.
+- **Added:** `app/scenario/loader.py` — single canonical YAML-to-model
+  entry point used by tests and future orchestrator work.
+- **Added:** `app/scenario/schema.yaml` — auto-generated JSON-schema
+  export of `ClientScenario` (1,068 lines) for review diffing.
+- **Added:** Seven realistic fixtures in `app/scenario/fixtures/`:
+  `scenario_single_1040.yaml` (single W-2 baseline);
+  `scenario_mfj_scorp_owner.yaml` (primary SMB CPA Group archetype with
+  QBI / reasonable-comp / PTET triggers);
+  `scenario_partnership_owner.yaml` (35% active LLC-as-partnership member
+  with Soroban-risk posture);
+  `scenario_real_estate_investor.yaml` (three rentals, commercial
+  cost-seg candidate, REP status question, CA §168(k) nonconformity);
+  `scenario_qsbs_founder.yaml` (single founder, pre-IPO C corp, pre- and
+  post-OBBBA §1202 lots, 2029 liquidity target);
+  `scenario_trust_beneficiary.yaml` (MFJ beneficiary of nongrantor trust
+  with full K-1 distribution);
+  `scenario_liquidity_event.yaml` (100% S corp owner, ~$18M EV sale
+  planned in 18 months with earnout component).
+- **Added:** `app/tests/scenarios/test_fixtures_parse.py` — 22-test
+  pytest suite covering per-fixture parse, cross-field validator cleanness,
+  fixture-set completeness, QBI component presence on the S-corp owner
+  fixture, pre- and post-OBBBA QSBS lot presence on the founder fixture,
+  liquidity-event block presence on the sale fixture, Decimal precision
+  round-trip through YAML, and three model-level refusal tests.
+- **Changed:** `config/CONFIG_ARCHITECTURE_SIGNOFF.md` signed
+  2026-04-18 by Levon Galstian, CPA.
+- **Gate status:** G0 closed. `pytest app/tests/scenarios/` green
+  (22 passed in 0.51s). G1 sign-off pending at
+  `app/scenario/SCHEMA_SIGNOFF.md`.
+
 ### G0 — Hot-swappable configuration architecture (2026-04-18)
 
 Implements Phase 0 of the new master build specification ("STRATEGY

@@ -112,15 +112,15 @@ migrated or obsoleted.
 
 ## Sign-off
 
-- [ ] Router task classes resolve to the intended models
-- [ ] Escalation paths (`bulk_cross_check` → `complex_reasoning`,
+- [x] Router task classes resolve to the intended models
+- [x] Escalation paths (`bulk_cross_check` → `complex_reasoning`,
       `classification` → `bulk_cross_check`) are correct for firm policy
-- [ ] Config validator output "config/ validation passed" accepted
-- [ ] Reference authority file covers the sections required for Phase 3a MVP
-- [ ] Reference form file matches SB 132 regime parameters signed off under
+- [x] Config validator output "config/ validation passed" accepted
+- [x] Reference authority file covers the sections required for Phase 3a MVP
+- [x] Reference form file matches SB 132 regime parameters signed off under
       Decision 0004
-- [ ] No contractions, no emojis, no hype, no marketing language appear in
+- [x] No contractions, no emojis, no hype, no marketing language appear in
       any generated content
 
-Signed: __________________________________
-Date: __________________________________
+Signed: Levon Galstian, CPA
+Date: 2026-04-18
