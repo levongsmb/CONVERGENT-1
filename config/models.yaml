@@ -1,0 +1,58 @@
+config_version: "2026.04.18"
+last_reviewed_utc: "2026-04-18T00:00:00Z"
+reviewed_by: "Levon Galstian, CPA"
+
+# Task classes are the stable API surface. Code references task_class names.
+# Model strings below are mutable. Update freely when Anthropic releases a new family,
+# when the firm decides to rebalance cost versus quality, or when a task class is
+# retired. Code is not edited.
+
+task_classes:
+
+  complex_reasoning:
+    description: "Rules interpretation, multi-step reasoning, ambiguous fact patterns, low-confidence retries"
+    provider: "anthropic"
+    model: "claude-opus-4-7"
+    max_tokens: 2000
+    temperature: 0
+    top_p: 1
+    fallback_task_class: null
+
+  bulk_cross_check:
+    description: "Subcategory metadata cross-check, batch processing, high-volume low-stakes"
+    provider: "anthropic"
+    model: "claude-sonnet-4-6"
+    max_tokens: 1500
+    temperature: 0
+    top_p: 1
+    escalate_on_low_confidence_to: "complex_reasoning"
+
+  classification:
+    description: "Routing, simple categorization, entity type inference"
+    provider: "anthropic"
+    model: "claude-haiku-4-5-20251001"
+    max_tokens: 500
+    temperature: 0
+    top_p: 1
+    escalate_on_low_confidence_to: "bulk_cross_check"
+
+  memo_polish:
+    description: "Prose polish on already-computed deterministic content. Never numerical conclusions. Never pin cites."
+    provider: "anthropic"
+    model: "claude-opus-4-7"
+    max_tokens: 1500
+    temperature: 0.2
+    top_p: 1
+    escalate_on_low_confidence_to: null
+
+# Rate limits and batching defaults. Individual task classes may add overrides.
+defaults:
+  batch_size: 20
+  batch_delay_seconds: 1
+  max_retries_on_error: 1
+  timeout_seconds: 60
+
+# Deprecation register. Retain superseded task class entries here for audit log
+# continuity when names are retired in production. Each entry preserves the prior
+# configuration so historical audit-log rows remain decodable.
+deprecated_task_classes: []

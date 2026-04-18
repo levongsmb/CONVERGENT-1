@@ -1,0 +1,32 @@
+config_version: "2026.04.18"
+last_reviewed_utc: "2026-04-18T00:00:00Z"
+
+form_number: "CA FTB 3804"
+form_name: "Pass-Through Entity Elective Tax Calculation"
+jurisdiction: "CA"
+latest_revision: "2025"
+applies_to_tax_years: ["2026", "2027", "2028", "2029", "2030"]
+
+election_mechanism:
+  filed_with: ["Form 565", "Form 568", "Form 100S"]
+  due_date_rule: "original timely-filed return of electing entity"
+  calendar_year_due: "March 15"
+  fiscal_year_due: "original due date of entity return"
+
+prepayment:
+  form: "CA FTB 3893"
+  due_date: "June 15 of taxable year"
+  minimum_amount_rule: "greater of 50% of prior year PTET or $1,000"
+
+shortfall_consequence:
+  mechanism: "12.5% credit reduction on shortfall amount under SB 132"
+  measured_at: "return filing date"
+  invalidates_election: false
+
+e_file_supported: true
+
+primary_authority:
+  - "SB 132 (Ch. 17, Stats. 2025)"
+  - "New RTC sections enacted by SB 132 for taxable years 2026-2030"
+  - "FTB Form 3804 Instructions"
+  - "FTB PTET FAQ"

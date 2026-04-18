@@ -1,0 +1,178 @@
+config_version: "2026.04.18"
+last_reviewed_utc: "2026-04-18T00:00:00Z"
+reviewed_by: "Levon Galstian, CPA"
+
+# IRC section authority records. This file is the reference implementation for
+# the authority loader. Evaluators call app.config.authorities.get_authority(id)
+# to resolve canonical cites, amendment metadata, and related reg references.
+#
+# Authority IDs within a year must be globally unique across all files under
+# config/authorities/<year>/. OBBBA-specific aggregated entries live in
+# config/authorities/<year>/obbba_sections.yaml. State acts live under
+# config/authorities/<year>/state/.
+
+sections:
+
+  "199A":
+    canonical_cite: "IRC §199A"
+    full_cite: "Internal Revenue Code §199A (Qualified Business Income Deduction)"
+    last_major_amendment: "P.L. 119-21 §70431 (OBBBA)"
+    amendment_effective_date: "2026-01-01"
+    permanence_status: "permanent"
+    related_regs:
+      - "Treas. Reg. §1.199A-1"
+      - "Treas. Reg. §1.199A-2"
+      - "Treas. Reg. §1.199A-3"
+      - "Treas. Reg. §1.199A-4"
+      - "Treas. Reg. §1.199A-5"
+      - "Treas. Reg. §1.199A-6"
+    key_subsections:
+      - {id: "199A(a)",     description: "General rule — 20% QBI deduction"}
+      - {id: "199A(b)(2)",  description: "W-2 wages and UBIA limitation"}
+      - {id: "199A(b)(3)",  description: "Phase-in (OBBBA expanded $75K single / $150K MFJ window)"}
+      - {id: "199A(d)",     description: "SSTB definition and exclusions"}
+      - {id: "199A(e)(2)",  description: "Threshold amount (indexed; Rev. Proc. 2025-32 supplies 2026 values)"}
+      - {id: "199A(i)",     description: "OBBBA minimum deduction — $400 floor at $1,000 active QBI, indexed after 2026"}
+
+  "1202":
+    canonical_cite: "IRC §1202"
+    full_cite: "Internal Revenue Code §1202 (Qualified Small Business Stock)"
+    last_major_amendment: "P.L. 119-21 §70431 (OBBBA)"
+    amendment_effective_date: "2025-07-04"
+    permanence_status: "permanent"
+    related_regs:
+      - "Treas. Reg. §1.1202-1"
+      - "Treas. Reg. §1.1202-2"
+      - "Treas. Reg. §1.1202-3"
+      - "Treas. Reg. §1.1202-4"
+    pre_and_post_amendment_split:
+      pre_obbba_applicable_to: "QSBS issued on or before 2025-07-04"
+      post_obbba_applicable_to: "QSBS issued after 2025-07-04"
+    key_subsections:
+      - {id: "1202(a)(1)",         description: "100% exclusion at 5-year hold post-OBBBA"}
+      - {id: "1202(a) [new tiers]", description: "50% at 3-year / 75% at 4-year (OBBBA, stock issued after 2025-07-04)"}
+      - {id: "1202(b)(4)",         description: "OBBBA $15M per-issuer cap, indexed after 2026"}
+      - {id: "1202(d)",            description: "OBBBA $75M gross assets threshold, indexed after 2026"}
+      - {id: "1202(e)",            description: "Qualified trade or business exclusions"}
+      - {id: "1(h)(4)",            description: "28% rate on non-excluded portion of §1202 gain"}
+      - {id: "1411",               description: "NIIT exclusion for gain excluded under §1202"}
+
+  "164":
+    canonical_cite: "IRC §164"
+    full_cite: "Internal Revenue Code §164 (State and Local Tax Deduction)"
+    last_major_amendment: "P.L. 119-21 (OBBBA)"
+    amendment_effective_date: "2025-01-01"
+    permanence_status: "temporary_with_sunset"
+    sunset_year: 2030
+    related_regs:
+      - "Treas. Reg. §1.164-1"
+      - "Treas. Reg. §1.164-4T"
+    key_subsections:
+      - {id: "164(b)(6)(B)", description: "Base cap schedule: 2025 $40,000 / 2026 $40,400 / 2027-2029 prior × 1.01 annually"}
+      - {id: "164(b)(6)(C)", description: "Phaseout: 30% of MAGI excess over $500K MFJ / $250K MFS (2025), indexed"}
+      - {id: "164(b)(6)(D)", description: "Floor: $10,000 MFJ / $5,000 MFS"}
+      - {id: "164(b)(6)(E)", description: "Sunset: reversion to $10,000 / $5,000 in 2030"}
+
+  "461":
+    canonical_cite: "IRC §461"
+    full_cite: "Internal Revenue Code §461 (General Rule for Taxable Year of Deduction)"
+    last_major_amendment: "P.L. 119-21 (OBBBA — §461(l) made permanent)"
+    amendment_effective_date: "2026-01-01"
+    permanence_status: "permanent"
+    key_subsections:
+      - {id: "461(l)(1)",    description: "Excess business loss disallowance"}
+      - {id: "461(l)(3)(A)", description: "Threshold amount (indexed)"}
+      - {id: "461(l)(2)",    description: "Carryover as §172 NOL"}
+
+  "151":
+    canonical_cite: "IRC §151"
+    full_cite: "Internal Revenue Code §151 (Personal Exemptions)"
+    last_major_amendment: "P.L. 119-21 (OBBBA — personal exemption $0 made permanent; §151(f) senior deduction added)"
+    amendment_effective_date: "2025-01-01"
+    permanence_status: "mixed"
+    key_subsections:
+      - {id: "151(d)", description: "Personal exemption amount set to $0 (OBBBA made permanent)"}
+      - {id: "151(f)", description: "OBBBA senior deduction — $6,000 per qualifying taxpayer age 65+, 6% phaseout above $75K single / $150K MFJ, effective 2025-2028"}
+
+  "1062":
+    canonical_cite: "IRC §1062"
+    full_cite: "Internal Revenue Code §1062 (Qualified Farmland Four-Year Installment Election)"
+    last_major_amendment: "P.L. 119-21 (OBBBA — new section)"
+    amendment_effective_date: "2025-07-04"
+    permanence_status: "permanent"
+    note: |
+      §1062 is not a §453 installment sale. Gain is recognized in full in the
+      year of sale. The tax liability attributable to the qualified farmland
+      gain is paid in four equal annual installments; first installment due
+      with the return for year of sale (original due date, no extension).
+      See Notice 2026-3 for §6654 and §6655 estimated tax relief.
+    related_regs: []
+    key_subsections:
+      - {id: "1062(a)", description: "Election mechanism"}
+      - {id: "1062(b)", description: "Qualified farmland definition"}
+      - {id: "1062(c)", description: "Qualified farmer definition"}
+
+  "174":
+    canonical_cite: "IRC §174"
+    full_cite: "Internal Revenue Code §174 (Foreign Research and Experimental Expenditures)"
+    last_major_amendment: "P.L. 119-21 (OBBBA — retained for foreign R&E; domestic relocated to §174A)"
+    amendment_effective_date: "2025-01-01"
+    permanence_status: "permanent"
+    related_regs:
+      - "Treas. Reg. §1.174-2"
+    key_subsections:
+      - {id: "174(a)", description: "Foreign R&E capitalization and 15-year amortization"}
+
+  "174A":
+    canonical_cite: "IRC §174A"
+    full_cite: "Internal Revenue Code §174A (Domestic Research and Experimental Expenditures — OBBBA-restored current expensing)"
+    last_major_amendment: "P.L. 119-21 (OBBBA — new section)"
+    amendment_effective_date: "2025-01-01"
+    permanence_status: "permanent"
+    related_regs: []
+    key_subsections:
+      - {id: "174A(a)", description: "Election to expense domestic R&E currently"}
+      - {id: "174A(b)", description: "Transition and §481(a) rules for prior-capitalized domestic R&E"}
+      - {id: "174A(c)", description: "Coordination with §280C"}
+
+  "139L":
+    canonical_cite: "IRC §139L"
+    full_cite: "Internal Revenue Code §139L (Qualified Lender Partial Exclusion on Agricultural Loan Interest Income)"
+    last_major_amendment: "P.L. 119-21 (OBBBA — new section)"
+    amendment_effective_date: "2025-07-04"
+    permanence_status: "permanent"
+    key_subsections:
+      - {id: "139L(a)", description: "25% exclusion of interest income from loans secured by agricultural real estate"}
+      - {id: "139L(b)", description: "Qualified lender and qualified loan definitions; AFR and §483/§1274 imputed interest rules continue to apply"}
+
+  "168":
+    canonical_cite: "IRC §168"
+    full_cite: "Internal Revenue Code §168 (Accelerated Cost Recovery System)"
+    last_major_amendment: "P.L. 119-21 (OBBBA — §168(k) bonus depreciation permanent restoration)"
+    amendment_effective_date: "2025-01-01"
+    permanence_status: "permanent"
+    key_subsections:
+      - {id: "168(k)", description: "100% bonus depreciation restored and made permanent"}
+      - {id: "168(e)", description: "Recovery periods, including QIP"}
+
+  "2010":
+    canonical_cite: "IRC §2010"
+    full_cite: "Internal Revenue Code §2010 (Unified Credit Against Estate Tax)"
+    last_major_amendment: "P.L. 119-21 (OBBBA — $15M basic exclusion permanent)"
+    amendment_effective_date: "2026-01-01"
+    permanence_status: "permanent"
+    key_subsections:
+      - {id: "2010(c)(3)", description: "Basic exclusion amount — $15,000,000 for 2026, indexed thereafter"}
+      - {id: "2010(c)(4)", description: "DSUE portability"}
+
+  "1411":
+    canonical_cite: "IRC §1411"
+    full_cite: "Internal Revenue Code §1411 (Net Investment Income Tax)"
+    last_major_amendment: "None since enactment"
+    amendment_effective_date: null
+    permanence_status: "permanent"
+    related_regs:
+      - "Treas. Reg. §1.1411-1 through -10"
+    key_subsections:
+      - {id: "1411(a)", description: "3.8% rate"}
+      - {id: "1411(b)", description: "MAGI thresholds — $250K MFJ / $200K single / $125K MFS (statutory, not indexed)"}

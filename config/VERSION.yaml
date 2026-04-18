@@ -1,0 +1,36 @@
+config_manifest_version: "2026.04.18"
+last_reviewed_utc: "2026-04-18T00:00:00Z"
+reviewed_by: "Levon Galstian, CPA"
+
+components:
+  models:
+    path: "config/models.yaml"
+    version: "2026.04.18"
+  rules_cache_2026:
+    path: "config/rules_cache/2026/"
+    version: "2026.04.18"
+  authorities_2026:
+    path: "config/authorities/2026/"
+    version: "2026.04.18"
+  forms_federal:
+    path: "config/forms/federal/"
+    version: "2026.04.18"
+  forms_california:
+    path: "config/forms/california/"
+    version: "2026.04.18"
+  prompts:
+    path: "config/prompts/"
+    version: "2026.04.18"
+  report_templates:
+    path: "config/report_templates/"
+    version: "2026.04.18"
+  cross_check_schemas:
+    path: "config/cross_check_schemas/"
+    version: "2026.04.18"
+
+# Migration plan
+# rules_cache_bootstrap/federal/*.yaml and rules_cache_bootstrap/california/*.yaml are
+# signed off under the prior Phase 0 gate. Phase 1 of this build migrates those files
+# into config/rules_cache/2026/federal/ and config/rules_cache/2026/california/ without
+# duplication. The legacy directory remains in place until migration is complete; it is
+# then removed.

@@ -74,6 +74,7 @@ Any new decisions this one spawns.
 | 0006 | signing-certificate-posture | ANSWERED 2026-04-18 | — |
 | 0007 | review-method-signoff-companions | ANSWERED 2026-04-18 | — |
 | 0008 | obbba-notice-narrow-scope | ANSWERED 2026-04-18 | — |
-| 0009 | strategy-library-category-order | OPEN | Phase 1 entry (awaiting paste-back of the 20 categories) |
+| 0009 | strategy-library-category-order | SUPERSEDED by master build MANIFEST | — |
+| 0010 | master-build-supersession | ANSWERED 2026-04-18 | — |
 
 Subsequent phases open their own decisions as the work uncovers them.

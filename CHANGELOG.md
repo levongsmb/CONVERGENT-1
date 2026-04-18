@@ -6,6 +6,45 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### G0 — Hot-swappable configuration architecture (2026-04-18)
+
+Implements Phase 0 of the new master build specification ("STRATEGY
+LIBRARY TAX PLANNING APPLICATION"). Prior Convergent v3 scaffolding
+remains in place for reference; new build work proceeds under `app/`,
+`config/`, and `__strategy_library/`.
+
+- **Added:** `config/VERSION.yaml` top-level manifest with pointers to
+  every config component and its version.
+- **Added:** `config/models.yaml` with the four canonical task classes —
+  `complex_reasoning` (claude-opus-4-7), `bulk_cross_check`
+  (claude-sonnet-4-6), `classification` (claude-haiku-4-5-20251001),
+  `memo_polish` (claude-opus-4-7) — escalation paths, and batching
+  defaults.
+- **Added:** `app/config/` package: `router.py` (LLMConfig dataclass
+  and `get_llm_config()` per spec), `rules.py` (get_rule + RuleBundle +
+  cache_version), `authorities.py` (id-unique-per-year index),
+  `forms.py` (with `applies_to_tax_years` enforcement), `prompts.py`
+  (Jinja2 `StrictUndefined`), `validate.py` (pre-commit validator).
+- **Added:** `config/prompts/cross_check_subcategory.j2` — the Phase 2
+  cross-check prompt externalized.
+- **Added:** `config/authorities/2026/irc_sections.yaml` covering twelve
+  IRC sections required by Phase 3a MVP evaluators (§199A, §1202 with
+  pre/post-OBBBA split metadata, §164 with sunset schedule, §461, §151
+  with §151(f) senior deduction, §1062, §174, §174A, §139L, §168, §2010,
+  §1411).
+- **Added:** `config/forms/california/3804.yaml` populated with the
+  SB 132 regime parameters signed off under Decision 0004.
+- **Added:** Directory structure for `config/rules_cache/2026/`,
+  `config/authorities/2026/state/`, `config/forms/federal/`,
+  `config/report_templates/`, `config/cross_check_schemas/`,
+  `app/scenario/fixtures/`, `app/evaluators/`, `app/orchestrator/`,
+  `app/reports/`, `app/tests/{evaluators,scenarios,orchestrator}/`,
+  `__strategy_library/{subcategories,_staging,_audit}/`.
+- **Added:** Decision 0010 recording the supersession of prior
+  discussion threads by the master build spec.
+- **Gate status:** `python -m app.config.validate` passes. G0 sign-off
+  pending at `config/CONFIG_ARCHITECTURE_SIGNOFF.md`.
+
 ### Phase 0 — Rules cache first sign-off pass (2026-04-18)
 
 User answered the six Q0.1–Q0.5 gate questions (Q0.6 deferred for
