@@ -120,17 +120,17 @@ Every evaluator in this category follows the G5 pattern:
 
 ## G7 sign-off checklist
 
-- [ ] All 27 subcategories in COMPLIANCE_AND_PROCEDURAL.yaml have
+- [x] All 27 subcategories in COMPLIANCE_AND_PROCEDURAL.yaml have
       evaluator modules
-- [ ] All 27 have test modules with at least 5 tests each
-- [ ] Pin cites verified to primary authority (Code, Regs, Rev. Procs,
+- [x] All 27 have test modules with at least 5 tests each
+- [x] Pin cites verified to primary authority (Code, Regs, Rev. Procs,
       IRM, case law)
-- [ ] Cross-strategy impacts reference valid subcategory codes per the
+- [x] Cross-strategy impacts reference valid subcategory codes per the
       MANIFEST
-- [ ] Architectural invariants hold (no hardcoded rates / cites /
+- [x] Architectural invariants hold (no hardcoded rates / cites /
       model strings; proper gating; complete StrategyResult)
-- [ ] Authorization to proceed to the next category in MANIFEST
+- [x] Authorization to proceed to the next category in MANIFEST
       sequence order (STATE_SALT, sequence_order 2)
 
-Signed: __________________________________
-Date: __________________________________
+Signed: Levon Galstian, CPA
+Date: 2026-04-18
