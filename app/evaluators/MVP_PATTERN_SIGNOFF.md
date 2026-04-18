@@ -202,23 +202,23 @@ remaining 45 evaluators (roughly 1 hour / evaluator with tests).
 
 ## G5 sign-off
 
-- [ ] Evaluator pattern (`BaseEvaluator` subclass, class-level metadata,
+- [x] Evaluator pattern (`BaseEvaluator` subclass, class-level metadata,
       `evaluate()` method signature, `StrategyResult` return shape)
       is the canonical pattern for Phase 3a and Phase 3b.
-- [ ] Test structure (5+ tests per evaluator, deterministic number
+- [x] Test structure (5+ tests per evaluator, deterministic number
       assertion, cross-strategy enumeration, pin-cite coverage)
       is the canonical test shape.
-- [ ] Rules-cache access pattern (`app.config.rules.get_rule`, graceful
+- [x] Rules-cache access pattern (`app.config.rules.get_rule`, graceful
       degradation on null, spy-verified in tests) is approved.
-- [ ] Statutory constants in-module (e.g., §6654(d)(1)(C) thresholds) vs
+- [x] Statutory constants in-module (e.g., §6654(d)(1)(C) thresholds) vs
       rules-cache-sourced parameters (e.g., OASDI wage base) — approved
       boundary.
-- [ ] Divergences from spec §5.3 reference pattern (list-literal
+- [x] Divergences from spec §5.3 reference pattern (list-literal
       PIN_CITES pending authority cache expansion; marginal-rate proxy
       pending orchestrator convergence) are accepted for Phase 3a.
-- [ ] Authorization to proceed to evaluators 6 through 50 in the order
+- [x] Authorization to proceed to evaluators 6 through 50 in the order
       listed above, with per-batch-of-10 commits to bound review
       friction.
 
-Signed: __________________________________
-Date: __________________________________
+Signed: Levon Galstian, CPA
+Date: 2026-04-18

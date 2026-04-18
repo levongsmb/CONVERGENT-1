@@ -6,6 +6,59 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### Phase 3a batch 2 — evaluators 6-15 (2026-04-18)
+
+G5 signed off by Levon Galstian, CPA on 2026-04-18. Next 10 MVP
+evaluators built per spec §5.5 with 63 additional tests.
+
+- **Added:** `app/evaluators/QBI_199A/QBI_OBBBA_PHASEIN.py` — three-regime
+  detector (BELOW_THRESHOLD / IN_PHASEIN / ABOVE_WINDOW) using the
+  config-driven threshold and phase-in width with graceful degradation
+  when threshold is awaiting Rev. Proc.; compression_target computed.
+  8 tests, deterministic on $400K MFJ threshold fixture.
+- **Added:** `app/evaluators/QBI_199A/QBI_199AI_MINIMUM.py` — §199A(i)
+  $400 floor applied before wage/UBIA limitation, with $1,000 active-QBI
+  gate. Material-participation heuristic distinguishes active from
+  passive K-1s. 7 tests, deterministic: 20% × $1,500 = $300 triggers
+  $100 delta to floor.
+- **Added:** `app/evaluators/STATE_SALT/SSALT_OBBBA_CAP_MODELING.py` —
+  §164(b)(6) effective cap after OBBBA phaseout, with floor enforcement
+  and sunset warning for horizons crossing 2030. 6 tests, deterministic:
+  MFJ S-corp fixture MAGI $947K → phaseout to $10K floor → $34,800 above cap.
+- **Added:** `app/evaluators/LOSS_LIMIT_NAVIGATION/LL_461L.py` — excess
+  business loss disallowance with §172 NOL flow-through tracking.
+  5 tests, deterministic: $1M loss vs $625K threshold → $375K disallowed.
+- **Added:** `app/evaluators/LOSS_LIMIT_NAVIGATION/LL_469_PASSIVE.py` —
+  passive activity loss release planning with aggregate suspended-loss
+  computation. 5 tests, deterministic: $118,400 suspended + $42,000
+  current = $160,400 release potential on real-estate fixture.
+- **Added:** `app/evaluators/LOSS_LIMIT_NAVIGATION/LL_REP_STATUS.py` —
+  §469(c)(7) real estate professional election documentation guide with
+  §1.469-9(g) aggregation coordination. 6 tests.
+- **Added:** `app/evaluators/LOSS_LIMIT_NAVIGATION/LL_163J_INTEREST.py` —
+  business interest limitation with OBBBA EBITDA restoration and §448(c)
+  small-corp exception. 5 tests.
+- **Added:** `app/evaluators/RETIREMENT/RET_SOLO_401K.py` — employee
+  deferral + employer profit-sharing under §415(c) cap with age-tier
+  catch-up detection (AGE_50 / SUPER_CATCHUP_60_63 per SECURE 2.0 §109).
+  7 tests, deterministic: $195K W-2 × 25% = $48,750 employer PS; capped at
+  $72,000 §415(c).
+- **Added:** `app/evaluators/RETIREMENT/RET_CASH_BALANCE.py` — age-band
+  feasibility signal with rough contribution targets from 35-70
+  (actuary produces precise numbers). 7 tests, deterministic: age 46 →
+  $150K band target × 35% = $52,500 federal saving estimate.
+- **Added:** `app/evaluators/RETIREMENT/RET_BACKDOOR_ROTH.py` — §408(d)(2)
+  pro-rata rule warning with MAGI-gated applicability on the
+  §408A(c)(3) Roth phaseout. 7 tests, deterministic: age-50 catch-up
+  fixture produces $8,600 annual IRA limit.
+
+Governance:
+- `app/evaluators/MVP_PATTERN_SIGNOFF.md` signed 2026-04-18 by Levon
+  Galstian, CPA with all six G5 boxes checked.
+
+Test suite totals: `pytest app/tests/` → **149 passed in 2.60s**.
+Registry auto-discovery: 15 evaluators registered.
+
 ### G5 — Phase 3a MVP Evaluator Pattern (2026-04-18)
 
 G4 signed off by Levon Galstian, CPA on 2026-04-18. First 5 evaluators
