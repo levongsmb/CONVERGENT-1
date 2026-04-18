@@ -6,6 +6,35 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### G6 — Phase 3a MVP complete (2026-04-18)
+
+All 50 MVP evaluators per spec §5.5 built, tested, and registered.
+Halts at G6 for user sign-off before Phase 3b opens.
+
+- **Added:** Final batch of 5 evaluators:
+  - `CR_ORDERING_LIMITS` (5 tests) — §38 general-business-credit
+    aggregation with 25%-of-tax limit and §39 carryback / 20-year
+    carryforward.
+  - `SET_SCORP_CONVERSION` (6 tests) — SE tax arithmetic companion
+    to ENT_SOLE_TO_SCORP. Deterministic: $200K SE → $15,889.06
+    gross SECA→FICA saving.
+  - `SET_1402A13` (6 tests) — limited-partner exception with
+    Soroban / Denham / Point 72 functional-test analysis; detects
+    HIGH_RISK and SOROBAN_CONSERVATIVE postures from K-1 data.
+  - `NIIT_MATERIAL_PARTIC` (6 tests) — §1411(c)(2) active-trade-or-
+    business carve-out. Deterministic: $612K × 3.8% = $23,256
+    potential NIIT saving if K-1 activity is nonpassive.
+  - `PTE_OUTSIDE_BASIS` (6 tests) — §705 / §752 / §704(d) basis
+    tracking with missing-basis detection per entity.
+- **Added:** `app/evaluators/MVP_50_SIGNOFF.md` (G6) — full inventory,
+  architectural invariants, deterministic anchors table,
+  commit-by-commit audit trail, and six sign-off boxes.
+- **Gate status:** G5 closed. G6 sign-off pending. Phase 3b blocked
+  until signed.
+- **Test suite totals:** `pytest app/tests/` → **359 passed in 3.78s**.
+- **Registry totals:** **50 evaluators** registered across 19 of 40
+  MANIFEST categories.
+
 ### Phase 3a batch 5 — evaluators 36-45 (2026-04-18)
 
 Ten MVP evaluators per spec §5.5; 60 new tests. Cumulative suite
