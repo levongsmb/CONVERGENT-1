@@ -63,15 +63,13 @@ def test_low_confidence_when_threshold_awaiting_user_input(rules):
 
 def test_mfj_scorp_owner_lands_above_window(rules_with_threshold):
     """MFJ fixture has ~$947K approx taxable income, well above threshold
-    $400K + phasein_width from the current rules cache.
-    Note: the 2026 rules cache currently carries the pre-OBBBA $100K MFJ
-    phase-in width; the $150K OBBBA-expanded width is a Phase 3b rules-
-    cache follow-up. Window top at $100K width = $500K."""
+    $400K + OBBBA §70431 MFJ phase-in width of $150K. Window top =
+    $400K + $150K = $550K."""
     scenario = _load("scenario_mfj_scorp_owner")
     result = Evaluator().evaluate(scenario, rules_with_threshold, year=2026)
     trace = result.computation_trace
     assert trace["regime"] == "ABOVE_WINDOW"
-    assert Decimal(trace["window_top"]) == Decimal("500000")
+    assert Decimal(trace["window_top"]) == Decimal("550000")
     assert Decimal(trace["applicable_percentage"]) == Decimal("1")
     assert Decimal(trace["compression_target_to_reach_threshold"]) > Decimal(0)
 
@@ -86,8 +84,9 @@ def test_single_qsbs_founder_below_threshold(rules_with_threshold):
 
 
 def test_in_phasein_detected_on_constructed_scenario(rules_with_threshold):
-    """Construct an MFJ scenario with taxable income between $400K threshold
-    and $500K window top (current rules cache uses $100K MFJ width)."""
+    """Construct an MFJ scenario with taxable income between $400K
+    threshold and $550K window top (OBBBA §70431 widened MFJ phase-in
+    to $150K)."""
     import yaml
 
     base = yaml.safe_load(
@@ -106,8 +105,8 @@ def test_in_phasein_detected_on_constructed_scenario(rules_with_threshold):
     trace = result.computation_trace
     assert trace["regime"] == "IN_PHASEIN"
     overshoot = Decimal(trace["overshoot_into_window"])
-    # applicable_pct = overshoot / phasein_width (100000 in current rules cache)
-    expected_pct = (overshoot / Decimal("100000")).quantize(Decimal("0.0001"))
+    # applicable_pct = overshoot / phasein_width ($150K MFJ under OBBBA)
+    expected_pct = (overshoot / Decimal("150000")).quantize(Decimal("0.0001"))
     assert Decimal(trace["applicable_percentage"]) == expected_pct
 
 

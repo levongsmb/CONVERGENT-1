@@ -25,21 +25,32 @@ parameters:
     verification_status: awaiting_user_input
 
   - coordinate: { tax_year: 2026, sub_parameter: "phasein_width_mfj" }
-    value: 100000
+    value: 150000
     unit: USD
     authority_kind: IRC
-    authority_citation: "IRC §199A(b)(3)(B)(ii), §199A(d)(3)(A)(ii)"
+    authority_citation: "IRC §199A(b)(3)(B)(ii) as amended by OBBBA §70431 (P.L. 119-21)"
     retrieved_at: 2026-04-18
-    verification_status: bootstrapped
-    notes: "Statutory $100,000 phase-in range for MFJ."
+    verified_at: 2026-04-18
+    verification_status: verified_by_cpa
+    notes: >
+      OBBBA §70431 widened the §199A(b)(3)(B)(ii) phase-in range from
+      $100,000 to $150,000 for MFJ, effective for tax years beginning
+      after 12/31/2025. Width is indexed for inflation after 2026 per
+      §199A(e)(2)(B).
 
   - coordinate: { tax_year: 2026, sub_parameter: "phasein_width_single_hoh_mfs" }
-    value: 50000
+    value: 75000
     unit: USD
     authority_kind: IRC
-    authority_citation: "IRC §199A(b)(3)(B)(ii), §199A(d)(3)(A)(ii)"
+    authority_citation: "IRC §199A(b)(3)(B)(ii) as amended by OBBBA §70431 (P.L. 119-21)"
     retrieved_at: 2026-04-18
-    verification_status: bootstrapped
+    verified_at: 2026-04-18
+    verification_status: verified_by_cpa
+    notes: >
+      OBBBA §70431 widened the §199A(b)(3)(B)(ii) phase-in range from
+      $50,000 to $75,000 for SINGLE / HOH / MFS, effective for tax
+      years beginning after 12/31/2025. Width is indexed for inflation
+      after 2026 per §199A(e)(2)(B).
 
   - coordinate: { tax_year: 2026, sub_parameter: "deduction_rate" }
     value: 0.20
@@ -82,7 +93,8 @@ parameters:
     verification_status: bootstrapped
     notes: >
       For SSTBs, the QBI deduction fully phases out at threshold + phase-in
-      width (MFJ: $100K above threshold; all other filers: $50K above).
+      width (MFJ: $150K above threshold; all other filers: $75K above, per
+      OBBBA §70431 as of 2026).
 
   - coordinate: { tax_year: 2026, sub_parameter: "ca_conformity" }
     value: "NOT_CONFORMED"
