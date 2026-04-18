@@ -79,17 +79,17 @@ Additional OBBBA-touched subcategories carry `obbba_touched: true` with
 
 ## Sign-off
 
-- [ ] MANIFEST.yaml matches spec §3.1 line by line
-- [ ] 40 category YAML files present, each parsing cleanly, each
+- [x] MANIFEST.yaml matches spec §3.1 line by line
+- [x] 40 category YAML files present, each parsing cleanly, each
       declaring the correct category_code and category_sequence_order
-- [ ] 40 per-category `_SIGNOFF.md` companions present and available for
+- [x] 40 per-category `_SIGNOFF.md` companions present and available for
       per-category review
-- [ ] G2 decisions record (`_staging/CATEGORY_DECISIONS_SIGNOFF.md`) reflects
+- [x] G2 decisions record (`_staging/CATEGORY_DECISIONS_SIGNOFF.md`) reflects
       only informational decisions carried from the master build spec
-- [ ] Integrity test suite green (`pytest app/tests/strategy_library/`)
-- [ ] Spec §3.2 schema invariants hold: no duplicate subcategory codes,
+- [x] Integrity test suite green (`pytest app/tests/strategy_library/`)
+- [x] Spec §3.2 schema invariants hold: no duplicate subcategory codes,
       all cross_references resolve, all merged_from values point to
       retired legacy names
 
-Signed: __________________________________
-Date: __________________________________
+Signed: Levon Galstian, CPA
+Date: 2026-04-18

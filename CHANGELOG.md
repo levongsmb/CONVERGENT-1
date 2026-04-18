@@ -6,6 +6,54 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### G4 — Phase 2 Cross-Check Protocol (2026-04-18)
+
+G3 signed off by Levon Galstian, CPA on 2026-04-18. Phase 2 infrastructure
+produced per spec Section 4. Real Anthropic API pass deferred to user
+invocation on the firm's API key.
+
+- **Added:** `app/cross_check/` package — `runner.py` (orchestrator with
+  `LLMClient` wrapper, checkpoint-every-N, escalation path, failure
+  handling), `null_detection.py` (spec §4 trigger-field null detection
+  across the six fields), `merge.py` (ruamel.yaml round-trip-safe merge
+  that preserves existing non-null values), `audit.py` (JSONL audit log
+  with sha16 prompt/response hashing), `__main__.py` (CLI with `--real`
+  and `--dry-run` modes).
+- **Changed:** `config/prompts/cross_check_subcategory.j2` template uses
+  `sub["code"]`, `sub["short_label"]`, and `sub.get("detailed_description")`
+  for safe access under the Jinja `StrictUndefined` environment in
+  `app/config/prompts.py`. Output wording, schema constraints, and
+  structure remain identical to the spec §0.5 template.
+- **Added:** `app/tests/cross_check/test_cross_check.py` — 16-test suite
+  covering null detection, ruamel-based merge (including the
+  preserve-inline-cite invariant), audit log JSONL shape and hashing,
+  dry-run mode (no mutation, correct counts), real-path population,
+  escalation-on-low-confidence (sonnet → opus), two-attempt JSON parse
+  retry with fallback to `cross_check_required=manual`, and
+  API-error fallback to `cross_check_required=retry`.
+- **Added:** Dependencies `ruamel.yaml` (round-trip YAML) and `anthropic`
+  (SDK) installed in the dev environment.
+- **Run:** Dry-run executed via `python -m app.cross_check --today-date
+  2026-04-18`. Result: 616 of 616 subcategories need cross-check across
+  all 40 categories, producing 616 unique prompt hashes with no
+  collisions. Cost estimate for the real pass: ~$4.50 single-pass
+  Sonnet; up to ~$27 worst case with 100% escalation; expected
+  ~$7-10 with 10-15% escalation rate.
+- **Added:** `__strategy_library/_audit/cross_check_2026-04-18.jsonl` —
+  dry-run audit log with 616 rows.
+- **Added:** `__strategy_library/_audit/cross_check_summary.md` — G4
+  sign-off document with architecture diagram, dry-run statistics,
+  missing-field pattern distribution (six distinct patterns), cost
+  estimate, and invocation instructions for the real run.
+- **Changed:** `__strategy_library/LIBRARY_SIGNOFF.md` signed 2026-04-18
+  by Levon Galstian, CPA (G3 closed).
+- **Gate status:** G3 closed. G4 sign-off pending. Phase 3a (MVP
+  evaluator batch) blocked until user approves the real cross-check
+  run and produces the populated metadata, OR until user explicitly
+  authorizes Phase 3a to proceed with the current library state
+  (evaluators reference subcategory codes, not populated metadata).
+- **Test suite totals:** `pytest app/tests/` → 48 passed.
+
 ### G2 + G3 — Phase 1b Strategy Library Inventory (2026-04-18)
 
 G1 signed off by Levon Galstian, CPA on 2026-04-18. Phase 1b produced

@@ -23,6 +23,6 @@ Constraints:
 
 Input:
 Parent category: {{ parent_category }}
-Subcategory code: {{ sub.code }}
-Short label: {{ sub.short_label }}
-Existing description: {{ sub.detailed_description or "" }}
+Subcategory code: {{ sub["code"] }}
+Short label: {{ sub["short_label"] }}
+Existing description: {{ sub.get("detailed_description") or "" }}
