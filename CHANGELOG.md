@@ -6,6 +6,51 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### Phase 3a batch 3 — evaluators 16-25 (2026-04-18)
+
+Ten MVP evaluators added per spec §5.5 order; 62 new tests. Cumulative
+suite: 211 passed; registry: 25 evaluators.
+
+- **Added:** `RET_ROTH_CONVERSION` (7 tests) — four-window classification
+  (EARLY, PRE_RETIREMENT, SUPER_WINDOW 60-72, POST_RMD) with §151(f)
+  senior-deduction headroom detection when age 65+.
+- **Added:** `RET_OBBBA_SENIOR_DEDUCTION` (7 tests) — §151(f) $6,000
+  per-qualifying-taxpayer deduction with 6% phaseout mechanics.
+  Deterministic: MFJ both 65+ at MAGI $200K → $3,000 phaseout →
+  $9,000 allowed deduction.
+- **Added:** `ENT_SOLE_TO_SCORP` (6 tests) — sole-prop to S corp
+  breakeven. Deterministic: $200K SE income → $27,192.70 current SE
+  tax; 40% reasonable-comp anchor $73,880 → $11,303.64 post-FICA;
+  $12,389.06 net savings after $3,500 compliance cost.
+- **Added:** `ENT_LLC_PSHIP_VS_SCORP` (5 tests) — LLC-as-partnership
+  to S corp flip with Soroban-risk posture warning. Deterministic on
+  partnership fixture: $400K share → $32,549 current SE; $160K anchor
+  comp → $24,480 post-FICA; $3,069 net after $5K compliance.
+- **Added:** `ENT_QSBS_DRIVEN` (7 tests) — pass-through to C corp
+  conversion for §1202 eligibility. Surfaces $3.57M maximum federal
+  savings per taxpayer per issuer under OBBBA $15M cap.
+- **Added:** `RED_COST_SEG` (6 tests) — cost segregation with $750K
+  basis floor, 25% commercial / 15% residential reclassification
+  heuristic, first-year acceleration computation under OBBBA 100% bonus.
+- **Added:** `RED_BONUS_DEPR` (6 tests) — §168(k) bonus depreciation
+  identification with defer-to-cost-seg path when only real property
+  acquired. Deterministic: $200K equipment × 32% = $64,000 federal save.
+- **Added:** `RED_163J_REPTOB` (6 tests) — §163(j)(7)(B) irrevocable
+  election guidance with ADS trade-off math.
+- **Added:** `RED_STR_CLASSIF` (6 tests) — short-term rental exception
+  with 7-day / 30-day rules and §1.469-5T(a) material-participation hour
+  tests.
+- **Added:** `CGL_TAX_LOSS_HARVEST` (6 tests) — unrealized-loss
+  identification with LT-offset vs $3K ordinary-offset math, wash-sale
+  guidance. Deterministic: $300K unrealized loss + $34K realized LT gain
+  → $8,092 LT save + $960 ordinary save = $9,052 total; $263K deferred.
+
+Category directories added: `ENTITY_SELECTION`, `REAL_ESTATE_DEPRECIATION`,
+`CAPITAL_GAINS_LOSSES` (under both `app/evaluators/` and `app/tests/evaluators/`).
+
+Test suite totals: `pytest app/tests/` → **211 passed in 3.03s**.
+Registry auto-discovery: 25 evaluators self-register and address by code.
+
 ### Phase 3a batch 2 — evaluators 6-15 (2026-04-18)
 
 G5 signed off by Levon Galstian, CPA on 2026-04-18. Next 10 MVP
