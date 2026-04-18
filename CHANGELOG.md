@@ -6,6 +6,46 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### Phase 3a batch 5 — evaluators 36-45 (2026-04-18)
+
+Ten MVP evaluators per spec §5.5; 60 new tests. Cumulative suite
+330 passed; registry 45 evaluators.
+
+- **Added:** `QSBS_OBBBA_TIERED` (6 tests) — 50/75/100% tiered
+  exclusion math. Deterministic: pre-OBBBA 7y held → $3.675M
+  excluded → $874,650 saved at 23.8%.
+- **Added:** `QSBS_STATE_CONFORMITY` (6 tests) — CA §1202
+  nonconformity drag. Deterministic: $4,725K QSBS gain × 12.3% CA
+  ordinary + $37,250 MHST = $618,425 CA tax drag.
+- **Added:** `SALE_ASSET_VS_STOCK` (6 tests) — asset vs stock sale
+  swing on planned liquidity. Deterministic: $18M / $1.85M basis →
+  $16.15M gain; S-corp narrative with §1245 recapture proxy.
+- **Added:** `SALE_F_REORG` (6 tests) — F-reorg + Q-Sub pre-sale
+  structuring. Deterministic: 30% × $16.15M × (37% − 23.8%) = $639,540
+  saving vs §338(h)(10).
+- **Added:** `SALE_BASIS_CLEANUP` (6 tests) — multi-entity cleanup
+  checklist with AAA / AE&P / §704(d) / §754 items surfaced per target.
+- **Added:** `INST_STANDARD_453` (6 tests) — §453 deferral with §453A
+  $5M threshold, §453(i) recapture acceleration, §453(e) related-party
+  trap. Deterministic NPV math on liquidity fixture's 15% earnout.
+- **Added:** `AM_174A_DOMESTIC_RE` (6 tests) — OBBBA §174A current
+  expensing with §481(a) transition and §280C(c) coordination.
+- **Added:** `AM_CASH_VS_ACCRUAL` (6 tests) — §448(c) threshold gate
+  with method-switch detection. Deterministic: liquidity fixture
+  ACCRUAL under $30M → switch_candidate.
+- **Added:** `AM_481A_PLANNING` (5 tests) — cross-cutting §481(a)
+  spread planning companion for all method-change evaluators.
+- **Added:** `CR_RND_41` (6 tests) — §41 research credit with §41(h)
+  startup payroll offset track detection ($5M gross-receipts ceiling).
+  Deterministic classification across the three archetype fixtures.
+
+Category dirs added: `SALE_TRANSACTION`, `INSTALLMENT_AND_DEFERRED_SALES`,
+`ACCOUNTING_METHODS`, `CREDITS` under both `app/evaluators/` and
+`app/tests/evaluators/`.
+
+Test suite totals: `pytest app/tests/` → **330 passed in 4.06s**.
+Registry auto-discovery: **45 evaluators** registered.
+
 ### Phase 3a batch 4 — evaluators 26-35 (2026-04-18)
 
 Ten MVP evaluators per spec §5.5; 59 new tests. Cumulative suite
