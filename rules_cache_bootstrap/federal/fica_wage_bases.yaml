@@ -1,0 +1,106 @@
+# OASDI wage base (§230 of the Social Security Act, applied via §3121(a)(1)
+# and §1401) and Medicare HI (no base).
+
+metadata:
+  section: "IRC §3121(a)(1), §1401; SSA §230"
+  jurisdiction: FED
+  parameter_family: fica_wage_bases
+  canonical_authority_kind: SSA_FACT_SHEET
+  canonical_authority_url: "https://www.ssa.gov/oact/cola/cbb.html"
+
+parameters:
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: oasdi_wage_base
+    value: null
+    unit: USD
+    authority_kind: SSA_FACT_SHEET
+    authority_citation: "SSA Fact Sheet — Social Security Cost-of-Living Adjustment for 2026"
+    authority_url: "https://www.ssa.gov/oact/cola/cbb.html"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      The 2026 OASDI wage base is announced by SSA in October 2025.
+      Populate from the SSA fact sheet for the planning year.
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: oasdi_rate_employee
+    value: 0.062
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §3101(a)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: oasdi_rate_employer
+    value: 0.062
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §3111(a)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: oasdi_rate_se
+    value: 0.124
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1401(a)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: medicare_hi_rate_employee
+    value: 0.0145
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §3101(b)(1)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: medicare_hi_rate_employer
+    value: 0.0145
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §3111(b)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: medicare_hi_rate_se
+    value: 0.029
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1401(b)(1)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: se_earnings_multiplier
+    value: 0.9235
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1402(a)(12)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      Net earnings from SE are multiplied by 0.9235 (= 100% - 7.65%) to
+      derive the SE earnings subject to SECA.

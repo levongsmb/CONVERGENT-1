@@ -1,0 +1,91 @@
+# §1202 Qualified Small Business Stock — exclusion cap and holding period.
+# Per the prompt (§12.2): "OBBBA $15M / phased-holding-period optimization".
+# OBBBA (P.L. 119-21) modified §1202 in two ways the engine must model:
+# (a) raised the per-issuer gain-exclusion cap structure and
+# (b) introduced a phased holding-period schedule (partial exclusion at
+# 3 and 4 years, full at 5). Confirm exact parameters from P.L. 119-21.
+
+metadata:
+  section: "IRC §1202 as amended by OBBBA (P.L. 119-21)"
+  jurisdiction: FED
+  parameter_family: section_1202
+
+parameters:
+
+  - coordinate: { tax_year: 2026, sub_parameter: "per_issuer_exclusion_cap_greater_of_a" }
+    value: null
+    unit: USD
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — §1202 exclusion cap (OBBBA $15M structure)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      OBBBA raised the per-issuer "greater of $X or 10× basis" cap.
+      Confirm $15M (indexed vs. unindexed) and effective date.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "per_issuer_exclusion_cap_multiplier_of_basis" }
+    value: 10
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1202(b)(1)(B) — 10× aggregate adjusted basis"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "gross_assets_ceiling_at_issuance" }
+    value: null
+    unit: USD
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — §1202(d) gross-assets ceiling (OBBBA structure)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      OBBBA modified the §1202(d) gross-assets ceiling. Confirm the new
+      ceiling and whether it is indexed.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "holding_period_for_full_exclusion" }
+    value: 5
+    unit: YEAR
+    authority_kind: IRC
+    authority_citation: "IRC §1202(a)(1) as amended — 5-year holding for 100% exclusion"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "partial_exclusion_at_3_years" }
+    value: null
+    unit: RATIO
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — §1202 phased exclusion"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      OBBBA introduced partial exclusion for shorter holding periods.
+      Confirm exact percentages at 3 and 4 years and the effective date
+      for issuances newly covered by the phased schedule.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "partial_exclusion_at_4_years" }
+    value: null
+    unit: RATIO
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — §1202 phased exclusion"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "excluded_gain_amt_adjustment" }
+    value: "NO_ADJUSTMENT"
+    unit: ENUM
+    authority_kind: IRC
+    authority_citation: "IRC §1202(a)(4) (as in effect post-OBBBA)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Pre-OBBBA, gains at 100% exclusion were not an AMT preference;
+      confirm OBBBA maintained this treatment for the new phased
+      exclusion levels.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "niit_treatment_of_excluded_gain" }
+    value: "EXCLUDED_FROM_NIT_BASE"
+    unit: ENUM
+    authority_kind: REG
+    authority_citation: "Treas. Reg. §1.1411-10 — gain excluded under §1202 not included in net investment income"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped

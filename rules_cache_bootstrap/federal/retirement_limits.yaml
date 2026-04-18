@@ -1,0 +1,128 @@
+# Retirement plan limits — §402(g), §414(v), §415(c), §401(a)(17),
+# §408(k), §408(p), §219, plus SECURE 2.0 super-catch-up structure.
+# Annually released by IRS Notice in late October for the following year.
+
+metadata:
+  section: "IRC §§ 401, 402, 408, 414, 415, 219"
+  jurisdiction: FED
+  parameter_family: retirement_limits
+  canonical_authority_kind: IRS_NOTICE
+  canonical_authority_url_pattern: "https://www.irs.gov/pub/irs-drop/n-{YY}-{NN}.pdf"
+
+parameters:
+  # All 2026 values must come from the IRS Notice announcing 2026 limits.
+  # Typical Notice cadence: "Notice 2025-XX — 2026 Limitations Adjusted as
+  # Provided in Section 415(d), etc."
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_402g_employee_elective_deferral" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §402(g)"
+    authority_url: "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_414v_catchup_age_50" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §414(v)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_414v_super_catchup_age_60_63" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §414(v)(2)(E) as added by SECURE 2.0 §109"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      SECURE 2.0 §109 added the "super catch-up" for participants aged
+      60–63 effective 2025 — equal to the greater of $10,000 (indexed) or
+      150% of the age-50 catch-up. 2026 dollar amount from IRS Notice.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_415c_annual_additions" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §415(c)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_415b_db_annual_benefit" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §415(b)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_401a17_compensation_limit" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §401(a)(17)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_408k_sep_max_percent" }
+    value: 0.25
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §408(k)(3)(C) — SEP contribution limit based on §404(h)(1)(C) / §415(c) (25% of compensation)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      For self-employed: 25% of net earnings from self-employment after
+      deducting (a) one-half of SE tax and (b) the SEP contribution itself,
+      yielding an effective 20% deduction rate on net SE earnings.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_408p_simple_deferral" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §408(p)(2)(E)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_408p_simple_catchup" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §408(p)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_219_ira_contribution" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §219(b)(5)(A)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_219_ira_catchup" }
+    value: null
+    unit: USD
+    authority_kind: IRS_NOTICE
+    authority_citation: "IRS Notice 2025-XX (2026 limits) — §219(b)(5)(B)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "secure_2_mandatory_roth_catchup_wage_threshold" }
+    value: 145000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §414(v)(7) as added by SECURE 2.0 §603"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      High-earner (prior-year FICA wages > $145,000, indexed) catch-up
+      contributions must be Roth. Initial threshold is statutory
+      $145,000; indexing begins per §414(v)(7)(B). Confirm whether any
+      2026 inflation adjustment has been announced; if not, the value
+      remains $145,000. Implementation relief under Notice 2023-62
+      extended the effective date to 2026; confirm no further deferral
+      before relying on the 2026 effective date.

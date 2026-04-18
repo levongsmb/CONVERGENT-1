@@ -1,0 +1,90 @@
+# §1411 Net Investment Income Tax — thresholds and rate
+# The MAGI thresholds in §1411(b) are statutory and NOT inflation-indexed;
+# the rate is statutory.
+
+metadata:
+  section: "IRC §1411"
+  jurisdiction: FED
+  parameter_family: niit
+  canonical_authority_kind: IRC
+
+parameters:
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: MFJ
+      sub_parameter: magi_threshold
+    value: 250000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §1411(b)(1)"
+    authority_url: "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title26-section1411"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: "Statutory, not indexed."
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: SINGLE
+      sub_parameter: magi_threshold
+    value: 200000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §1411(b)(3)"
+    authority_url: "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title26-section1411"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: HOH
+      sub_parameter: magi_threshold
+    value: 200000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §1411(b)(3)"
+    authority_url: "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title26-section1411"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: MFS
+      sub_parameter: magi_threshold
+    value: 125000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §1411(b)(2)"
+    authority_url: "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title26-section1411"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: rate
+    value: 0.038
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1411(a)"
+    authority_url: "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title26-section1411"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ESTATE_TRUST
+      sub_parameter: applicable_threshold_rule
+    value: "begins at highest §1(e) trust bracket breakpoint"
+    unit: ENUM
+    authority_kind: IRC
+    authority_citation: "IRC §1411(a)(2)"
+    authority_url: "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title26-section1411"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      Trusts and estates: NIIT applies to the lesser of (A) undistributed
+      net investment income or (B) excess of AGI over the dollar amount
+      at which the highest §1(e) trust bracket begins. That dollar amount
+      is supplied by the annual Rev. Proc. — see
+      `federal/trust_brackets.yaml` (awaiting_user_input).

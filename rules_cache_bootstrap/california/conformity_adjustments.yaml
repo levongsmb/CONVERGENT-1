@@ -1,0 +1,88 @@
+# CA nonconformity adjustments — flagged at the CA computation layer.
+# CA generally does not conform to TCJA / OBBBA federal changes unless
+# separately enacted. This file enumerates the specific nonconformity
+# points the engine must respect.
+
+metadata:
+  section: "CA R&TC various"
+  jurisdiction: CA
+  parameter_family: conformity_adjustments
+
+parameters:
+
+  - coordinate: { sub_parameter: "bonus_depreciation_168k" }
+    value: "NOT_CONFORMED"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17250, §24349 — CA uses MACRS without bonus"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { sub_parameter: "section_179_limit" }
+    value: "LIMITED_TO_25000"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17255, §24356 — CA §179 cap $25,000 (not $1.16M federal)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: "Confirm 2026 CA §179 cap is still $25,000; historically unchanged."
+
+  - coordinate: { sub_parameter: "section_199A" }
+    value: "NOT_CONFORMED"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA has not conformed to §199A"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { sub_parameter: "section_174_re_capitalization" }
+    value: "PARTIAL_CONFORMITY"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC conformity date"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      CA conforms to IRC as of a specific static date. Confirm CA's
+      current specified conformity date and whether it includes TCJA §174
+      capitalization changes and any OBBBA §174 modifications.
+
+  - coordinate: { sub_parameter: "obbba_items_generally" }
+    value: "NOT_CONFORMED_UNLESS_SEPARATELY_ENACTED"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC specified-date conformity"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      Per the build prompt (§11): "post-OBBBA changes mostly not adopted".
+      Specific OBBBA-to-CA adoption actions should be tracked as they
+      occur and flipped here by category.
+
+  - coordinate: { sub_parameter: "section_461l" }
+    value: "NOT_CONFORMED"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC — CA conforms to §461(l) only to the extent separately enacted"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      CA has separately enacted its own excess business loss limit in
+      certain years; confirm 2026 status.
+
+  - coordinate: { sub_parameter: "cap_gain_preferential_rates" }
+    value: "NOT_CONFORMED"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA does not provide preferential capital gain rates"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { sub_parameter: "section_1202_gain_exclusion" }
+    value: "NOT_CONFORMED"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC — CA §1202 conformity repealed"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: "CA taxes §1202-excluded gain at ordinary CA rates."

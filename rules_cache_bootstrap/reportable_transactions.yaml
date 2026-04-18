@@ -1,0 +1,49 @@
+# IRS Reportable Transactions — Phase 0 snapshot enumeration.
+# Reportable transactions require Form 8886 disclosure. Per §12A.12, any
+# Library strategy matching a Reportable pattern is suppressed from the
+# Optimizer candidate set; the scenario's Compliance Flag Engine still
+# surfaces the flag for user awareness.
+
+metadata:
+  snapshot_date: 2026-04-18
+  source_url: "https://www.irs.gov/businesses/corporations/reportable-transactions"
+
+categories:
+  - category: "LISTED_TRANSACTION"
+    description: "See listed_transactions.yaml — a listed transaction is a reportable transaction."
+  - category: "CONFIDENTIAL_TRANSACTION"
+    description: "Transactions offered under conditions of confidentiality with advisor fee > threshold."
+  - category: "CONTRACTUAL_PROTECTION_TRANSACTION"
+    description: "Transactions where advisor fee is contingent on tax benefit being sustained."
+  - category: "LOSS_TRANSACTION"
+    description: "§165 loss above threshold — Form 8886 required."
+  - category: "TRANSACTION_OF_INTEREST"
+    description: "Identified by IRS as having potential for tax avoidance or evasion (sub-designated by Notice)."
+
+# Specific TOI designations. Enumerate what is current as of snapshot
+# date during Statutory Mining bootstrap. Seed list below — user
+# confirms.
+
+designations:
+
+  - designation_citation: "Notice 2007-72 (contribution of successor-member interests)"
+    category: "TRANSACTION_OF_INTEREST"
+    label: "Successor-member contribution transactions"
+    pattern_summary: >
+      Contributions of successor-member interests in LLCs in certain
+      abusive patterns.
+    designated_at: 2007-08-14
+    still_designated: null
+    verification_status: awaiting_user_input
+
+  - designation_citation: "Placeholder — populate from irs.gov current Reportable Transactions index"
+    category: "TRANSACTION_OF_INTEREST"
+    label: null
+    pattern_summary: null
+    designated_at: null
+    still_designated: null
+    verification_status: awaiting_user_input
+    notes: >
+      Statutory Mining bootstrap populates the full current list during
+      Phase 7. Phase 0 acceptance does not require enumeration of every
+      TOI — user confirms coverage scope.

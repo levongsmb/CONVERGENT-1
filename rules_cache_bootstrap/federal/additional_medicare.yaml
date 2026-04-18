@@ -1,0 +1,79 @@
+# §3101(b)(2) Additional Medicare Tax — 0.9% on wages / SE income above
+# filing-status thresholds. Statutory, not indexed.
+
+metadata:
+  section: "IRC §3101(b)(2), §1401(b)(2), §3102(f)"
+  jurisdiction: FED
+  parameter_family: additional_medicare
+
+parameters:
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: MFJ
+      sub_parameter: threshold
+    value: 250000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §3101(b)(2)(A)(i)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: MFS
+      sub_parameter: threshold
+    value: 125000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §3101(b)(2)(A)(ii)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: SINGLE
+      sub_parameter: threshold
+    value: 200000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §3101(b)(2)(A)(iii)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: HOH
+      sub_parameter: threshold
+    value: 200000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §3101(b)(2)(A)(iii)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: rate
+    value: 0.009
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §3101(b)(2), §1401(b)(2)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: employer_withholding_threshold_wages
+    value: 200000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §3102(f)(1)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      Employer must begin Additional Medicare withholding once employee's
+      wages from that employer exceed $200,000 in a calendar year,
+      without regard to filing status.

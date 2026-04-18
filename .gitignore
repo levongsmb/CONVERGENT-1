@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Playwright
+test-results/
+playwright-report/
+
+# Installer artifacts
+installer/vendor/tesseract/
+installer/vendor/ghostscript/
+installer/vendor/webview2/
+!installer/vendor/README.md
+installer/convergent.ico
+installer/version_info.txt
+
+# Local editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Convergent runtime data — never commit client files
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.key
+engagements/
+backups/
+authority_cache/
+rules_cache/
+
+# Anthropic logs / keys (belt-and-suspenders — keyring is the real store)
+.anthropic/
+*.apikey

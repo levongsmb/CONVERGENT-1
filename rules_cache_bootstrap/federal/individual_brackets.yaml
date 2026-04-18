@@ -1,0 +1,101 @@
+# §1 individual ordinary income brackets
+# Authority of record: Rev. Proc. inflation-adjustment release for the
+# planning year (typically published in late October / early November for
+# the following year by IRS Notice IR-YYYY-NNN + Rev. Proc. YYYY-NN).
+#
+# Per Decision 0001 (Option C): values below are marked
+# awaiting_user_input because confirming the exact bracket breakpoints and
+# their interaction with any OBBBA-driven permanence or modification
+# requires the user to supply the Rev. Proc. cite current as of the
+# planning year. Placeholder shape is retained so engine wiring can be
+# developed against a stable schema.
+
+metadata:
+  section: "IRC §1"
+  jurisdiction: FED
+  parameter_family: individual_ordinary_brackets
+  canonical_authority_kind: REV_PROC
+  canonical_authority_url_pattern: "https://www.irs.gov/pub/irs-irbs/irb{YY}-{NN}.pdf"
+  notes: >
+    The Rev. Proc. provides bracket breakpoints by filing status for the
+    tax year. This engine applies bracket interpolation exactly as printed
+    in the Rev. Proc. tables — no rounding, no simplification.
+
+parameters:
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: MFJ
+      sub_parameter: bracket_breakpoints_ordinary
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: AWAITING_USER_INPUT
+    authority_url: null
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Populate with Rev. Proc. 2025-32 (or successor) §3.01 table for MFJ.
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: SINGLE
+      sub_parameter: bracket_breakpoints_ordinary
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: AWAITING_USER_INPUT
+    authority_url: null
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Populate with Rev. Proc. 2025-32 (or successor) §3.01 table for
+      Unmarried Individuals.
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: HOH
+      sub_parameter: bracket_breakpoints_ordinary
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: AWAITING_USER_INPUT
+    authority_url: null
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: MFS
+      sub_parameter: bracket_breakpoints_ordinary
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: AWAITING_USER_INPUT
+    authority_url: null
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate:
+      tax_year: 2026
+      filing_status: ANY
+      sub_parameter: marginal_rates_ordinary
+    value:
+      - 0.10
+      - 0.12
+      - 0.22
+      - 0.24
+      - 0.32
+      - 0.35
+      - 0.37
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1(j)(2) as modified by OBBBA (P.L. 119-21) — rates permanentized"
+    authority_url: "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title26-section1"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      OBBBA (P.L. 119-21) made the 2018 rate structure permanent. The
+      bracket breakpoints continue to be inflation-indexed and are
+      supplied by the Rev. Proc. above. Confirm rate-schedule permanence
+      under OBBBA matches this list before sign-off.

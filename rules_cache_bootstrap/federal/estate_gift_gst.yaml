@@ -1,0 +1,62 @@
+# §§ 2010, 2503(b), 2631 — estate and gift tax exemption and annual
+# exclusion. OBBBA (P.L. 119-21) made the post-TCJA elevated exemption
+# permanent; the user must confirm the exact 2026 indexed value.
+
+metadata:
+  section: "IRC §§ 2010, 2503(b), 2631, 2505"
+  jurisdiction: FED
+  parameter_family: estate_gift_gst
+
+parameters:
+
+  - coordinate: { tax_year: 2026, sub_parameter: "basic_exclusion_amount_applicable_exclusion" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-XX — §2010(c) basic exclusion amount for 2026"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      OBBBA made the elevated TCJA exemption permanent. The 2026 indexed
+      value comes from the annual inflation-adjustment Rev. Proc.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "gst_exemption" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-XX — §2631(c) GST exemption for 2026"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: "Equal to basic exclusion amount per §2631(c); confirm parity."
+
+  - coordinate: { tax_year: 2026, sub_parameter: "annual_exclusion_2503b" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-XX — §2503(b) annual exclusion for 2026"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "annual_exclusion_noncitizen_spouse_2523i" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-XX — §2523(i) non-citizen spouse exclusion for 2026"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "estate_tax_top_rate" }
+    value: 0.40
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §2001(c) — 40% top bracket"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "dsue_portability_available" }
+    value: true
+    unit: ENUM
+    authority_kind: IRC
+    authority_citation: "IRC §2010(c)(4) — DSUE portability"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped

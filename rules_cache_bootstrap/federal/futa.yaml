@@ -1,0 +1,44 @@
+# §3301 FUTA
+metadata:
+  section: "IRC §3301, §3306(b)(1), §3302"
+  jurisdiction: FED
+  parameter_family: futa
+
+parameters:
+  - coordinate: { tax_year: 2026, sub_parameter: gross_rate }
+    value: 0.060
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §3301"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+  - coordinate: { tax_year: 2026, sub_parameter: wage_base }
+    value: 7000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §3306(b)(1)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+  - coordinate: { tax_year: 2026, sub_parameter: state_credit_max }
+    value: 0.054
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §3302"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      Effective net FUTA for a non-credit-reduction state is 0.6% on the
+      first $7,000 of wages. CA and other states periodically become
+      credit-reduction states under §3302(c)(2) — check the current
+      DOL credit-reduction list for the planning year.
+  - coordinate: { tax_year: 2026, sub_parameter: credit_reduction_state_list }
+    value: null
+    unit: ENUM
+    authority_kind: DOL_PUBLICATION
+    authority_citation: "US DOL FUTA Credit Reduction States announcement for 2026"
+    authority_url: "https://oui.doleta.gov/unemploy/futa_credit.asp"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Populate each November from DOL for the preceding calendar year
+      (credit-reduction determination is made annually on November 10).

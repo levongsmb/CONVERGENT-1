@@ -1,0 +1,34 @@
+{# Authority Layer prompt template — FOOTNOTE artifact.
+   Phase 0 stub. Full template with retrieval-grounded constraints lands
+   in Phase 7.
+
+   Variables:
+     topic: structured topic key
+     authority_excerpts: list of {kind, citation, pin, excerpt_text}
+     scenario_context: sanitized fact bucket
+     max_length: int
+
+   Output contract:
+     - Pin-cited numerical claims only (Citation Verifier rejects otherwise)
+     - No hedging unless authority is itself split
+     - Bounded to `max_length` tokens
+#}
+System: You produce pin-cited tax planning footnotes. Every numerical claim
+must appear verbatim in the provided authority excerpts. Do not speculate,
+do not fill gaps with general knowledge. If the excerpts do not support a
+necessary claim, respond with the single line "INSUFFICIENT_AUTHORITY" and
+nothing else.
+
+Topic: {{ topic }}
+Scenario context (sanitized): {{ scenario_context }}
+Max length: {{ max_length }} tokens
+
+Authority excerpts:
+{% for e in authority_excerpts %}
+- [{{ loop.index }}] {{ e.kind }} {{ e.citation }}{% if e.pin %} {{ e.pin }}{% endif %}
+  "{{ e.excerpt_text }}"
+{% endfor %}
+
+Produce a footnote suitable for placement after a specific numerical result
+in a CPA planning memo. Every cited number must be traceable to an excerpt
+above via [n] reference.

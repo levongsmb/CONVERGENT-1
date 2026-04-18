@@ -1,0 +1,49 @@
+# §461(l) excess business loss limitation.
+# Per the prompt (§12.2): "§461(l) EBL management (now through 2030 per
+# OBBBA)". OBBBA extended the EBL limit through 2030.
+
+metadata:
+  section: "IRC §461(l) as amended by OBBBA (P.L. 119-21)"
+  jurisdiction: FED
+  parameter_family: section_461l
+
+parameters:
+
+  - coordinate: { tax_year: 2026, sub_parameter: "sunset_year" }
+    value: 2030
+    unit: YEAR
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — §461(l) extension"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      OBBBA extended §461(l) through 2030. Confirm exact sunset date
+      (end of TY 2030 vs. mid-year).
+
+  - coordinate: { tax_year: 2026, sub_parameter: "threshold_mfj" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-XX — §461(l)(3)(A)(ii) threshold for 2026"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "threshold_single_hoh_mfs" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-XX — §461(l)(3)(A)(ii) threshold for 2026"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "disallowed_loss_carryover_treatment" }
+    value: "§172 NOL"
+    unit: ENUM
+    authority_kind: IRC
+    authority_citation: "IRC §461(l)(2) (as in effect post-OBBBA)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Historically disallowed amounts flow to §172 NOL carryover in
+      subsequent years. Confirm OBBBA did not modify the carryover
+      character treatment.

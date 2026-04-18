@@ -1,0 +1,101 @@
+# IRS Listed Transactions — Phase 0 snapshot enumeration.
+# Per §12A.12: any strategy matching a Listed pattern is removed from the
+# Library entirely for the engagement.
+#
+# Canonical source: https://www.irs.gov/businesses/corporations/listed-transactions
+# Statutory Mining refreshes this weekly; Phase 0 populates with the set
+# published as of the snapshot date.
+
+metadata:
+  snapshot_date: 2026-04-18
+  source_url: "https://www.irs.gov/businesses/corporations/listed-transactions"
+
+# Seed entries cover the currently-listed patterns mentioned in the build
+# prompt (§12.2 "Blocked strategies"). User verifies currency during
+# Phase 0 sign-off.
+
+designations:
+
+  - designation_citation: "Notice 2017-10 (syndicated conservation easements)"
+    label: "Syndicated conservation easement transactions"
+    pattern_summary: >
+      Syndicated conservation easement arrangements with promoter-marketed
+      charitable-contribution deductions materially exceeding investor
+      outlay.
+    strategy_library_ids_blocked: []
+    designated_at: 2016-12-23
+    still_designated: null
+    verification_status: awaiting_user_input
+    notes: "Confirm still-designated status and any subsequent Regs."
+
+  - designation_citation: "Notice 2023-27 (Malta Pension)"
+    label: "Malta personal retirement scheme arrangements"
+    pattern_summary: >
+      Arrangements purporting to use Malta personal retirement schemes to
+      achieve US tax deferral and preferential capital-gains treatment
+      outside the scope of §§401–409A.
+    strategy_library_ids_blocked: []
+    designated_at: 2023-02-17
+    still_designated: null
+    verification_status: awaiting_user_input
+
+  - designation_citation: "Notice 2023-34 (Monetized Installment Sale)"
+    label: "Monetized installment sale transactions"
+    pattern_summary: >
+      Promoter-structured monetized installment sales purporting to defer
+      gain recognition while the seller receives non-recourse monetization
+      loan proceeds economically equivalent to cash.
+    strategy_library_ids_blocked: []
+    designated_at: 2023-04-12
+    still_designated: null
+    verification_status: awaiting_user_input
+
+  - designation_citation: "Notice 2015-73 (Basket Contracts)"
+    label: "Basket contract transactions"
+    pattern_summary: >
+      Basket option contracts and basket contracts purporting to defer
+      income or convert ordinary income to capital gains.
+    strategy_library_ids_blocked: []
+    designated_at: 2015-11-16
+    still_designated: null
+    verification_status: awaiting_user_input
+
+  - designation_citation: "Notice 2024-41 (CRAT Abusive)"
+    label: "Charitable remainder annuity trust abusive transactions"
+    pattern_summary: >
+      CRAT transactions using contributed appreciated property to
+      mischaracterize income on sale and generate a tax-free annuity
+      stream.
+    strategy_library_ids_blocked: []
+    designated_at: null
+    still_designated: null
+    verification_status: awaiting_user_input
+    notes: "Confirm exact designation date and citation."
+
+  - designation_citation: "Notice 2024-54 (Partnership Basis-Shifting)"
+    label: "Partnership basis-shifting transactions"
+    pattern_summary: >
+      Certain partnership basis-shifting transactions among related
+      parties designed to generate artificial depreciation or reduce
+      gain.
+    strategy_library_ids_blocked: []
+    designated_at: null
+    still_designated: null
+    verification_status: awaiting_user_input
+    notes: "Confirm final-Regs status; the 2024 transactions-of-interest publication may have been superseded or finalized."
+
+  - designation_citation: "Notice 2016-66 (Micro-Captive — Transaction of Interest)"
+    label: "Micro-captive insurance transactions matching Notice 2016-66"
+    pattern_summary: >
+      §831(b) micro-captive arrangements matching the Notice 2016-66
+      pattern (loss ratio, financing arrangements, related-party
+      indicators).
+    strategy_library_ids_blocked: []
+    designated_at: 2016-11-01
+    still_designated: null
+    verification_status: awaiting_user_input
+    notes: >
+      Note: Notice 2016-66 originally classified these as a
+      Transaction of Interest (reportable, not listed). Final Regs may
+      have elevated the classification; confirm current posture before
+      sign-off.

@@ -1,0 +1,179 @@
+# Authority Layer — Pitfall Library (§12A.10)
+#
+# Phase 0 seed. Full population during Phase 7. Every entry:
+#
+#   id: string
+#   trigger: Predicate  # §12.3 DSL
+#   severity: BLOCK | WARN | INFO
+#   title: string
+#   narrative: string   # 2-3 sentences
+#   primary_authority: [Citation]
+#   recommended_action: string
+#   last_reviewed: date
+
+version: "0.1.0-phase0"
+last_updated: 2026-04-18
+
+pitfalls:
+
+  - id: listed_transaction_match
+    severity: BLOCK
+    title: "Strategy matches currently-designated Listed Transaction"
+    trigger: "strategy.library_id in listed_transactions.blocked_ids"
+    narrative: >
+      Listed Transactions (§6707A) are patterns the IRS has specifically
+      identified as tax-avoidance transactions requiring disclosure on
+      Form 8886. Convergent removes any matching strategy from the
+      candidate set entirely; this flag appears to document the
+      suppression.
+    primary_authority:
+      - kind: IRC
+        citation: "IRC §6707A"
+      - kind: IRC
+        citation: "IRC §6011(a)"
+    recommended_action: "Strategy suppressed. See listed_transactions.yaml for matching designation."
+    last_reviewed: 2026-04-18
+
+  - id: reportable_transaction_match
+    severity: WARN
+    title: "Strategy approaches Reportable Transaction disclosure pattern"
+    trigger: "strategy.library_id in reportable_transactions.adjacent_ids"
+    narrative: >
+      Reportable Transactions (§6011) include loss transactions above
+      threshold, confidential transactions, contractual-protection
+      transactions, and transactions of interest. A strategy adjacent to
+      these patterns may itself be reportable depending on facts.
+    primary_authority:
+      - kind: IRC
+        citation: "IRC §6011"
+      - kind: REG
+        citation: "Treas. Reg. §1.6011-4"
+    recommended_action: "Review Form 8886 applicability before implementing."
+    last_reviewed: 2026-04-18
+
+  - id: scorp_reasonable_comp_low_ratio
+    severity: WARN
+    title: "Officer compensation ratio below reasonable-comp floor"
+    trigger: >
+      entity_type == 'S_CORP' and revenue > 250000 and
+      (officer_comp / (officer_comp + k1_box1)) < 0.20
+    narrative: >
+      IRS reasonable-compensation enforcement against S-corp shareholder-
+      employees is well established. Ratios below 20% on meaningful
+      revenue invite adjustment under §3111 / §3101. Mulcahy v. Commissioner
+      and similar cases set the framework.
+    primary_authority:
+      - kind: REG
+        citation: "Treas. Reg. §1.162-7"
+      - kind: REG
+        citation: "Treas. Reg. §31.3121(a)-1"
+      - kind: CASE
+        citation: "Mulcahy, Pauritsch, Salvador & Co. v. Commissioner, T.C. Memo 2011-74, aff'd 680 F.3d 867 (7th Cir. 2012)"
+    recommended_action: "Commission a reasonable-compensation study before locking the officer-comp amount."
+    last_reviewed: 2026-04-18
+
+  - id: section_1402a13_active_llc_member_se_exception
+    severity: WARN
+    title: "§1402(a)(13) limited-partner SE exception — unsettled authority"
+    trigger: "entity_type == 'LLC_AS_PARTNERSHIP' and member.active_in_business and strategy invokes limited_partner_exception"
+    narrative: >
+      The §1402(a)(13) limited-partner exception from SECA is actively
+      litigated as applied to LLC members who actively participate. Soroban
+      (T.C. 2024), Denham Capital, and Point 72 have all produced
+      taxpayer-adverse rulings or settlements. Aggressive reliance on the
+      exception for actively-participating LLC members is high-risk.
+    primary_authority:
+      - kind: IRC
+        citation: "IRC §1402(a)(13)"
+      - kind: CASE
+        citation: "Soroban Capital Partners LP v. Commissioner, 161 T.C. No. 12 (2023)"
+      - kind: CASE
+        citation: "Denham Capital Management v. Commissioner"
+      - kind: REG
+        citation: "Prop. Treas. Reg. §1.1402(a)-2 (1997) — never finalized"
+    recommended_action: "Do not apply this exception to actively-participating LLC members without partner-level fact-pattern documentation and client risk sign-off."
+    last_reviewed: 2026-04-18
+
+  - id: section_643f_multi_trust_anti_abuse
+    severity: WARN
+    title: "§643(f) multi-trust anti-abuse — common grantor + common beneficiaries"
+    trigger: "count(nongrantor_trusts with common grantor and common primary beneficiary) > 1"
+    narrative: >
+      §643(f) empowers Treasury to treat multiple trusts as a single trust
+      where they have substantially the same grantor and substantially
+      the same primary beneficiary and a principal purpose of tax
+      avoidance. Aggressive non-grantor-trust sprinkle strategies using
+      multiple trusts can collapse under §643(f).
+    primary_authority:
+      - kind: IRC
+        citation: "IRC §643(f)"
+      - kind: REG
+        citation: "Prop. Treas. Reg. §1.643(f)-1"
+    recommended_action: "Structure trusts with substantially different beneficiary classes or confirm non-tax principal purpose."
+    last_reviewed: 2026-04-18
+
+  - id: ca_ptet_june15_short_payment_credit_reduction
+    severity: INFO
+    title: "CA PTET June 15 prepayment short / missed — 12.5% credit reduction (2026–2030)"
+    trigger: "entity.ca_ptet_elected and june15_prepayment_shortfall > 0 and tax_year between 2026 and 2030"
+    narrative: >
+      For TYs 2026–2030, a missed or short June 15 prepayment does not
+      invalidate the PTET election, but the qualified taxpayer's PTET
+      credit is reduced by 12.5% of the pro rata share of the unpaid
+      amount that was due on June 15. PTET credit is nonrefundable with
+      a 5-year carryforward.
+    primary_authority:
+      - kind: RTC
+        citation: "CA R&TC §§ 19900 et seq."
+      - kind: FTB_NOTICE
+        citation: "FTB Form 3804 (2026) Instructions; FTB PTET FAQ as of snapshot date"
+    recommended_action: "Fund the full June 15 prepayment; any shortfall is quantified and flowed into the scenario cash-flow line item."
+    last_reviewed: 2026-04-18
+
+  - id: prop_19_reassessment_entity_held_real_property
+    severity: WARN
+    title: "Prop 19 reassessment exposure on entity-held real property transfer"
+    trigger: "entity owns CA real property and transaction involves ownership change in the entity"
+    narrative: >
+      Prop 19 (CA Rev & Tax Code §§ 60-69.5 as amended) and change-in-
+      control rules for legal-entity transfers trigger reassessment on
+      CA-situs real property when cumulative voting-interest transfers
+      exceed 50% or a single person acquires majority control.
+    primary_authority:
+      - kind: RTC
+        citation: "CA R&TC §§ 60, 61, 62, 64, 65, 69.5 (as amended by Prop 19 and successors)"
+    recommended_action: "Before any transfer structuring, confirm no Prop 19 reassessment is triggered or accept the reassessment as a modeled cost."
+    last_reviewed: 2026-04-18
+
+  - id: section_1014_basis_step_up_traps
+    severity: INFO
+    title: "§1014 basis step-up interaction traps"
+    trigger: "strategy interacts with §1014 basis treatment"
+    narrative: >
+      §1014(e) one-year rule denies step-up on property gifted to decedent
+      within one year of death where original donor reacquires. §2036 /
+      §2038 retained-interest pullback can produce step-up at the cost
+      of estate inclusion. GPOA inclusion for §1014 step-up is a design
+      tool but requires exact drafting.
+    primary_authority:
+      - kind: IRC
+        citation: "IRC §1014(a), (b), (e)"
+      - kind: IRC
+        citation: "IRC §§ 2036, 2038, 2041"
+    recommended_action: "Coordinate with estate counsel on §1014 step-up design."
+    last_reviewed: 2026-04-18
+
+  - id: obbba_sunset_watch_placeholder
+    severity: INFO
+    title: "OBBBA sunset watch — planning horizon crosses a sunset boundary"
+    trigger: "planning_horizon crosses any obbba_sunset boundary in rules_cache"
+    narrative: >
+      OBBBA (P.L. 119-21) introduced or extended several time-limited
+      provisions. Sunset Watch (§12A.13) surfaces a persistent pitfall
+      when the engagement's planning horizon crosses a sunset boundary
+      so the CPA can plan for the reversion.
+    primary_authority:
+      - kind: PL
+        citation: "Public Law 119-21"
+    recommended_action: "Model both pre- and post-sunset scenarios in multi-year projections."
+    last_reviewed: 2026-04-18

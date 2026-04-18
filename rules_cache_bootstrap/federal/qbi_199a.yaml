@@ -1,0 +1,94 @@
+# §199A QBI deduction — thresholds, phaseout widths, SSTB rules.
+# OBBBA (P.L. 119-21) made §199A permanent; confirm exact indexed values.
+
+metadata:
+  section: "IRC §199A"
+  jurisdiction: FED
+  parameter_family: qbi_199a
+
+parameters:
+
+  - coordinate: { tax_year: 2026, sub_parameter: "taxable_income_threshold_mfj" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-XX — §199A(e)(2) threshold amount for 2026"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "taxable_income_threshold_single" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-XX — §199A(e)(2) threshold amount for 2026"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "phasein_width_mfj" }
+    value: 100000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §199A(b)(3)(B)(ii), §199A(d)(3)(A)(ii)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: "Statutory $100,000 phase-in range for MFJ."
+
+  - coordinate: { tax_year: 2026, sub_parameter: "phasein_width_single_hoh_mfs" }
+    value: 50000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §199A(b)(3)(B)(ii), §199A(d)(3)(A)(ii)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "deduction_rate" }
+    value: 0.20
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §199A(a)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "w2_wages_pct_limit" }
+    value: 0.50
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §199A(b)(2)(B)(i)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "w2_plus_ubia_pct_limit" }
+    value: 0.25
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §199A(b)(2)(B)(ii)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "ubia_of_qualified_property_pct" }
+    value: 0.025
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §199A(b)(2)(B)(ii)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "sstb_complete_phaseout_anchor" }
+    value: "threshold_plus_phasein_width"
+    unit: ENUM
+    authority_kind: IRC
+    authority_citation: "IRC §199A(d)(3)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      For SSTBs, the QBI deduction fully phases out at threshold + phase-in
+      width (MFJ: $100K above threshold; all other filers: $50K above).
+
+  - coordinate: { tax_year: 2026, sub_parameter: "ca_conformity" }
+    value: "NOT_CONFORMED"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC — CA does not conform to §199A"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: "CA has not adopted §199A; flagged at the CA computation layer."

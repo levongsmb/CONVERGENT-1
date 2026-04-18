@@ -1,0 +1,73 @@
+# CA Franchise Tax — $800 minimum by entity type
+metadata:
+  section: "CA R&TC §§ 17941, 17942, 23153, 23802"
+  jurisdiction: CA
+  parameter_family: franchise_tax
+
+parameters:
+  - coordinate: { tax_year: 2026, entity_type: "S_CORP", sub_parameter: "minimum_annual" }
+    value: 800
+    unit: USD
+    authority_kind: RTC
+    authority_citation: "CA R&TC §23802(b), §23153"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: "S corps pay the greater of 1.5% of CA net income or $800."
+  - coordinate: { tax_year: 2026, entity_type: "S_CORP", sub_parameter: "net_income_rate" }
+    value: 0.015
+    unit: RATIO
+    authority_kind: RTC
+    authority_citation: "CA R&TC §23802(b)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+  - coordinate: { tax_year: 2026, entity_type: "C_CORP", sub_parameter: "net_income_rate" }
+    value: 0.0884
+    unit: RATIO
+    authority_kind: RTC
+    authority_citation: "CA R&TC §23151(e)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+  - coordinate: { tax_year: 2026, entity_type: "LLC_AS_PARTNERSHIP", sub_parameter: "minimum_annual" }
+    value: 800
+    unit: USD
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17941"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+  - coordinate: { tax_year: 2026, entity_type: "LLC_AS_PARTNERSHIP", sub_parameter: "additional_gross_receipts_fee_schedule" }
+    value: null
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17942 — LLC fee based on total California income"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      §17942 imposes an additional LLC fee based on total California
+      income at a tiered schedule ($900 / $2,500 / $6,000 / $11,790
+      historically). Confirm current schedule for 2026 and verify
+      legislative changes.
+  - coordinate: { tax_year: 2026, entity_type: "LIMITED_PARTNERSHIP", sub_parameter: "minimum_annual" }
+    value: 800
+    unit: USD
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17935"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+  - coordinate: { tax_year: 2026, entity_type: "LLP", sub_parameter: "minimum_annual" }
+    value: 800
+    unit: USD
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17948"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+  - coordinate: { tax_year: 2026, entity_type: "ANY", sub_parameter: "first_year_exemption" }
+    value: null
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "AB 85 first-year exemption — confirm current status"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      AB 85 provided a first-year $800 exemption for LLCs, LPs, and LLPs
+      formed between 2021-01-01 and 2023-12-31. Confirm whether any
+      extension applies for 2026.

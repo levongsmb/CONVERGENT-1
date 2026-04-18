@@ -1,0 +1,70 @@
+# §164(b)(6) SALT cap as modified by OBBBA.
+# Per the prompt (§14.2): "SALT cap $40K vs. $10K reversion risk post-phaseout"
+# and (§12.2 STATE_SALT): "SALT cap $40K OBBBA phaseout optimization".
+#
+# The exact parameters — base cap, phaseout structure, income thresholds,
+# and expiration if any — must be confirmed by the user from the
+# controlling Public Law 119-21 text and any IRS interpretive Notice.
+
+metadata:
+  section: "IRC §164(b)(6) as amended by OBBBA (P.L. 119-21)"
+  jurisdiction: FED
+  parameter_family: salt_cap_obbba
+
+parameters:
+
+  - coordinate: { tax_year: 2026, sub_parameter: "base_cap_mfj" }
+    value: null
+    unit: USD
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — OBBBA SALT cap provisions"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Per §12.2, the engine must model "SALT cap $40K OBBBA phaseout
+      optimization". Populate the exact base cap, effective window, and
+      phaseout schedule from P.L. 119-21.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "base_cap_mfs" }
+    value: null
+    unit: USD
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — OBBBA SALT cap provisions"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "phaseout_agi_threshold_mfj" }
+    value: null
+    unit: USD
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — OBBBA SALT cap phaseout"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "phaseout_rate" }
+    value: null
+    unit: RATIO
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — OBBBA SALT cap phaseout"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "post_phaseout_floor" }
+    value: null
+    unit: USD
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — OBBBA SALT cap phaseout floor"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: "Cap below which phaseout cannot drive the allowance (e.g., $10K floor)."
+
+  - coordinate: { tax_year: 2026, sub_parameter: "effective_window" }
+    value: null
+    unit: ENUM
+    authority_kind: PL
+    authority_citation: "Public Law 119-21 — OBBBA SALT cap sunset"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Populate the specific effective window the $40K-structure applies.
+      Sunset behavior feeds the §12A.13 Sunset Watch pitfall list.

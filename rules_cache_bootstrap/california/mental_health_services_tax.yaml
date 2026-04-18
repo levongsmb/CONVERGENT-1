@@ -1,0 +1,34 @@
+# CA Mental Health Services Tax — 1% on taxable income > $1,000,000
+
+metadata:
+  section: "CA R&TC §17043"
+  jurisdiction: CA
+  parameter_family: mental_health_services_tax
+
+parameters:
+
+  - coordinate: { tax_year: 2026, sub_parameter: "threshold" }
+    value: 1000000
+    unit: USD
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17043(a)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: "Statutory, not indexed for inflation."
+
+  - coordinate: { tax_year: 2026, sub_parameter: "rate" }
+    value: 0.01
+    unit: RATIO
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17043(a)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "applies_to" }
+    value: "TAXABLE_INCOME_ABOVE_THRESHOLD"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17043(a)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: "Applies on top of regular CA income tax."

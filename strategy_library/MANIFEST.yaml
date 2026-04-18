@@ -1,0 +1,307 @@
+# Convergent Strategy Library Manifest — Phase 1 opening deliverable
+#
+# Per §12.5 of the build prompt, the MANIFEST enumerates at minimum 120
+# distinct strategy IDs across the 20 categories in §12.2. This Phase 0
+# scaffold publishes the ID list only; each strategy's YAML file lands in
+# Phase 1, one category at a time, reviewed by the user before advancing.
+#
+# Sequencing of the 20 categories is governed by Open Question Q0.6
+# (priority order). The ordering below reflects the default proposal in
+# Q0.6 — user re-orders during Phase 0 sign-off.
+#
+# Every ID is snake_case, unique across the Library, and stable once
+# published. Renaming an ID is a breaking change that requires a
+# decisions.md entry.
+
+version: "0.1.0-phase0"
+total_strategies: 187
+last_updated: 2026-04-18
+
+categories:
+
+  - key: COMPENSATION
+    description: "§162 / §1366 / §119 / §132 / §105 / §106 / §125 — officer comp and fringe benefits"
+    sequence_order: 1
+    strategies:
+      - id: scorp_reasonable_comp_optimization
+      - id: scorp_reasonable_comp_shift_to_distribution
+      - id: accountable_plan_reimbursement
+      - id: augusta_rule_280a_g
+      - id: hire_your_child_under_18
+      - id: hire_your_child_family_management_company
+      - id: scorp_gt_2pct_health_insurance_deduction
+      - id: ichra_design
+      - id: qsehra_design
+      - id: hra_section_105
+      - id: cafeteria_plan_125
+      - id: dependent_care_fsa
+      - id: hsa_maximization
+      - id: nqdc_409a_deferral_for_high_earner
+      - id: split_dollar_life_insurance
+      - id: phantom_equity_plan
+      - id: sar_stock_appreciation_rights
+      - id: section_83b_election
+      - id: section_83i_qualified_equity_grant
+
+  - key: QBI_199A
+    description: "§199A qualified business income optimization"
+    sequence_order: 2
+    strategies:
+      - id: qbi_below_threshold_optimization
+      - id: qbi_above_threshold_w2_wages_tuning
+      - id: qbi_above_threshold_ubia_tuning
+      - id: qbi_sstb_characterization_review
+      - id: qbi_sstb_disaggregation_crack_and_pack
+      - id: qbi_aggregation_199a4
+      - id: qbi_nongrantor_trust_sprinkle
+      - id: qbi_reasonable_comp_calibration
+      - id: qbi_rental_safe_harbor_rev_proc_2019_38
+
+  - key: RETIREMENT
+    description: "Qualified and non-qualified retirement plan optimization"
+    sequence_order: 3
+    strategies:
+      - id: solo_401k_design
+      - id: solo_401k_with_mega_backdoor_roth
+      - id: sep_ira_design
+      - id: simple_ira_design
+      - id: safe_harbor_401k_profit_sharing
+      - id: traditional_401k_cross_tested_profit_sharing
+      - id: defined_benefit_plan_layered
+      - id: cash_balance_plan_layered
+      - id: section_412e3_fully_insured_db
+      - id: roth_conversion_multi_year_laddder
+      - id: backdoor_roth_nondeductible_ira
+      - id: mega_backdoor_roth_after_tax_401k
+      - id: in_plan_roth_rollover
+      - id: nua_net_unrealized_appreciation
+      - id: section_72t_sepp_early_access
+      - id: qcd_qualified_charitable_distribution
+      - id: secure2_super_catchup_age_60_63
+      - id: rollover_ira_to_roth_ira
+
+  - key: ENTITY_SELECTION
+    description: "Choice of entity and entity conversion"
+    sequence_order: 4
+    strategies:
+      - id: s_election_from_sole_prop_or_smllc
+      - id: s_election_from_c_corp
+      - id: s_election_revocation
+      - id: qsub_election
+      - id: f_reorganization_pre_sale
+      - id: section_338h10_election
+      - id: section_336e_election
+      - id: c_corp_election_from_s
+      - id: llc_partnership_to_s_corp
+      - id: series_llc_formation
+      - id: dst_delaware_statutory_trust_1031
+
+  - key: STATE_SALT
+    description: "State tax and PTET optimization including CA"
+    sequence_order: 5
+    strategies:
+      - id: ca_ptet_election_ab150
+      - id: ca_ptet_credit_vs_deduction_optimization
+      - id: salt_cap_40k_phaseout_bunching
+      - id: state_ptet_ny
+      - id: state_ptet_nj
+      - id: state_ptet_ma
+      - id: state_ptet_va
+      - id: state_ptet_co
+      - id: residency_change_out_of_ca
+      - id: trust_situs_planning_ding_ning
+      - id: multistate_apportionment_optimization
+
+  - key: REAL_ESTATE_DEPRECIATION
+    description: "Depreciation and real estate structural planning"
+    sequence_order: 6
+    strategies:
+      - id: cost_segregation_study
+      - id: bonus_depreciation_168k_obbba_100pct
+      - id: section_179_election
+      - id: str_material_participation_469
+      - id: real_estate_professional_469c7
+      - id: section_1_469_4_grouping
+      - id: section_1031_like_kind_exchange
+      - id: section_1031_plus_721_upreit
+      - id: section_266_capitalize_carrying_charges
+      - id: partial_asset_disposition
+      - id: qof_section_1400Z_investment
+
+  - key: QSBS_1202
+    description: "§1202 original issuance, gifting, and rollover"
+    sequence_order: 7
+    strategies:
+      - id: qsbs_original_issuance_structuring
+      - id: qsbs_gift_stacking_nongrantor_trusts
+      - id: qsbs_1045_rollover
+      - id: qsbs_qualified_trade_packaging
+      - id: qsbs_holding_period_management
+      - id: qsbs_obbba_15m_phased_holding_optimization
+
+  - key: TRUSTS_INCOME_SHIFTING
+    description: "Non-grantor trust income shifting and related"
+    sequence_order: 8
+    strategies:
+      - id: nongrantor_trust_income_shifting
+      - id: ding_trust_delaware_incomplete_gift
+      - id: ning_trust_nevada_incomplete_gift
+      - id: esbt_election
+      - id: qsst_election
+      - id: trust_sprinkle_provisions
+
+  - key: TRUSTS_WEALTH_TRANSFER
+    description: "Wealth-transfer trust structures"
+    sequence_order: 9
+    strategies:
+      - id: slat_spousal_lifetime_access_trust
+      - id: idgt_with_installment_sale
+      - id: grat_rolling_short_term
+      - id: grat_long_term
+      - id: qprt_qualified_personal_residence_trust
+      - id: dynasty_trust
+      - id: dapt_domestic_asset_protection_trust
+      - id: decanting_section_2503d
+      - id: trust_protector_modifications
+      - id: section_645_qrt_election
+      - id: section_663b_65_day_election
+      - id: grantor_trust_power_swap_toggle
+
+  - key: ESTATE_GIFT_GST
+    description: "Estate, gift, and GST planning"
+    sequence_order: 10
+    strategies:
+      - id: annual_exclusion_gifting
+      - id: section_2503e_medical_tuition
+      - id: section_529_five_year_frontload
+      - id: gst_exemption_allocation_planning
+      - id: qtip_with_dsue
+      - id: section_6166_installment
+      - id: section_2032a_special_use
+      - id: graegin_loan
+      - id: flp_fllc_discounts
+      - id: defined_value_formula_clause
+      - id: portability_filing_not_required
+
+  - key: CHARITABLE
+    description: "Charitable giving structures and timing"
+    sequence_order: 11
+    strategies:
+      - id: donor_advised_fund
+      - id: charitable_bunching
+      - id: crat_charitable_remainder_annuity_trust
+      - id: crut_charitable_remainder_unitrust
+      - id: flip_crut
+      - id: nimcrut
+      - id: clat_charitable_lead_annuity_trust
+      - id: clut_charitable_lead_unitrust
+      - id: private_foundation
+      - id: bargain_sale
+      - id: qualified_conservation_contribution_non_listed
+      - id: enhanced_food_inventory_170e3
+      - id: qcd_from_ira
+
+  - key: INSTALLMENT_DEFERRAL
+    description: "§453 and deferral structures"
+    sequence_order: 12
+    strategies:
+      - id: installment_sale_section_453
+      - id: section_453h_liquidating_distribution
+      - id: section_453a_interest_management
+      - id: earnout_structuring
+      - id: section_483_imputed_interest_management
+
+  - key: CAPITAL_GAINS_LOSSES
+    description: "Capital gain / loss timing and character"
+    sequence_order: 13
+    strategies:
+      - id: tax_loss_harvesting
+      - id: wash_sale_1091_navigation
+      - id: section_1256_60_40_mark_to_market
+      - id: section_475_trader_mark_to_market
+      - id: zero_pct_ltcg_bracket_harvesting
+      - id: section_1244_small_business_stock_ordinary_loss
+
+  - key: LOSS_LIMIT_NAVIGATION
+    description: "§461(l) / §163(j) / §465 / §469 planning"
+    sequence_order: 14
+    strategies:
+      - id: section_461l_ebl_management
+      - id: section_163j_real_property_election_out
+      - id: section_465_at_risk_basis_restoration
+      - id: section_469_grouping_and_disposition
+      - id: section_1366d_stock_debt_basis_restoration
+      - id: section_704d_partner_basis_restoration
+
+  - key: ACCOUNTING_METHODS
+    description: "Method elections and changes"
+    sequence_order: 15
+    strategies:
+      - id: section_195_startup_amortization
+      - id: section_263a_unicap_small_business_exception
+      - id: section_448c_cash_method_small_corp
+      - id: section_471c_inventory_simplification
+      - id: section_446_accounting_method_change
+      - id: section_267_related_party_timing
+
+  - key: CREDITS
+    description: "Federal business and incentive credits"
+    sequence_order: 16
+    strategies:
+      - id: section_41_research_credit
+      - id: section_174_re_capitalization_strategy
+      - id: wotc_work_opportunity
+      - id: section_45_production_credit
+      - id: section_48_investment_credit
+      - id: section_45w_commercial_ev
+      - id: section_45l_new_energy_efficient_home
+      - id: section_48e_clean_electricity
+      - id: section_45x_advanced_manufacturing
+      - id: section_45s_paid_family_leave_obbba_permanent
+      - id: empowerment_zone_credit
+      - id: nmtc_new_markets_tax_credit
+
+  - key: SALE_TRANSACTION
+    description: "Liquidity-event planning"
+    sequence_order: 17
+    strategies:
+      - id: f_reorganization_pre_sale_structuring
+      - id: rollover_equity_tax_free_portion
+      - id: reverse_morris_trust
+      - id: section_355_spin_off
+
+  - key: INTERNATIONAL
+    description: "Cross-border"
+    sequence_order: 18
+    strategies:
+      - id: section_911_feie
+      - id: section_1116_ftc_optimization
+      - id: section_962_election
+      - id: pfic_qef_election_1295
+      - id: gilti_fdii_beat_layering
+      - id: check_the_box_foreign_entities
+      - id: treaty_position_8833
+
+  - key: MISCELLANEOUS
+    description: "Remaining high-impact strategies"
+    sequence_order: 19
+    strategies:
+      - id: section_529_education_funding
+      - id: coverdell_esa
+      - id: able_account
+      - id: section_831b_micro_captive_non_listed_patterns_only
+      - id: life_insurance_funded_buy_sell
+      - id: section_691_ird_planning
+      - id: section_1014_basis_step_up_optimization
+      - id: upstream_basis_planning
+
+  - key: COMPLIANCE_AND_PROCEDURAL
+    description: "Procedural and penalty-mitigation"
+    sequence_order: 20
+    strategies:
+      - id: section_6662_6664_substantial_authority_documentation
+      - id: qualified_amended_return_timing
+      - id: section_6501_sol_management
+      - id: section_6511_refund_claim_timing
+      - id: section_7121_closing_agreement
+      - id: section_9100_relief_missed_election

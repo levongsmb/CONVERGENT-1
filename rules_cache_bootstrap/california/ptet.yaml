@@ -1,0 +1,141 @@
+# California Pass-Through Entity Tax (AB 150) — 2026+ controlling rule.
+#
+# Per §11 of the build prompt, verbatim:
+# "Current FTB rule controlling 2026 and beyond — bake into all PTET logic,
+# do not regress to pre-2026 treatment: for taxable years beginning on or
+# after January 1, 2026 and before January 1, 2031, a missed or short
+# June 15 prepayment does not invalidate the election. The qualifying
+# entity may still make a valid PTET election for the year; however, the
+# qualified taxpayer's PTET credit is reduced by 12.5% of the pro rata
+# share of the unpaid amount that was due on June 15. The PTET credit is
+# nonrefundable at the qualified-taxpayer level, and any unused portion
+# carries forward five taxable years."
+#
+# Decision 0004 — user must confirm:
+# (i) parameters exactly as stated in §11
+# (ii) March 15 election/filing deadline posture
+# (iii) authority cite of record (RTC §§ 19900 et seq. + Form 3804
+#      Instructions + FTB PTET FAQ, or a different cite)
+
+metadata:
+  section: "CA R&TC §§ 17052.10, 19900, 19902, 19904, 19906"
+  jurisdiction: CA
+  parameter_family: ptet_ab150
+
+parameters:
+
+  - coordinate: { tax_year: 2026, sub_parameter: "tax_rate" }
+    value: 0.093
+    unit: RATIO
+    authority_kind: RTC
+    authority_citation: "CA R&TC §19900(a)(2)"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      PTET rate equal to 9.3%. Confirm no rate change applies under the
+      current AB 150 extension / PTET framework. Verify against FTB Form
+      3804 instructions for 2026.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "credit_treatment" }
+    value: "NONREFUNDABLE_5YR_CARRYFORWARD"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17052.10 (PTET credit, nonrefundable, 5-year carryforward)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      §11 states: "The PTET credit is nonrefundable at the qualified-
+      taxpayer level, and any unused portion carries forward five taxable
+      years." User confirms per Decision 0004.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "june15_prepayment_missed_invalidates_election" }
+    value: false
+    unit: BOOL
+    authority_kind: RTC
+    authority_citation: "CA R&TC §19900 et seq. (2026+ rule per FTB Form 3804 Instructions / FTB PTET FAQ)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      §11 specifies: missed / short June 15 prepayment does NOT invalidate
+      election for TYs 2026–2030.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "june15_short_payment_credit_reduction_pct" }
+    value: 0.125
+    unit: RATIO
+    authority_kind: RTC
+    authority_citation: "CA R&TC §19900 et seq. (2026+ rule) — 12.5% credit reduction on pro rata unpaid June 15 amount"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      §11 verbatim: "the qualified taxpayer's PTET credit is reduced by
+      12.5% of the pro rata share of the unpaid amount that was due on
+      June 15." Applies per qualified taxpayer on their pro rata share
+      of the underpayment.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "rule_effective_window_start" }
+    value: "2026-01-01"
+    unit: DATE
+    authority_kind: RTC
+    authority_citation: "CA R&TC §19900 et seq. (2026+ rule)"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, sub_parameter: "rule_effective_window_end" }
+    value: "2030-12-31"
+    unit: DATE
+    authority_kind: RTC
+    authority_citation: "CA R&TC §19900 et seq. — sunset before 2031"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      §11 states "for taxable years beginning on or after January 1, 2026
+      and before January 1, 2031". User confirms exact sunset treatment
+      and whether a subsequent year's rule is already enacted.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "election_deadline" }
+    value: null
+    unit: DATE
+    authority_kind: RTC
+    authority_citation: "CA R&TC §19902 — election deadline"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Decision 0004(ii): confirm March 15 election deadline vs. any 2026+
+      modification.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "qualified_entity_types" }
+    value:
+      - "S_CORP"
+      - "LLC_AS_PARTNERSHIP"
+      - "LIMITED_PARTNERSHIP"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC §19902(a) — qualified entity definition"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+    notes: >
+      Qualified entity excludes publicly traded partnerships and entities
+      with a partnership as a partner; excludes SMLLCs taxed as
+      disregarded. Confirm.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "qualified_taxpayer_definition_excludes" }
+    value:
+      - "PARTNERSHIP_PARTNER"
+      - "DISREGARDED_ENTITY_OWNER_WHO_IS_ENTITY"
+    unit: ENUM
+    authority_kind: RTC
+    authority_citation: "CA R&TC §17052.10(b) — qualified taxpayer"
+    retrieved_at: 2026-04-18
+    verification_status: bootstrapped
+
+  - coordinate: { tax_year: 2026, sub_parameter: "authority_of_record" }
+    value: "CA R&TC §§ 19900 et seq.; FTB Form 3804 (2026) Instructions; FTB PTET FAQ as of snapshot date"
+    unit: ENUM
+    authority_kind: FTB_NOTICE
+    authority_citation: "Composite authority cite of record"
+    authority_url: "https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Decision 0004(iii): user confirms this composite is the authority
+      of record or nominates a specific FTB Notice / Legal Ruling.
