@@ -1,0 +1,78 @@
+# IRC §63(c) standard deduction — 2026.
+# Source: Rev. Proc. 2025-32.
+# Confirmed 2026-04-18 via Decision 0001 sign-off.
+
+metadata:
+  section: "IRC §63(c)"
+  jurisdiction: FED
+  parameter_family: standard_deduction
+  primary_authority: "Rev. Proc. 2025-32; IR-2025-103"
+  signoff_companion: "standard_deduction.yaml.SIGNOFF.md"
+
+parameters:
+
+  - coordinate: { tax_year: 2026, filing_status: MFJ, sub_parameter: "basic_amount" }
+    value: 32200
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: "MFJ and Surviving Spouse share the basic amount."
+
+  - coordinate: { tax_year: 2026, filing_status: SURVIVING_SPOUSE, sub_parameter: "basic_amount" }
+    value: 32200
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: HOH, sub_parameter: "basic_amount" }
+    value: 24150
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: SINGLE, sub_parameter: "basic_amount" }
+    value: 16100
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: MFS, sub_parameter: "basic_amount" }
+    value: 16100
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, marital_status: UNMARRIED, sub_parameter: "additional_age65_or_blind" }
+    value: 2050
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: "Per qualifying factor (age 65+ and/or blind) for unmarried filers."
+
+  - coordinate: { tax_year: 2026, marital_status: MARRIED, sub_parameter: "additional_age65_or_blind" }
+    value: 1650
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: "Per qualifying factor per qualifying spouse."

@@ -1,85 +1,24 @@
-# §1 individual ordinary income brackets
-# Authority of record: Rev. Proc. inflation-adjustment release for the
-# planning year (typically published in late October / early November for
-# the following year by IRS Notice IR-YYYY-NNN + Rev. Proc. YYYY-NN).
+# IRC §1 individual ordinary income brackets — 2026.
+# Source: Rev. Proc. 2025-32; IR-2025-103.
+# OBBBA (P.L. 119-21) made the TCJA rate structure permanent.
+# Confirmed 2026-04-18 via Decision 0001 sign-off.
 #
-# Per Decision 0001 (Option C): values below are marked
-# awaiting_user_input because confirming the exact bracket breakpoints and
-# their interaction with any OBBBA-driven permanence or modification
-# requires the user to supply the Rev. Proc. cite current as of the
-# planning year. Placeholder shape is retained so engine wiring can be
-# developed against a stable schema.
+# Single and MFJ tables are populated directly. MFS, HoH, and trusts/
+# estates tables are marked `awaiting_user_input` with the explicit
+# instruction to copy verbatim from the Rev. Proc. PDF to avoid
+# transcription error — per user's Q0.3-style instruction.
 
 metadata:
   section: "IRC §1"
   jurisdiction: FED
   parameter_family: individual_ordinary_brackets
-  canonical_authority_kind: REV_PROC
-  canonical_authority_url_pattern: "https://www.irs.gov/pub/irs-irbs/irb{YY}-{NN}.pdf"
-  notes: >
-    The Rev. Proc. provides bracket breakpoints by filing status for the
-    tax year. This engine applies bracket interpolation exactly as printed
-    in the Rev. Proc. tables — no rounding, no simplification.
+  primary_authority: "Rev. Proc. 2025-32; IR-2025-103"
+  statutory_basis: "IRC §1(j) as made permanent by OBBBA (P.L. 119-21)"
+  signoff_companion: "individual_brackets.yaml.SIGNOFF.md"
 
 parameters:
 
-  - coordinate:
-      tax_year: 2026
-      filing_status: MFJ
-      sub_parameter: bracket_breakpoints_ordinary
-    value: null
-    unit: USD
-    authority_kind: REV_PROC
-    authority_citation: AWAITING_USER_INPUT
-    authority_url: null
-    retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
-    notes: >
-      Populate with Rev. Proc. 2025-32 (or successor) §3.01 table for MFJ.
-
-  - coordinate:
-      tax_year: 2026
-      filing_status: SINGLE
-      sub_parameter: bracket_breakpoints_ordinary
-    value: null
-    unit: USD
-    authority_kind: REV_PROC
-    authority_citation: AWAITING_USER_INPUT
-    authority_url: null
-    retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
-    notes: >
-      Populate with Rev. Proc. 2025-32 (or successor) §3.01 table for
-      Unmarried Individuals.
-
-  - coordinate:
-      tax_year: 2026
-      filing_status: HOH
-      sub_parameter: bracket_breakpoints_ordinary
-    value: null
-    unit: USD
-    authority_kind: REV_PROC
-    authority_citation: AWAITING_USER_INPUT
-    authority_url: null
-    retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
-
-  - coordinate:
-      tax_year: 2026
-      filing_status: MFS
-      sub_parameter: bracket_breakpoints_ordinary
-    value: null
-    unit: USD
-    authority_kind: REV_PROC
-    authority_citation: AWAITING_USER_INPUT
-    authority_url: null
-    retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
-
-  - coordinate:
-      tax_year: 2026
-      filing_status: ANY
-      sub_parameter: marginal_rates_ordinary
+  - coordinate: { tax_year: 2026, filing_status: ANY, sub_parameter: "marginal_rates_ordinary" }
     value:
       - 0.10
       - 0.12
@@ -90,12 +29,103 @@ parameters:
       - 0.37
     unit: RATIO
     authority_kind: IRC
-    authority_citation: "IRC §1(j)(2) as modified by OBBBA (P.L. 119-21) — rates permanentized"
-    authority_url: "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title26-section1"
+    authority_citation: "IRC §1(j) as permanentized by OBBBA"
     retrieved_at: 2026-04-18
-    verification_status: bootstrapped
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # Single ------------------------------------------------------------
+  # Bracket breakpoints are the LOWER bounds of each bracket; the upper
+  # bound is the next bracket's lower bound (or infinity for the top).
+
+  - coordinate: { tax_year: 2026, filing_status: SINGLE, sub_parameter: "bracket_breakpoints_ordinary" }
+    value:
+      - { rate: 0.10, lower: 0,        upper: 12400 }
+      - { rate: 0.12, lower: 12400,    upper: 50400 }
+      - { rate: 0.22, lower: 50400,    upper: 105700 }
+      - { rate: 0.24, lower: 105700,   upper: 201775 }
+      - { rate: 0.32, lower: 201775,   upper: 256225 }
+      - { rate: 0.35, lower: 256225,   upper: 640600 }
+      - { rate: 0.37, lower: 640600,   upper: null }
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.01 Table (A) — Single"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # MFJ / Surviving spouse -------------------------------------------
+
+  - coordinate: { tax_year: 2026, filing_status: MFJ, sub_parameter: "bracket_breakpoints_ordinary" }
+    value:
+      - { rate: 0.10, lower: 0,        upper: 24800 }
+      - { rate: 0.12, lower: 24800,    upper: 100800 }
+      - { rate: 0.22, lower: 100800,   upper: 211400 }
+      - { rate: 0.24, lower: 211400,   upper: 403550 }
+      - { rate: 0.32, lower: 403550,   upper: 512450 }
+      - { rate: 0.35, lower: 512450,   upper: 768700 }
+      - { rate: 0.37, lower: 768700,   upper: null }
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.01 Table (B) — MFJ / Surviving spouse"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # MFS, HoH, Trusts/Estates — explicitly awaiting PDF copy ---------
+
+  - coordinate: { tax_year: 2026, filing_status: MFS, sub_parameter: "bracket_breakpoints_ordinary" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.01 Table (C) — MFS"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
     notes: >
-      OBBBA (P.L. 119-21) made the 2018 rate structure permanent. The
-      bracket breakpoints continue to be inflation-indexed and are
-      supplied by the Rev. Proc. above. Confirm rate-schedule permanence
-      under OBBBA matches this list before sign-off.
+      Per user instruction (Decision 0001 answer): copy MFS bracket
+      table directly from Rev. Proc. 2025-32 §3.01 Table (C) PDF to
+      avoid transcription error. Structure mirrors the Single table
+      above but with different breakpoints.
+
+  - coordinate: { tax_year: 2026, filing_status: HOH, sub_parameter: "bracket_breakpoints_ordinary" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.01 Table (D) — HoH"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, filing_status: ESTATE_TRUST, sub_parameter: "bracket_breakpoints_ordinary" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.01 Table (E) — Trusts and estates"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: >
+      Trust bracket table also sets the §1411(a)(2) anchor threshold
+      (NIIT for trusts starts where highest trust bracket begins).
+
+  # OBBBA §68 itemized deduction tax-benefit cap applies to 37% bracket
+  - coordinate: { tax_year: 2026, sub_parameter: "section_68_limitation_applies_at_top_bracket" }
+    value: true
+    unit: BOOL
+    authority_kind: IRC
+    authority_citation: "IRC §68 as amended by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: >
+      OBBBA re-activated a tax-benefit limitation on itemized
+      deductions for taxpayers in the 37% bracket. Specific mechanic
+      and phase-in range populated from interpretive Notices when
+      available.
+
+  - coordinate: { tax_year: 2026, sub_parameter: "personal_exemption" }
+    value: 0
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §151 — TCJA elimination made permanent by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18

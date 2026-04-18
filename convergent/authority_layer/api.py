@@ -21,7 +21,23 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
-from typing import Any
+from typing import Any, Final
+
+
+# -----------------------------------------------------------------------
+# Model pinning per Decision 0005 (2026-04-18).
+#
+# The v3 prompt specified Sonnet 4.5 / Opus 4.5. User confirmed 2026-04-18
+# to pin the 4.7 / 4.6 / 4.5 (Haiku) family instead — the 4.5 tier is
+# superseded. Settings UI (Phase 6) exposes these as overridable per
+# user preference; AuthorityArtifact.model_id captures the exact model
+# used for every commentary artifact so cache invalidation can be
+# scoped to model family on future upgrades.
+# -----------------------------------------------------------------------
+
+DEFAULT_COMMENTARY_MODEL: Final[str] = "claude-opus-4-7"
+DEFAULT_BULK_MODEL: Final[str] = "claude-sonnet-4-6"
+DEFAULT_ROUTING_MODEL: Final[str] = "claude-haiku-4-5-20251001"
 
 
 class ArtifactType(str, Enum):

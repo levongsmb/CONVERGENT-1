@@ -1,0 +1,113 @@
+# IRC §1(h) long-term capital gain and qualified dividend rates — 2026.
+# Source: Rev. Proc. 2025-32.
+
+metadata:
+  section: "IRC §1(h)"
+  jurisdiction: FED
+  parameter_family: capital_gain_brackets
+  primary_authority: "Rev. Proc. 2025-32"
+  signoff_companion: "capital_gain_brackets.yaml.SIGNOFF.md"
+
+parameters:
+
+  - coordinate: { sub_parameter: "rates_ltcg_qdiv" }
+    value: [0.00, 0.15, 0.20]
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1(h)(1)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { sub_parameter: "rate_section_1202_non_excluded" }
+    value: 0.28
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1(h)(4)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { sub_parameter: "rate_collectibles" }
+    value: 0.28
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1(h)(4)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { sub_parameter: "rate_unrecaptured_1250" }
+    value: 0.25
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §1(h)(6)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # 0 / 15 / 20% bracket breakpoints — taxable income thresholds
+  - coordinate: { tax_year: 2026, filing_status: SINGLE, sub_parameter: "breakpoint_0_to_15" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.03 — Single 0%/15% threshold"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: "Copy from Rev. Proc. 2025-32 §3.03 table directly."
+
+  - coordinate: { tax_year: 2026, filing_status: SINGLE, sub_parameter: "breakpoint_15_to_20" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.03 — Single 15%/20% threshold"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, filing_status: MFJ, sub_parameter: "breakpoint_0_to_15" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.03 — MFJ 0%/15% threshold"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, filing_status: MFJ, sub_parameter: "breakpoint_15_to_20" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.03 — MFJ 15%/20% threshold"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, filing_status: HOH, sub_parameter: "breakpoint_0_to_15" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.03"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, filing_status: HOH, sub_parameter: "breakpoint_15_to_20" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.03"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, filing_status: MFS, sub_parameter: "breakpoint_0_to_15" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.03"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+
+  - coordinate: { tax_year: 2026, filing_status: MFS, sub_parameter: "breakpoint_15_to_20" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 §3.03"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input

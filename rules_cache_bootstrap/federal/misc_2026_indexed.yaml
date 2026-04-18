@@ -1,0 +1,108 @@
+# Miscellaneous 2026 indexed amounts from Rev. Proc. 2025-32.
+# Each entry stands alone; family-specific files exist where the
+# parameter has a rich rule family (e.g., estate_gift_gst.yaml,
+# retirement_limits.yaml).
+
+metadata:
+  primary_authority: "Rev. Proc. 2025-32; IR-2025-103"
+  signoff_companion: "misc_2026_indexed.yaml.SIGNOFF.md"
+
+parameters:
+
+  # §911 foreign earned income exclusion
+  - coordinate: { tax_year: 2026, sub_parameter: "section_911_feie" }
+    value: 132900
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # §32 EITC max (3+ qualifying children)
+  - coordinate: { tax_year: 2026, sub_parameter: "eitc_max_3plus_qualifying_children" }
+    value: 8231
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # §179 expensing
+  - coordinate: { tax_year: 2026, sub_parameter: "section_179_expensing_limit" }
+    value: 2560000
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_179_phaseout_threshold" }
+    value: 4090000
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # §36C adoption credit
+  - coordinate: { tax_year: 2026, sub_parameter: "adoption_credit_max" }
+    value: 17670
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # §24 CTC — OBBBA base $2,200; 2026 indexed amount pending Rev. Proc. confirmation
+  - coordinate: { tax_year: 2025, sub_parameter: "section_24_ctc_base_per_qualifying_child" }
+    value: 2200
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §24 as amended by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: "OBBBA set the base at $2,200 effective 2025."
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_24_ctc_indexed_per_qualifying_child" }
+    value: null
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32 — §24 CTC 2026 indexed amount"
+    retrieved_at: 2026-04-18
+    verification_status: awaiting_user_input
+    notes: "Per user instruction: confirm 2026 indexed amount from Rev. Proc. 2025-32 directly."
+
+  # §132(f) monthly transportation fringe
+  - coordinate: { tax_year: 2026, sub_parameter: "section_132f_monthly_transportation_fringe" }
+    value: 340
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # §125(i) health FSA
+  - coordinate: { tax_year: 2026, sub_parameter: "section_125i_health_fsa_salary_reduction_limit" }
+    value: 3400
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, sub_parameter: "section_125i_health_fsa_carryover" }
+    value: 680
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18

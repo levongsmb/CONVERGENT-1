@@ -1,98 +1,68 @@
 # Open Questions
 
-Questions the user must answer before a blocked phase can continue. Unlike
-`docs/decisions.md`, which records *every* tax-judgment fork including the
-resolved ones, this file is strictly the **current blocking queue**. When a
-question is answered, it moves to `docs/decisions/`; it is removed here.
+Questions the user must answer before a blocked phase can continue.
+When a question is answered, it moves to `docs/decisions/`; it is
+removed here.
 
-## Phase 0 — blocking Phase 0 acceptance
+## Phase 0 — blocking Phase 1 entry
 
-### Q0.1 — Rules cache bootstrap sign-off workflow
+### Q0.6 — Strategy Library category sequence (deferred on 2026-04-18)
 
-How would you like to review the bootstrapped rules cache?
+User deferred Q0.6 on 2026-04-18 pending paste-back of the 20-category
+list. The list is reproduced below. Send back either (a) an explicit
+"accept default order" or (b) a re-ordered sequence.
 
-- (a) In-person screen share — Claude Code walks you through each
-  parameter category
-- (b) Markdown-rendered per-category review files that you sign off in
-  the file itself (`rules_cache_bootstrap/<category>.yaml` + a
-  companion `<category>.SIGNOFF.md`)
-- (c) A single master checklist at `rules_cache_bootstrap/review_checklist.md`
-  that references the YAML values and you annotate in-place
+Default ordering criteria supplied with the deferral:
+1. April 2026 filing-season urgency
+2. Client-base applicability frequency
+3. Parameter volatility (OBBBA-touched sections first)
+4. Cross-category dependency (brackets and standard deduction before
+   anything referencing AGI or taxable-income thresholds)
 
-**Blocks:** Phase 1 entry.
+The 20 categories (current default order from `strategy_library/MANIFEST.yaml`):
 
-### Q0.2 — OBBBA interpretive Notices to bootstrap
+1. COMPENSATION — §162 / §1366 / §119 / §132 / §105 / §106 / §125 (officer comp and fringe benefits)
+2. QBI_199A — §199A qualified business income optimization
+3. RETIREMENT — qualified and non-qualified retirement plan optimization
+4. ENTITY_SELECTION — choice of entity and entity conversion
+5. STATE_SALT — state tax and PTET optimization including CA
+6. REAL_ESTATE_DEPRECIATION — depreciation and real-estate structural planning
+7. QSBS_1202 — §1202 original issuance, gifting, and rollover
+8. TRUSTS_INCOME_SHIFTING — non-grantor trust income shifting and related
+9. TRUSTS_WEALTH_TRANSFER — wealth-transfer trust structures
+10. ESTATE_GIFT_GST — estate, gift, and GST planning
+11. CHARITABLE — charitable giving structures and timing
+12. INSTALLMENT_DEFERRAL — §453 and deferral structures
+13. CAPITAL_GAINS_LOSSES — capital gain / loss timing and character
+14. LOSS_LIMIT_NAVIGATION — §461(l) / §163(j) / §465 / §469 planning
+15. ACCOUNTING_METHODS — method elections and changes
+16. CREDITS — federal business and incentive credits
+17. SALE_TRANSACTION — liquidity-event planning
+18. INTERNATIONAL — cross-border
+19. MISCELLANEOUS — remaining high-impact strategies
+20. COMPLIANCE_AND_PROCEDURAL — procedural and penalty-mitigation
 
-Which IRS Notices in the OBBBA interpretive series do you want included in
-the Day-1 cache? Claude Code proposes pulling every Notice citing Public Law
-119-21 that has been published as of the snapshot date. If you want a
-different scope (e.g., "only Notices on §461(l), §199A, §1202, and SALT cap"),
-say so before Phase 0 bootstrap runs.
+**Blocks:** Phase 1 sub-phase sequence. `strategy_library/MANIFEST.yaml`
+`sequence_order` keys reflect the default above; once user confirms or
+re-orders, the MANIFEST is updated to match and Phase 1 begins with the
+first category.
 
-**Blocks:** Rules cache bootstrap run.
+## Phase 0 — closed since last update
 
-### Q0.3 — CA PTET parameters verbatim confirmation
+The following were answered on 2026-04-18 and have been moved to the
+numbered decisions in `docs/decisions/`:
 
-Three sub-questions in `docs/decisions/0004-ptet-ca-current-rule-confirmation.md`.
-Short-form: (i) confirm parameters exactly as in §11, (ii) confirm March 15
-election deadline, (iii) confirm the authority cite of record.
+- Q0.1 → Decision 0007 (review method = SIGNOFF.md companions)
+- Q0.2 → Decision 0008 (narrow OBBBA Notice scope — 13 provisions)
+- Q0.3 → Decision 0004 (CA PTET with SB 132 corrections)
+- Q0.4 → Decision 0006 (unsigned Phase 0 installer)
+- Q0.5 → Decision 0005 (Claude 4.7 / 4.6 / 4.5 family)
 
-**Blocks:** CA rules cache YAML and CA PTET strategies.
+## Sign-off companions still outstanding
 
-### Q0.4 — Windows signing certificate
-
-§3.3 says "bundle a code-signing certificate if provided (future: user
-supplies a signing cert; initial builds are unsigned and will trigger
-Windows SmartScreen warning on first run — document this in README)."
-
-Do you have a code-signing certificate ready for Phase 0, or should the
-Phase 0 installer build ship unsigned with the SmartScreen warning
-documented? If the cert arrives later, we switch during Phase 10.
-
-**Blocks:** Installer stub build (unsigned build is fine to start, but we
-need to know which path to wire the Inno Setup script against).
-
-### Q0.5 — Claude model pinning for Authority Layer
-
-§3.3 specifies "Claude Sonnet 4.5 default, Claude Opus 4.5 for
-Authority-Layer commentary generation." As of today (2026-04-18), the
-current model family is Claude 4.X — Opus 4.7, Sonnet 4.6, Haiku 4.5. Do
-you want to:
-
-- (a) Pin the specification exactly as written (Sonnet 4.5 / Opus 4.5)
-- (b) Use the current Claude model family (Sonnet 4.6 default, Opus 4.7
-  for commentary)
-- (c) Make the models configurable in Settings, shipping with the current
-  family as default
-
-**Blocks:** Phase 7 entry; does not block Phase 0 acceptance but should be
-answered early.
-
-### Q0.6 — Strategy Library initial coverage priority order
-
-§12.2 lists 20 categories; §18 requires ≥120 strategies in the MANIFEST.
-The user is an S-corp specialist. Priority order for Phase 1 sub-phase
-sequencing — confirm or re-order:
-
-1. COMPENSATION (reasonable comp, accountable plans, Augusta, HRA/ICHRA, S-corp >2% health, hire-your-child)
-2. QBI_199A
-3. RETIREMENT
-4. ENTITY_SELECTION
-5. STATE_SALT (incl. CA PTET)
-6. REAL_ESTATE_DEPRECIATION (cost seg, §469, §1031)
-7. QSBS_1202
-8. TRUSTS_INCOME_SHIFTING
-9. TRUSTS_WEALTH_TRANSFER
-10. ESTATE_GIFT_GST
-11. CHARITABLE
-12. INSTALLMENT_DEFERRAL
-13. CAPITAL_GAINS_LOSSES
-14. LOSS_LIMIT_NAVIGATION
-15. ACCOUNTING_METHODS
-16. CREDITS
-17. SALE_TRANSACTION
-18. INTERNATIONAL
-19. MISCELLANEOUS
-20. COMPLIANCE_AND_PROCEDURAL
-
-**Blocks:** Phase 1 ordering.
+The Phase 0 acceptance gate (§18) additionally requires every row in
+`rules_cache_bootstrap/review_checklist.md` to reach the ✓ state. The
+user's 2026-04-18 answer delivered confirmed values for several critical
+YAMLs; remaining ◐ and ☐ rows require further user input before Phase 0
+fully closes. Claude Code does **not** advance to Phase 1 until the
+master sign-off line is added to the review checklist.

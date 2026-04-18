@@ -1,7 +1,8 @@
 # 0002 — Rules cache bootstrap sources and cadence
 
-- **Status:** OPEN
+- **Status:** ANSWERED
 - **Opened:** 2026-04-18
+- **Answered:** 2026-04-18
 - **Phase gate:** Phase 0
 
 ## Context
@@ -54,8 +55,16 @@ avoids the static-shipped-cache trap where a 3-month-old installer produces
 
 ## Answer
 
-(awaiting user)
+**2026-04-18:** Option C (hybrid static seed + background refresh on first
+launch + Settings toggle). Aligns with Decision 0008 (narrow OBBBA Notice
+scope) — Statutory Mining polls only the thirteen OBBBA provisions listed
+there during its OBBBA-related refresh cycle, not every Notice citing
+P.L. 119-21.
 
 ## Implementation notes
 
-(to be filled in)
+- Static seed ships in `rules_cache_bootstrap/`.
+- Background refresh scheduler (§12A.6) kicks off on first launch; UI
+  surfaces a "refreshing authority cache" banner until catch-up completes.
+- OBBBA scope filter honored in `convergent/authority_layer/statutory_mining/sources/irs.py`
+  OBBBA poller once wired in Phase 7.

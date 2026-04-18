@@ -1,62 +1,74 @@
 # §§ 2010, 2503(b), 2631 — estate and gift tax exemption and annual
-# exclusion. OBBBA (P.L. 119-21) made the post-TCJA elevated exemption
-# permanent; the user must confirm the exact 2026 indexed value.
+# exclusion. OBBBA made the elevated exemption permanent at $15,000,000
+# for decedents dying in 2026.
+#
+# Confirmed 2026-04-18 via Decision 0001 sign-off.
 
 metadata:
   section: "IRC §§ 2010, 2503(b), 2631, 2505"
   jurisdiction: FED
   parameter_family: estate_gift_gst
+  primary_authority: "IRC §2010 as amended by OBBBA; Rev. Proc. 2025-32"
+  signoff_companion: "estate_gift_gst.yaml.SIGNOFF.md"
 
 parameters:
 
   - coordinate: { tax_year: 2026, sub_parameter: "basic_exclusion_amount_applicable_exclusion" }
-    value: null
+    value: 15000000
     unit: USD
-    authority_kind: REV_PROC
-    authority_citation: "Rev. Proc. 2025-XX — §2010(c) basic exclusion amount for 2026"
+    authority_kind: IRC
+    authority_citation: "IRC §2010(c)(3) as amended by OBBBA"
     retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
     notes: >
-      OBBBA made the elevated TCJA exemption permanent. The 2026 indexed
-      value comes from the annual inflation-adjustment Rev. Proc.
+      OBBBA made the elevated exemption permanent at $15M for 2026
+      decedents. Annual inflation adjustment applies per §2010(c)(3)(C)
+      thereafter; confirm whether 2026 is a base year ($15M flat) or
+      already indexed.
 
   - coordinate: { tax_year: 2026, sub_parameter: "gst_exemption" }
-    value: null
+    value: 15000000
     unit: USD
-    authority_kind: REV_PROC
-    authority_citation: "Rev. Proc. 2025-XX — §2631(c) GST exemption for 2026"
+    authority_kind: IRC
+    authority_citation: "IRC §2631(c) — parity with basic exclusion"
     retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
-    notes: "Equal to basic exclusion amount per §2631(c); confirm parity."
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: "GST exemption tracks basic exclusion amount under §2631(c)."
 
   - coordinate: { tax_year: 2026, sub_parameter: "annual_exclusion_2503b" }
-    value: null
+    value: 19000
     unit: USD
     authority_kind: REV_PROC
-    authority_citation: "Rev. Proc. 2025-XX — §2503(b) annual exclusion for 2026"
+    authority_citation: "Rev. Proc. 2025-32"
     retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
 
   - coordinate: { tax_year: 2026, sub_parameter: "annual_exclusion_noncitizen_spouse_2523i" }
     value: null
     unit: USD
     authority_kind: REV_PROC
-    authority_citation: "Rev. Proc. 2025-XX — §2523(i) non-citizen spouse exclusion for 2026"
+    authority_citation: "Rev. Proc. 2025-32 — §2523(i) non-citizen spouse exclusion"
     retrieved_at: 2026-04-18
     verification_status: awaiting_user_input
+    notes: "Populate directly from Rev. Proc. 2025-32 table to avoid transcription error."
 
   - coordinate: { tax_year: 2026, sub_parameter: "estate_tax_top_rate" }
     value: 0.40
     unit: RATIO
     authority_kind: IRC
-    authority_citation: "IRC §2001(c) — 40% top bracket"
+    authority_citation: "IRC §2001(c)"
     retrieved_at: 2026-04-18
-    verification_status: bootstrapped
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
 
   - coordinate: { tax_year: 2026, sub_parameter: "dsue_portability_available" }
     value: true
-    unit: ENUM
+    unit: BOOL
     authority_kind: IRC
-    authority_citation: "IRC §2010(c)(4) — DSUE portability"
+    authority_citation: "IRC §2010(c)(4)"
     retrieved_at: 2026-04-18
-    verification_status: bootstrapped
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18

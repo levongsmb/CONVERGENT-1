@@ -1,36 +1,54 @@
-# OBBBA Interpretive Notices — Phase 0 snapshot enumeration.
-# Per Decision 0003: the bootstrap captures every Notice citing Public
-# Law 119-21 published prior to the build snapshot date.
-#
-# This file is the authoritative list of which Notices are in the Day-1
-# authority cache. The user confirms the list during Phase 0 sign-off
-# (Open Question Q0.2).
+# OBBBA Interpretive Notices — Phase 0 narrow bootstrap scope.
+# Decision 0008: narrow to return-line-impact provisions only; exclude
+# procedural, transition-relief, penalty-waiver, and employer-
+# withholding mechanics Notices.
 
 metadata:
   snapshot_date: 2026-04-18
-  public_law: "P.L. 119-21 (OBBBA — One Big Beautiful Bill Act)"
+  public_law: "P.L. 119-21 (OBBBA — One Big Beautiful Bill Act, signed 2025-07-04)"
   irs_landing_url: "https://www.irs.gov/tax-reform/one-big-beautiful-bill-provisions"
-  govinfo_public_law_url_pattern: "https://www.govinfo.gov/content/pkg/PLAW-119publ21/pdf/PLAW-119publ21.pdf"
+  govinfo_public_law_url: "https://www.govinfo.gov/content/pkg/PLAW-119publ21/pdf/PLAW-119publ21.pdf"
+  scope_decision: "docs/decisions/0008-obbba-notice-narrow-scope.md"
 
-notices:
-  # Phase 0 ships this list empty of specific Notices. The user or
-  # Statutory Mining bootstrap run populates with every OBBBA
-  # interpretive Notice published as of 2026-04-18. Each entry takes
-  # this shape:
-  #
-  # - notice_number: "2026-XX"
-  #   released_at: YYYY-MM-DD
-  #   title: "..."
-  #   affected_code_sections: ["§199A", "§461(l)", ...]
-  #   summary: "One-paragraph summary."
-  #   full_text_url: "https://www.irs.gov/pub/irs-drop/n-YY-XX.pdf"
-  #   verification_status: awaiting_user_input
+# -----------------------------------------------------------------------
+# scope_filter — the thirteen return-line-impact OBBBA provisions that
+# the Statutory Mining OBBBA poller bootstraps into the rules cache and
+# authority cache. Notices outside this filter are NOT bootstrapped and
+# do not trigger rules-cache diff alerts, even when they cite P.L. 119-21.
+# -----------------------------------------------------------------------
 
-  - notice_number: null
-    verification_status: awaiting_user_input
-    notes: >
-      Open Question Q0.2: scope confirmation. Default proposal is to
-      enumerate every IRS Notice citing P.L. 119-21 published prior to
-      2026-04-18. User confirms scope or narrows to specific Code
-      sections (e.g., §199A, §461(l), §1202, §164(b)(6)/SALT) before
-      Statutory Mining bootstrap runs.
+scope_filter:
+  - code_section: "IRC §199A"
+    description: "QBI deduction including SSTB parameters"
+  - code_section: "IRC §461(l)"
+    description: "Excess business loss extension through 2030"
+  - code_section: "IRC §1202"
+    description: "QSBS phased exclusion and $15M / $75M caps"
+  - code_section: "IRC §164(b)(6)"
+    description: "SALT cap $40K-structure with phaseout and 2030 sunset"
+  - code_section: "IRC §168(k)"
+    description: "Bonus depreciation permanent restoration"
+  - code_section: "IRC §174"
+    description: "Domestic R&E restoration"
+  - code_section: "IRC §151(f)"
+    description: "Senior deduction (temporary, 2025–2028)"
+  - label: "Qualified tip income exclusion"
+    description: "OBBBA tip income exclusion (confirm Code section when final)"
+  - label: "Overtime premium exclusion"
+    description: "OBBBA overtime premium exclusion"
+  - code_section: "IRC §24"
+    description: "Child Tax Credit amendments ($2,200 base, indexed)"
+  - code_section: "IRC §68"
+    description: "Itemized deduction tax-benefit limitation for 37% bracket"
+  - code_section: "IRC §55"
+    description: "AMT phaseout changes (25% → 50%)"
+  - code_section: "IRC §2010"
+    description: "Estate basic exclusion permanent at $15M"
+
+# -----------------------------------------------------------------------
+# notices — populated by Statutory Mining bootstrap with Notices in the
+# scope_filter only. Phase 0 ships empty; Phase 7 populates on first
+# Statutory Mining run.
+# -----------------------------------------------------------------------
+
+notices: []

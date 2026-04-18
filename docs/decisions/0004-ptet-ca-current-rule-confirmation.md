@@ -1,7 +1,8 @@
 # 0004 — CA PTET current rule confirmation
 
-- **Status:** OPEN
+- **Status:** ANSWERED with corrections
 - **Opened:** 2026-04-18
+- **Answered:** 2026-04-18
 - **Phase gate:** Phase 0 — rules cache review
 
 ## Context
@@ -51,4 +52,38 @@ confirmation on the three items above closes this decision.
 
 ## Answer
 
-(awaiting user)
+**2026-04-18:** Confirmed with several corrections. Summary:
+
+1. **Tax rate 9.3% — CONFIRMED.**
+2. **Credit-reduction mechanic:** 12.5% of the *shortfall amount* (the
+   unpaid portion of the June 15 minimum payment), measured as of the
+   return filing date — **not** 12.5% of the "pro rata share" phrasing
+   from the prompt. Example: required $100,000, paid $60,000 →
+   shortfall $40,000 → credit reduction $5,000.
+3. **Nonrefundable with 5-year carryforward — CONFIRMED.**
+4. **Effective window:** TY beginning 2026-01-01 through
+   2030-12-31 — CONFIRMED.
+5. **Deadlines — REPLACE single field with two fields:**
+   - `election_and_balance_due_date` — Form 3804 filed with timely-filed
+     original return of the electing entity; calendar-year PTEs
+     March 15; fiscal-year filers, original due date of Form 565 / 568 /
+     100S; balance of PTE elective tax due with the return.
+   - `election_minimum_prepayment_date` — June 15 of the taxable year;
+     amount = greater of 50% of prior year PTET or $1,000; the 12.5%
+     haircut attaches to the June 15 shortfall measured at filing, not
+     to a missed March 15.
+6. **Authority of record — CORRECTED:**
+   - Primary: **SB 132 (Ch. 17, Stats. 2025, signed 2025-06-27).** SB 132
+     added new RTC sections parallel to §§19900–19906 to govern the
+     2026–2030 regime. Do NOT cite RTC §§19900 et seq. as primary
+     authority for 2026+ (that framework applies to 2021–2025 only).
+   - Secondary: FTB Form 3804 Instructions; FTB PTET FAQ (both
+     updating).
+
+## Implementation notes
+
+- `rules_cache_bootstrap/california/ptet.yaml` rewritten to match this
+  answer verbatim.
+- Pitfall entry `ca_ptet_june15_short_payment_credit_reduction` updated
+  in `authority_layer/pitfalls.yaml` to reflect the shortfall-based
+  mechanic and SB 132 primary authority.

@@ -1,7 +1,8 @@
 # 0003 — OBBBA bootstrap snapshot date
 
-- **Status:** OPEN
+- **Status:** ANSWERED
 - **Opened:** 2026-04-18
+- **Answered:** 2026-04-18
 - **Phase gate:** Phase 0
 
 ## Context
@@ -59,5 +60,7 @@ advanced.
 
 ## Answer
 
-(awaiting user — specifically the user must confirm the list of OBBBA
-Notices to bootstrap; see `rules_cache_bootstrap/federal/obbba_notices.yaml`)
+**2026-04-18:** Option B — snapshot date = build date (2026-04-18 for
+this run); enumerated Notices and snapshot ID pinned in every engagement.
+Notice scope answered separately in Decision 0008: narrow to the 13
+return-line-impact OBBBA provisions.

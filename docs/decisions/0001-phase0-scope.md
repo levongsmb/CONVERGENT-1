@@ -1,9 +1,9 @@
 # 0001 — Phase 0 scope
 
-- **Status:** OPEN
+- **Status:** ANSWERED
 - **Opened:** 2026-04-18
-- **Answered:** —
-- **Implemented:** —
+- **Answered:** 2026-04-18
+- **Implemented:** 2026-04-18
 - **Phase gate:** Phase 0 acceptance
 
 ## Context
@@ -72,14 +72,31 @@ entries to close the Phase 0 gate.
 
 ## Answer
 
-(awaiting user)
+**2026-04-18:** User confirms Option C. Proceed with the first-pass cache
+populated only where current primary-authority cites are available;
+remaining parameters stay `awaiting_user_input` with the specific
+authority cite the value will come from. User supplied confirmed values
+for five parameter families in the first sign-off pass (§1202, §164(b)(6)
+SALT cap, §402(g) / §414(v) / §415(c) / §401(a)(17) and related
+retirement limits from Notice 2025-67, §1 brackets + standard deduction
++ AMT from Rev. Proc. 2025-32, and CA PTET under SB 132). Review method
+is per-file SIGNOFF.md companions (Decision 0007).
 
 ## Implementation notes
 
-(to be filled in)
+- `rules_cache_bootstrap/federal/*.yaml` and `rules_cache_bootstrap/california/*.yaml`
+  populated with confirmed values where supplied; remainder kept at
+  `awaiting_user_input` with pin-cite.
+- SIGNOFF.md template lives at `rules_cache_bootstrap/_SIGNOFF_TEMPLATE.md`
+  and is copied per-file as each parameter family is reviewed.
 
 ## Follow-ons
 
-- 0002 — Rules cache bootstrap sources and cadence
-- 0003 — OBBBA bootstrap snapshot date
-- 0004 — CA PTET current rule confirmation
+- 0002 — Rules cache bootstrap sources and cadence (ANSWERED)
+- 0003 — OBBBA bootstrap snapshot date (ANSWERED)
+- 0004 — CA PTET current rule confirmation (ANSWERED with SB 132 correction)
+- 0005 — Claude model pinning (ANSWERED)
+- 0006 — Signing certificate posture (ANSWERED — unsigned Phase 0)
+- 0007 — Review method = SIGNOFF.md companions (ANSWERED)
+- 0008 — OBBBA Notice narrow scope (ANSWERED with 13 provisions)
+- 0009 — Strategy Library category order (OPEN; user deferred pending paste-back)

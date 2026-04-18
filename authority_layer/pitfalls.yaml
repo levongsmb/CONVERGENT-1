@@ -112,22 +112,26 @@ pitfalls:
     recommended_action: "Structure trusts with substantially different beneficiary classes or confirm non-tax principal purpose."
     last_reviewed: 2026-04-18
 
-  - id: ca_ptet_june15_short_payment_credit_reduction
+  - id: ca_ptet_june15_shortfall_credit_reduction
     severity: INFO
-    title: "CA PTET June 15 prepayment short / missed — 12.5% credit reduction (2026–2030)"
-    trigger: "entity.ca_ptet_elected and june15_prepayment_shortfall > 0 and tax_year between 2026 and 2030"
+    title: "CA PTET June 15 minimum prepayment shortfall — 12.5% credit reduction (SB 132, TY 2026–2030)"
+    trigger: "entity.ca_ptet_elected and june15_shortfall_amount > 0 and tax_year between 2026 and 2030"
     narrative: >
-      For TYs 2026–2030, a missed or short June 15 prepayment does not
-      invalidate the PTET election, but the qualified taxpayer's PTET
-      credit is reduced by 12.5% of the pro rata share of the unpaid
-      amount that was due on June 15. PTET credit is nonrefundable with
-      a 5-year carryforward.
+      Under SB 132 (Ch. 17, Stats. 2025) governing TY 2026–2030, a
+      shortfall on the June 15 minimum prepayment does not invalidate
+      the PTET election. The qualified taxpayer's PTET credit is
+      reduced by 12.5% of the shortfall amount (the unpaid portion of
+      the June 15 minimum payment), measured as of the return filing
+      date. June 15 minimum = greater of 50% of prior year PTET or
+      $1,000. Example: required $100,000, paid $60,000, shortfall
+      $40,000, credit reduction $5,000. PTET credit is nonrefundable
+      with a 5-year carryforward.
     primary_authority:
-      - kind: RTC
-        citation: "CA R&TC §§ 19900 et seq."
+      - kind: PL
+        citation: "SB 132 (Ch. 17, Stats. 2025, signed 2025-06-27)"
       - kind: FTB_NOTICE
-        citation: "FTB Form 3804 (2026) Instructions; FTB PTET FAQ as of snapshot date"
-    recommended_action: "Fund the full June 15 prepayment; any shortfall is quantified and flowed into the scenario cash-flow line item."
+        citation: "FTB Form 3804 (2026) Instructions; FTB PTET FAQ (updating)"
+    recommended_action: "Fund the full June 15 minimum prepayment; any shortfall is quantified on the shortfall basis (not pro rata) and flowed into the scenario credit reduction and cash-flow line items."
     last_reviewed: 2026-04-18
 
   - id: prop_19_reassessment_entity_held_real_property

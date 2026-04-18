@@ -1,0 +1,94 @@
+# IRC §§ 55–59 individual AMT — 2026.
+# Source: Rev. Proc. 2025-32.
+# OBBBA modified the phaseout rate from 25% to 50% (confirmed per
+# Decision 0001 sign-off).
+
+metadata:
+  section: "IRC §§ 55, 56, 57, 58, 59"
+  jurisdiction: FED
+  parameter_family: amt_individual
+  primary_authority: "Rev. Proc. 2025-32; IRC §55 as amended by OBBBA"
+  signoff_companion: "amt_individual.yaml.SIGNOFF.md"
+
+parameters:
+
+  - coordinate: { tax_year: 2026, filing_status: SINGLE, sub_parameter: "exemption_amount" }
+    value: 90100
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: MFJ, sub_parameter: "exemption_amount" }
+    value: 140200
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: SINGLE, sub_parameter: "phaseout_start_amti" }
+    value: 500000
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: MFJ, sub_parameter: "phaseout_start_amti" }
+    value: 1000000
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, sub_parameter: "phaseout_rate" }
+    value: 0.50
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §55(d) as amended by OBBBA — phaseout accelerated from 25% to 50%"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, sub_parameter: "rate_26_to_28_amti_threshold" }
+    value: 244500
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: MFS, sub_parameter: "rate_26_to_28_amti_threshold" }
+    value: 122250
+    unit: USD
+    authority_kind: REV_PROC
+    authority_citation: "Rev. Proc. 2025-32"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { sub_parameter: "rate_26pct" }
+    value: 0.26
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §55(b)(1)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { sub_parameter: "rate_28pct" }
+    value: 0.28
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §55(b)(1)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18

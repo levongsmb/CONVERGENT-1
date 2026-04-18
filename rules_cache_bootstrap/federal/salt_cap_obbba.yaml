@@ -1,70 +1,193 @@
-# §164(b)(6) SALT cap as modified by OBBBA.
-# Per the prompt (§14.2): "SALT cap $40K vs. $10K reversion risk post-phaseout"
-# and (§12.2 STATE_SALT): "SALT cap $40K OBBBA phaseout optimization".
+# IRC §164(b)(6) SALT cap — OBBBA-modified schedule.
 #
-# The exact parameters — base cap, phaseout structure, income thresholds,
-# and expiration if any — must be confirmed by the user from the
-# controlling Public Law 119-21 text and any IRS interpretive Notice.
+# Confirmed 2026-04-18 via Decision 0001 sign-off.
+# Statutory basis: IRC §164(b)(6)(B)–(D) as amended by OBBBA; P.L. 119-21.
+#
+# Schedule (MFJ; MFS = 1/2):
+#
+#   Year     Base cap   Phaseout MAGI threshold
+#   ----     --------   -----------------------
+#   2025     $40,000    $500,000
+#   2026     $40,400    $505,000
+#   2027     prior × 1.01 (each year)
+#   2028     prior × 1.01
+#   2029     prior × 1.01
+#   2030+    REVERTS to $10,000 ($5,000 MFS)   [sunset]
+#
+# Phaseout: 30% of MAGI excess over threshold reduces the cap down to the
+# $10,000 / $5,000 MFS floor. 2025 MFJ: MAGI of $600,000 reaches the
+# floor (since $100,000 × 30% = $30,000 reduction, $40,000 − $30,000 = $10,000).
 
 metadata:
   section: "IRC §164(b)(6) as amended by OBBBA (P.L. 119-21)"
   jurisdiction: FED
   parameter_family: salt_cap_obbba
+  primary_authority: "IRC §164(b)(6)(B)–(D); P.L. 119-21"
+  signoff_companion: "salt_cap_obbba.yaml.SIGNOFF.md"
 
 parameters:
 
-  - coordinate: { tax_year: 2026, sub_parameter: "base_cap_mfj" }
-    value: null
+  # -------------------------------------------------------------------
+  # Base cap — MFJ and MFS.
+  # -------------------------------------------------------------------
+
+  - coordinate: { tax_year: 2025, filing_status: MFJ, sub_parameter: "base_cap" }
+    value: 40000
     unit: USD
-    authority_kind: PL
-    authority_citation: "Public Law 119-21 — OBBBA SALT cap provisions"
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(B) as amended by OBBBA"
     retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
-    notes: >
-      Per §12.2, the engine must model "SALT cap $40K OBBBA phaseout
-      optimization". Populate the exact base cap, effective window, and
-      phaseout schedule from P.L. 119-21.
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
 
-  - coordinate: { tax_year: 2026, sub_parameter: "base_cap_mfs" }
-    value: null
+  - coordinate: { tax_year: 2025, filing_status: MFS, sub_parameter: "base_cap" }
+    value: 20000
     unit: USD
-    authority_kind: PL
-    authority_citation: "Public Law 119-21 — OBBBA SALT cap provisions"
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(B) as amended by OBBBA"
     retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
 
-  - coordinate: { tax_year: 2026, sub_parameter: "phaseout_agi_threshold_mfj" }
-    value: null
+  - coordinate: { tax_year: 2026, filing_status: MFJ, sub_parameter: "base_cap" }
+    value: 40400
     unit: USD
-    authority_kind: PL
-    authority_citation: "Public Law 119-21 — OBBBA SALT cap phaseout"
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(B) as amended by OBBBA"
     retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
 
-  - coordinate: { tax_year: 2026, sub_parameter: "phaseout_rate" }
-    value: null
-    unit: RATIO
-    authority_kind: PL
-    authority_citation: "Public Law 119-21 — OBBBA SALT cap phaseout"
-    retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
-
-  - coordinate: { tax_year: 2026, sub_parameter: "post_phaseout_floor" }
-    value: null
+  - coordinate: { tax_year: 2026, filing_status: MFS, sub_parameter: "base_cap" }
+    value: 20200
     unit: USD
-    authority_kind: PL
-    authority_citation: "Public Law 119-21 — OBBBA SALT cap phaseout floor"
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(B) as amended by OBBBA"
     retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
-    notes: "Cap below which phaseout cannot drive the allowance (e.g., $10K floor)."
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
 
-  - coordinate: { tax_year: 2026, sub_parameter: "effective_window" }
-    value: null
+  - coordinate: { tax_year_range: "2027-2029", sub_parameter: "base_cap_indexing_rule" }
+    value: "PRIOR_YEAR_TIMES_1.01"
     unit: ENUM
-    authority_kind: PL
-    authority_citation: "Public Law 119-21 — OBBBA SALT cap sunset"
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(B) as amended by OBBBA"
     retrieved_at: 2026-04-18
-    verification_status: awaiting_user_input
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: "Annual 1% indexing applied to both MFJ and MFS base caps."
+
+  # -------------------------------------------------------------------
+  # Phaseout threshold (MAGI) — MFJ and MFS.
+  # -------------------------------------------------------------------
+
+  - coordinate: { tax_year: 2025, filing_status: MFJ, sub_parameter: "phaseout_magi_threshold" }
+    value: 500000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(C) as amended by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2025, filing_status: MFS, sub_parameter: "phaseout_magi_threshold" }
+    value: 250000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(C) as amended by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: MFJ, sub_parameter: "phaseout_magi_threshold" }
+    value: 505000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(C) as amended by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2026, filing_status: MFS, sub_parameter: "phaseout_magi_threshold" }
+    value: 252500
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(C) as amended by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  # -------------------------------------------------------------------
+  # Phaseout rate and floor.
+  # -------------------------------------------------------------------
+
+  - coordinate: { sub_parameter: "phaseout_rate" }
+    value: 0.30
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(C) as amended by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { filing_status: MFJ, sub_parameter: "floor" }
+    value: 10000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(D) — $10K floor MFJ"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { filing_status: MFS, sub_parameter: "floor" }
+    value: 5000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(D) — $5K floor MFS"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2025, filing_status: MFJ, sub_parameter: "magi_at_full_phaseout_to_floor" }
+    value: 600000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "Derived: $500,000 + ($30,000 / 30%)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: "Anchor value — 2025 MFJ reaches the $10,000 floor at $600,000 MAGI."
+
+  # -------------------------------------------------------------------
+  # 2030 sunset — reversion to $10K / $5K base with no phaseout.
+  # -------------------------------------------------------------------
+
+  - coordinate: { tax_year: 2030, filing_status: MFJ, sub_parameter: "base_cap" }
+    value: 10000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(E) — OBBBA sunset / TCJA reversion"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { tax_year: 2030, filing_status: MFS, sub_parameter: "base_cap" }
+    value: 5000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §164(b)(6)(E) — OBBBA sunset / TCJA reversion"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { sub_parameter: "sunset_year" }
+    value: 2030
+    unit: YEAR
+    authority_kind: PL
+    authority_citation: "P.L. 119-21 — OBBBA SALT cap sunset"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
     notes: >
-      Populate the specific effective window the $40K-structure applies.
-      Sunset behavior feeds the §12A.13 Sunset Watch pitfall list.
+      Sunset Watch (§12A.13) activates a persistent pitfall when the
+      engagement's planning horizon crosses 2030.

@@ -66,12 +66,14 @@ Any new decisions this one spawns.
 
 | # | Slug | Status | Blocking |
 |---|------|--------|----------|
-| 0001 | phase0-scope | OPEN | Phase 0 gate |
-| 0002 | rules-cache-bootstrap-sources | OPEN | Phase 0 gate — rules cache review |
-| 0003 | obbba-bootstrap-snapshot-date | OPEN | Phase 0 gate — rules cache review |
-| 0004 | ptet-ca-current-rule-confirmation | OPEN | Phase 0 gate — rules cache review |
-| 0005 | strategy-library-initial-count-target | OPEN | Phase 1 entry |
-| 0006 | claude-model-pinning | OPEN | Phase 7 entry |
-| 0007 | opinion-text-caching-policy | OPEN | Phase 7 entry |
+| 0001 | phase0-scope | ANSWERED 2026-04-18 | — |
+| 0002 | rules-cache-bootstrap-sources | ANSWERED 2026-04-18 | — |
+| 0003 | obbba-bootstrap-snapshot-date | ANSWERED 2026-04-18 | — |
+| 0004 | ptet-ca-current-rule-confirmation | ANSWERED 2026-04-18 | — |
+| 0005 | claude-model-pinning | ANSWERED 2026-04-18 | — |
+| 0006 | signing-certificate-posture | ANSWERED 2026-04-18 | — |
+| 0007 | review-method-signoff-companions | ANSWERED 2026-04-18 | — |
+| 0008 | obbba-notice-narrow-scope | ANSWERED 2026-04-18 | — |
+| 0009 | strategy-library-category-order | OPEN | Phase 1 entry (awaiting paste-back of the 20 categories) |
 
 Subsequent phases open their own decisions as the work uncovers them.

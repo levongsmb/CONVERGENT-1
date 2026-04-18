@@ -1,0 +1,73 @@
+# IRC §151(f) — OBBBA senior deduction (temporary, 2025–2028).
+# Confirmed 2026-04-18 via Decision 0001 sign-off.
+#
+# $6,000 per qualifying taxpayer age 65+; 6% phaseout above
+# $75,000 MAGI Single / $150,000 MAGI MFJ.
+# Effective taxable years 2025 through 2028 only (OBBBA sunset).
+
+metadata:
+  section: "IRC §151(f) as added by OBBBA"
+  jurisdiction: FED
+  parameter_family: obbba_senior_deduction
+  primary_authority: "OBBBA; P.L. 119-21"
+  signoff_companion: "obbba_senior_deduction_151f.yaml.SIGNOFF.md"
+
+parameters:
+
+  - coordinate: { sub_parameter: "per_qualifying_taxpayer_amount" }
+    value: 6000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §151(f) as added by OBBBA"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: "Per qualifying taxpayer age 65+ (both spouses if MFJ)."
+
+  - coordinate: { sub_parameter: "qualifying_age" }
+    value: 65
+    unit: YEAR
+    authority_kind: IRC
+    authority_citation: "IRC §151(f)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { filing_status: SINGLE, sub_parameter: "phaseout_magi_threshold" }
+    value: 75000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §151(f)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { filing_status: MFJ, sub_parameter: "phaseout_magi_threshold" }
+    value: 150000
+    unit: USD
+    authority_kind: IRC
+    authority_citation: "IRC §151(f)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { sub_parameter: "phaseout_rate" }
+    value: 0.06
+    unit: RATIO
+    authority_kind: IRC
+    authority_citation: "IRC §151(f)"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+
+  - coordinate: { sub_parameter: "effective_tax_year_range" }
+    value: [2025, 2028]
+    unit: YEAR_RANGE
+    authority_kind: PL
+    authority_citation: "OBBBA senior deduction sunset"
+    retrieved_at: 2026-04-18
+    verification_status: verified_by_cpa
+    verified_at: 2026-04-18
+    notes: >
+      Temporary. Sunset Watch activates when planning horizon crosses
+      2028 into 2029.
