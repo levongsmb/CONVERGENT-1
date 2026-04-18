@@ -1,0 +1,21 @@
+category_code: REAL_ESTATE_DEPRECIATION
+category_sequence_order: 15
+subcategories:
+  - {code: RED_COST_SEG, short_label: "Cost segregation studies", priority_score: 9}
+  - {code: RED_BONUS_DEPR, short_label: "Bonus depreciation", obbba_touched: true, priority_score: 8, statutory_cite: "IRC §168(k) as restored by OBBBA"}
+  - {code: RED_179, short_label: "§179 expensing", priority_score: 6}
+  - {code: RED_QIP, short_label: "Qualified improvement property", priority_score: 7}
+  - {code: RED_PARTIAL_DISP, short_label: "Partial asset disposition elections"}
+  - {code: RED_TPR, short_label: "Tangible property regulations"}
+  - {code: RED_REPAIR_VS_CAP, short_label: "Repair vs capitalize"}
+  - {code: RED_ADS_VS_GDS, short_label: "ADS vs GDS", priority_score: 6}
+  - {code: RED_RESIDENTIAL_CLASSIF, short_label: "Residential vs nonresidential classification"}
+  - {code: RED_STR_CLASSIF, short_label: "Short-term rental classification", priority_score: 7}
+  - {code: RED_LAND_IMPROVEMENTS, short_label: "Land improvement segregation"}
+  - {code: RED_TENANT_IMPROVEMENTS, short_label: "Tenant improvement planning", priority_score: 5}
+  - {code: RED_PLACED_IN_SERVICE, short_label: "Placed-in-service timing", priority_score: 6}
+  - {code: RED_PASSIVE_LOSS_INTERACT, short_label: "Passive loss interaction", cross_references: [LOSS_LIMIT_NAVIGATION.LL_469_PASSIVE]}
+  - {code: RED_163J_REPTOB, short_label: "Electing real property trade or business §163(j)", priority_score: 8}
+  - {code: RED_INTEREST_CAP, short_label: "Interest capitalization"}
+  - {code: RED_RECAPTURE_PLAN, short_label: "Depreciation recapture planning", priority_score: 8}
+  - {code: RED_INSTALL_RECAPTURE, short_label: "Installment sale plus depreciation recapture interaction", cross_references: [INSTALLMENT_AND_DEFERRED_SALES.INST_RECAPTURE_ACCEL]}

@@ -1,0 +1,28 @@
+category_code: STATE_SALT
+category_sequence_order: 2
+subcategories:
+  - {code: SSALT_PTET_MODELING, short_label: "PTET election modeling by state", priority_score: 10, cross_references: [CALIFORNIA_SPECIFIC.CA_PTET_ELECTION]}
+  - {code: SSALT_RESIDENT_CREDIT, short_label: "Resident credit optimization"}
+  - {code: SSALT_164_SALT_CAP, short_label: "SALT cap planning under §164", obbba_touched: true, statutory_cite: "IRC §164(b)(6) as amended by OBBBA"}
+  - {code: SSALT_OBBBA_CAP_MODELING, short_label: "OBBBA SALT cap increase and 2025-2029 phase-down modeling", obbba_touched: true, priority_score: 9, statutory_cite: "IRC §164(b)(6)(B)-(D) as amended by OBBBA"}
+  - {code: SSALT_PROPERTY_TAX_TIMING, short_label: "Property tax timing and prepayment analysis"}
+  - {code: SSALT_STATE_ESTIMATES, short_label: "State estimated tax optimization"}
+  - {code: SSALT_COMPOSITE_VS_WITHHOLD, short_label: "Composite return vs withholding elections"}
+  - {code: SSALT_NONRESIDENT_WH, short_label: "Nonresident withholding minimization"}
+  - {code: SSALT_NOL_CREDIT_CARRYFWD, short_label: "State NOL and credit carryforward preservation"}
+  - {code: SSALT_CONFORMITY_DECOUPLING, short_label: "State conformity and decoupling analysis"}
+  - {code: SSALT_LOCAL_TAX_OVERLAYS, short_label: "Local tax overlays (NYC, SF gross receipts, etc.)"}
+  - {code: SSALT_SALES_USE_EXPOSURE, short_label: "Sales and use tax exposure from restructuring"}
+  - {code: SSALT_TRANSFER_TAX, short_label: "Transfer tax, mansion tax, and documentary tax planning"}
+  - {code: SSALT_AUDIT_VDA, short_label: "State audit defense and voluntary disclosure agreements"}
+  - {code: SSALT_NYC_RESIDENT, short_label: "NYC resident tax", merged_from: NEW_YORK_SPECIFIC}
+  - {code: SSALT_NY_PTET, short_label: "NY PTET", merged_from: NEW_YORK_SPECIFIC}
+  - {code: SSALT_NY_INVESTMENT_CAPITAL, short_label: "NY investment capital classification", merged_from: NEW_YORK_SPECIFIC}
+  - {code: SSALT_NY_CONVENIENCE_RULE, short_label: "NY convenience of employer rule", merged_from: NEW_YORK_SPECIFIC}
+  - {code: SSALT_NY_MANSION_TAX, short_label: "NY real estate transfer and mansion tax", merged_from: NEW_YORK_SPECIFIC}
+  - {code: SSALT_NJ_BAIT, short_label: "NJ BAIT election", merged_from: NEW_JERSEY_HAWAII_DC_SPECIFIC}
+  - {code: SSALT_NJ_RESIDENT_CREDIT, short_label: "NJ resident credit optimization", merged_from: NEW_JERSEY_HAWAII_DC_SPECIFIC}
+  - {code: SSALT_NJ_TRUST_RESIDENCY, short_label: "NJ trust residency", merged_from: NEW_JERSEY_HAWAII_DC_SPECIFIC}
+  - {code: SSALT_HI_GET_INCOME, short_label: "Hawaii GET and income tax overlap", merged_from: NEW_JERSEY_HAWAII_DC_SPECIFIC}
+  - {code: SSALT_DC_UBFT, short_label: "DC unincorporated business franchise tax", merged_from: NEW_JERSEY_HAWAII_DC_SPECIFIC}
+  - {code: SSALT_DC_SERVICE_SOURCING, short_label: "DC sourcing for service businesses", merged_from: NEW_JERSEY_HAWAII_DC_SPECIFIC}

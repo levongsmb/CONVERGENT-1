@@ -1,0 +1,18 @@
+category_code: DEBT_RECAPITALIZATION
+category_sequence_order: 19
+subcategories:
+  - {code: DEBT_CASH_OUT_REFI, short_label: "Cash-out refinance"}
+  - {code: DEBT_RATE_TERM_REFI, short_label: "Rate-and-term refinance"}
+  - {code: DEBT_SIGNIFICANT_MOD, short_label: "Significant modification analysis"}
+  - {code: DEBT_COD_PLANNING, short_label: "COD income planning"}
+  - {code: DEBT_INSOLVENCY, short_label: "Bankruptcy and insolvency exclusions"}
+  - {code: DEBT_EQUITY_EXCHANGE, short_label: "Debt-for-equity exchanges"}
+  - {code: DEBT_RELATED_PARTY_WORKOUT, short_label: "Debt workouts with related parties"}
+  - {code: DEBT_OID, short_label: "OID planning"}
+  - {code: DEBT_AHYDO, short_label: "AHYDO issues"}
+  - {code: DEBT_INTEREST_TRACING, short_label: "Interest tracing"}
+  - {code: DEBT_PSHIP_DEBT_CHANGES, short_label: "Basis effects of partnership debt changes"}
+  - {code: DEBT_SCORP_LOAN_BASIS, short_label: "S corp shareholder loan basis"}
+  - {code: DEBT_REFI_PRE_SALE, short_label: "Refinancing before sale"}
+  - {code: DEBT_MARGIN_LOAN, short_label: "Margin loan planning"}
+  - {code: DEBT_SBL, short_label: "Securities-backed lending"}

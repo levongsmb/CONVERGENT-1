@@ -1,0 +1,13 @@
+category_code: RESEARCH_DEV_AND_IP
+category_sequence_order: 21
+subcategories:
+  - {code: RND_174A_DOMESTIC, short_label: "Domestic R&E expensing §174A", obbba_touched: true, priority_score: 8, statutory_cite: "IRC §174A as added by OBBBA"}
+  - {code: RND_174_FOREIGN_AMORT, short_label: "Foreign R&E amortization"}
+  - {code: RND_280C_COORD, short_label: "§280C coordination with §174A", obbba_touched: true}
+  - {code: RND_41_QUALIFICATION, short_label: "§41 credit qualification of wages, supplies, contract research"}
+  - {code: RND_481A_174A_TRANSITION, short_label: "§481(a) transition for §174A elections", obbba_touched: true}
+  - {code: RND_COST_SHARING, short_label: "Cost sharing arrangements"}
+  - {code: RND_SOFTWARE_DEV, short_label: "Software development capitalization and expensing"}
+  - {code: RND_IP_MIGRATION, short_label: "IP migration planning"}
+  - {code: RND_PATENT_BOX, short_label: "International patent box interactions"}
+  - {code: RND_DOCUMENTATION, short_label: "R&D credit documentation and substantiation"}

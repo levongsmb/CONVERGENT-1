@@ -1,0 +1,13 @@
+category_code: C_CORP_SPECIAL_ISSUES
+category_sequence_order: 12
+subcategories:
+  - {code: CCSI_AET_531, short_label: "Accumulated earnings tax §531"}
+  - {code: CCSI_PHC_541, short_label: "Personal holding company §541"}
+  - {code: CCSI_REDEMPTIONS_302, short_label: "§302 redemption characterization"}
+  - {code: CCSI_DIVIDEND_PLANNING, short_label: "Dividend vs compensation planning"}
+  - {code: CCSI_BLOCKER_STRUCTURES, short_label: "Blocker structures for tax-exempt and foreign investors"}
+  - {code: CCSI_CONSOLIDATED_RETURN, short_label: "Consolidated return elections"}
+  - {code: CCSI_DRD, short_label: "Dividends received deduction planning"}
+  - {code: CCSI_EP_TRACKING, short_label: "Earnings and profits tracking"}
+  - {code: CCSI_NOL_382, short_label: "§382 NOL limitation after ownership change"}
+  - {code: CCSI_LIQUIDATION_332_336, short_label: "§332 and §336 liquidation analysis"}

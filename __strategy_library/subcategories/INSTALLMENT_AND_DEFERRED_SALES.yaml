@@ -1,0 +1,16 @@
+category_code: INSTALLMENT_AND_DEFERRED_SALES
+category_sequence_order: 25
+subcategories:
+  - {code: INST_STANDARD_453, short_label: "Standard §453 installment sale", priority_score: 8}
+  - {code: INST_ELECTION_OUT, short_label: "Election out of installment", priority_score: 4}
+  - {code: INST_PLEDGE_RULE, short_label: "Pledge rule", priority_score: 3}
+  - {code: INST_RELATED_PARTY, short_label: "Related-party second disposition rule", priority_score: 4}
+  - {code: INST_CONTINGENT_PAYMENTS, short_label: "Contingent payment installment sales", priority_score: 5}
+  - {code: INST_IMPUTED_INTEREST, short_label: "Imputed interest and OID", priority_score: 5}
+  - {code: INST_DEALER_EXCEPTIONS, short_label: "Dealer disposition exceptions"}
+  - {code: INST_RECAPTURE_ACCEL, short_label: "Depreciation recapture acceleration", priority_score: 7}
+  - {code: INST_MONETIZED, short_label: "Monetized installment sale risk"}
+  - {code: INST_STRUCTURED, short_label: "Structured installment sales", priority_score: 3}
+  - {code: INST_FARMLAND_1062_XREF, short_label: "Qualified farmland four-year tax installment election (cross-reference)", cross_references: [FARM_RANCH_AG.FRA_1062_FARMLAND_INSTALL]}
+  - {code: INST_TRUST_SALES, short_label: "Installment reporting for trust sales", priority_score: 4}
+  - {code: INST_NOTE_GIFTING, short_label: "Installment note gifting", priority_score: 3}

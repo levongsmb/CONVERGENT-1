@@ -1,0 +1,20 @@
+category_code: ENTITY_SELECTION
+category_sequence_order: 9
+subcategories:
+  - {code: ENT_SOLE_TO_SCORP, short_label: "Sole prop to S corp conversion", priority_score: 10}
+  - {code: ENT_LLC_PSHIP_VS_SCORP, short_label: "LLC taxed as partnership vs S corp", priority_score: 10}
+  - {code: ENT_SCORP_TO_PSHIP, short_label: "S corp to partnership conversion", priority_score: 5}
+  - {code: ENT_PSHIP_TO_SCORP, short_label: "Partnership to S corp incorporation"}
+  - {code: ENT_PSHIP_TO_CCORP, short_label: "Partnership incorporation to C corp", priority_score: 7}
+  - {code: ENT_CHECK_THE_BOX, short_label: "Check-the-box elections", priority_score: 8}
+  - {code: ENT_CCORP_BLOCKER, short_label: "C corp blocker use"}
+  - {code: ENT_HOLDCO_OPCO, short_label: "Holdco / opco structures", priority_score: 8}
+  - {code: ENT_MGMT_COMPANY, short_label: "Management company structures", priority_score: 6}
+  - {code: ENT_IP_HOLDING, short_label: "IP holding company structures"}
+  - {code: ENT_REAL_ESTATE_SEP, short_label: "Real estate separate entity structures", priority_score: 9}
+  - {code: ENT_SERIES_LLC, short_label: "Series LLC and segregated asset structures"}
+  - {code: ENT_TRUST_OWNED, short_label: "Trust-owned entity structures", priority_score: 5}
+  - {code: ENT_QSBS_DRIVEN, short_label: "QSBS-driven C corp conversion", priority_score: 7, cross_references: [QSBS_1202.QSBS_PRE_CONVERSION]}
+  - {code: ENT_STATE_TAX_DRIVEN, short_label: "State tax driven entity choice"}
+  - {code: ENT_EXIT_DRIVEN, short_label: "Exit-driven entity choice"}
+  - {code: ENT_SE_TAX_DRIVEN, short_label: "Self-employment tax driven entity choice"}

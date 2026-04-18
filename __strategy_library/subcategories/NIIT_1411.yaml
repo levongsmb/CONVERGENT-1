@@ -1,0 +1,15 @@
+category_code: NIIT_1411
+category_sequence_order: 18
+subcategories:
+  - {code: NIIT_MATERIAL_PARTIC, short_label: "Material participation planning"}
+  - {code: NIIT_GROUPING, short_label: "Grouping elections"}
+  - {code: NIIT_SCORP_MIX, short_label: "S corp shareholder wage/distribution mix"}
+  - {code: NIIT_REP_PLANNING, short_label: "Rental real estate REP planning"}
+  - {code: NIIT_INSTALL_TIMING, short_label: "Installment sale NIIT timing"}
+  - {code: NIIT_TRUST_THRESHOLD, short_label: "Trust NIIT threshold planning"}
+  - {code: NIIT_CAP_GAIN_HARVEST, short_label: "Capital gain harvesting vs NIIT"}
+  - {code: NIIT_CHAR_REDUCE_MAGI, short_label: "Charitable planning to reduce MAGI"}
+  - {code: NIIT_ROTH_INTERACT, short_label: "Roth conversion interaction"}
+  - {code: NIIT_CFC_PFIC_1411, short_label: "§1411 election issues for CFC/PFIC contexts"}
+  - {code: NIIT_BUSINESS_VS_INVEST, short_label: "Business vs investment income characterization"}
+  - {code: NIIT_SELF_RENTAL_RECHAR, short_label: "Self-rental recharacterization"}

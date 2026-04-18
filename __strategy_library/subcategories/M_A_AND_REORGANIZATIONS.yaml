@@ -1,0 +1,20 @@
+category_code: M_A_AND_REORGANIZATIONS
+category_sequence_order: 24
+subcategories:
+  - {code: MA_TAX_FREE_ABC, short_label: "Tax-free A, B, and C reorganizations"}
+  - {code: MA_FORWARD_TRIANGULAR, short_label: "Forward triangular merger"}
+  - {code: MA_REVERSE_TRIANGULAR, short_label: "Reverse triangular merger"}
+  - {code: MA_F_REORG, short_label: "F reorganization"}
+  - {code: MA_D_REORG, short_label: "D reorganization"}
+  - {code: MA_351_INCORP, short_label: "§351 incorporation"}
+  - {code: MA_368_RECAP, short_label: "§368 recapitalization"}
+  - {code: MA_338_ELECTION, short_label: "§338 election"}
+  - {code: MA_336E_ELECTION, short_label: "§336(e) election"}
+  - {code: MA_PRE_TXN_SPINOFFS, short_label: "Pre-transaction spin-offs §355"}
+  - {code: MA_SPLIT_OFFS, short_label: "Split-offs and split-ups"}
+  - {code: MA_DEBT_PUSHDOWN, short_label: "Debt pushdown"}
+  - {code: MA_BASIS_STEPUP_PLANNING, short_label: "Basis step-up planning"}
+  - {code: MA_TXN_COST_CAP, short_label: "Transaction cost capitalization"}
+  - {code: MA_SUCCESS_FEE_SAFE_HARBOR, short_label: "Success-based fee safe harbor"}
+  - {code: MA_EARNOUT_TAX, short_label: "Earnout tax treatment"}
+  - {code: MA_WCAP_ADJ, short_label: "Working capital adjustment treatment"}

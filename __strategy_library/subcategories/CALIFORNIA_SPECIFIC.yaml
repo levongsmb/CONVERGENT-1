@@ -1,0 +1,23 @@
+category_code: CALIFORNIA_SPECIFIC
+category_sequence_order: 3
+subcategories:
+  - {code: CA_RESIDENCY_AUDITS, short_label: "CA residency audits", cross_references: [RESIDENCY_DOMICILE.RD_CA_DOMICILE_BREAK]}
+  - {code: CA_MARKET_SOURCING, short_label: "Market-based sourcing for services"}
+  - {code: CA_FTB_NONRESIDENT_SERVICE, short_label: "FTB treatment of nonresident service income"}
+  - code: CA_PTET_ELECTION
+    short_label: "CA PTET election mechanics (2026-2030 regime)"
+    priority_score: 10
+    obbba_touched: false
+    statutory_cite: "SB 132 (Ch. 17, Stats. 2025); new RTC sections enacted by SB 132 for taxable years 2026-2030; FTB Form 3804 instructions"
+    detailed_description: "California pass-through entity elective tax under the SB 132 regime. 9.3% rate on qualified net income. Nonrefundable credit to consenting owners with 5-year carryforward. Election on timely-filed original return (calendar-year entities: March 15). June 15 minimum payment (greater of 50% prior year PTET or $1,000) required to avoid 12.5% credit reduction on shortfall amount."
+  - {code: CA_MENTAL_HEALTH_TAX, short_label: "CA mental health tax 1% over $1M"}
+  - {code: CA_NONCONFORMITY_QSBS, short_label: "CA nonconformity to §1202 QSBS", cross_references: [QSBS_1202.QSBS_STATE_CONFORMITY]}
+  - {code: CA_NONCONFORMITY_BONUS, short_label: "CA nonconformity to bonus depreciation and §168(k)"}
+  - {code: CA_TAX_BASIS_CAPITAL, short_label: "CA tax basis capital reporting"}
+  - {code: CA_COMMUNITY_PROPERTY, short_label: "CA community property planning"}
+  - {code: CA_INSTALLMENT_SOURCING, short_label: "CA installment sale sourcing"}
+  - {code: CA_TRUST_RESIDENCY, short_label: "CA trust residency"}
+  - {code: CA_LLC_FEE_MIN, short_label: "CA LLC fee minimization"}
+  - {code: CA_NOL_CREDIT_LIMITS, short_label: "CA NOL and credit limitations"}
+  - {code: CA_DISASTER_LOSS, short_label: "CA disaster loss elections"}
+  - {code: CA_1031_CLAWBACK, short_label: "CA §1031 clawback tracking"}

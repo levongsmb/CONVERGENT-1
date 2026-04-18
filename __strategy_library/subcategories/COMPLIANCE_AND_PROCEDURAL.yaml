@@ -1,0 +1,30 @@
+category_code: COMPLIANCE_AND_PROCEDURAL
+category_sequence_order: 1
+subcategories:
+  - {code: CAP_EST_TAX_SAFE_HARBORS, short_label: "Estimated tax safe harbors and annualization"}
+  - {code: CAP_PENALTY_ABATEMENT, short_label: "Late-filing and late-payment penalty abatement"}
+  - {code: CAP_FIRST_TIME_ABATE, short_label: "First-time abatement"}
+  - {code: CAP_REASONABLE_CAUSE, short_label: "Reasonable cause substantiation"}
+  - {code: CAP_PROTECTIVE_ELECTIONS, short_label: "Protective elections and protective refund claims"}
+  - {code: CAP_SUPERSEDING_VS_AMENDED, short_label: "Superseding vs amended returns"}
+  - {code: CAP_STATUTE_MGMT, short_label: "Statute management and consent strategy"}
+  - {code: CAP_3115_METHOD_CHANGE, short_label: "Method change filing procedures under Form 3115"}
+  - {code: CAP_8275_DISCLOSURE, short_label: "Disclosure statements Form 8275 and 8275-R"}
+  - {code: CAP_ELECTION_CALENDAR, short_label: "Consistency elections and annual election calendar"}
+  - {code: CAP_RECORD_RECONSTRUCTION, short_label: "Record reconstruction and substantiation protocols"}
+  - {code: CAP_7508A_DISASTER, short_label: "Disaster relief postponements under §7508A"}
+  - {code: CAP_IDENTITY_POA, short_label: "Identity theft, transcript, and POA procedures"}
+  - {code: CAP_BBA_AUDIT_REGIME, short_label: "BBA partnership audit regime procedural elections"}
+  - {code: CAP_PUSH_OUT_ELECTION, short_label: "BBA push-out election mechanics"}
+  - {code: CAP_PR_CONTROLS, short_label: "Partnership representative controls"}
+  - {code: CAP_453D_ELECTION_OUT, short_label: "Installment election out under §453(d)"}
+  - {code: CAP_EXAMS_APPEALS, short_label: "IRS exams and Appeals defense", merged_from: IRS_CONTROVERSY_DEFENSE}
+  - {code: CAP_ACCOUNTING_METHOD_DEFENSE, short_label: "Accounting method defense in examination", merged_from: IRS_CONTROVERSY_DEFENSE}
+  - {code: CAP_ERC_DEFENSE, short_label: "ERC examination defense", merged_from: IRS_CONTROVERSY_DEFENSE}
+  - {code: CAP_1099, short_label: "1099 reporting including 1099-K", merged_from: INFORMATION_REPORTING_WITHHOLDING}
+  - {code: CAP_BACKUP_WITHHOLDING, short_label: "Backup withholding compliance", merged_from: INFORMATION_REPORTING_WITHHOLDING}
+  - {code: CAP_W8_W9, short_label: "W-8 and W-9 collection and substantiation", merged_from: INFORMATION_REPORTING_WITHHOLDING}
+  - {code: CAP_PAYROLL_REPORTING, short_label: "Payroll reporting compliance", merged_from: INFORMATION_REPORTING_WITHHOLDING}
+  - {code: CAP_K2_K3, short_label: "Partnership Schedule K-2 and K-3 reporting", merged_from: INFORMATION_REPORTING_WITHHOLDING}
+  - {code: CAP_FORM_8308, short_label: "Form 8308 partnership interest sale reporting"}
+  - {code: CAP_NOTICE_2026_3, short_label: "Notice 2026-3 estimated tax relief for §1062 farmland installment elections", obbba_touched: true, statutory_cite: "Notice 2026-3"}

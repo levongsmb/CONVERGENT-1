@@ -1,0 +1,32 @@
+category_code: COMPENSATION
+category_sequence_order: 5
+subcategories:
+  - {code: COMP_REASONABLE_COMP, short_label: "Reasonable compensation studies", priority_score: 10}
+  - {code: COMP_OFFICER_WAGE_OPT, short_label: "Officer wage optimization", priority_score: 10}
+  - {code: COMP_WAGE_DIST_SPLIT, short_label: "Wage vs distribution split", priority_score: 10}
+  - {code: COMP_FAMILY_PAYROLL, short_label: "Family payroll", priority_score: 8}
+  - {code: COMP_SPOUSE_PAYROLL, short_label: "Spouse payroll for benefit access"}
+  - {code: COMP_CHILDREN_PAYROLL, short_label: "Children on payroll"}
+  - {code: COMP_BONUS_TIMING, short_label: "Bonus timing", priority_score: 7}
+  - {code: COMP_DEFERRED_BONUS, short_label: "Deferred bonus accruals"}
+  - {code: COMP_FRINGE_BENEFITS, short_label: "Fringe benefit inclusion and exclusion"}
+  - {code: COMP_PAYROLL_TAX_MIN, short_label: "Payroll tax minimization"}
+  - {code: COMP_ACCOUNTABLE_PLAN, short_label: "Accountable plan reimbursements", priority_score: 9}
+  - {code: COMP_RENT_VS_WAGES, short_label: "Rent vs wages vs distributions", priority_score: 7}
+  - {code: COMP_GP_VS_WAGES, short_label: "Guaranteed payments vs wages", priority_score: 8}
+  - {code: COMP_MGMT_FEES, short_label: "Management fee restructuring", priority_score: 6}
+  - {code: COMP_WORKER_CLASSIFICATION, short_label: "Worker classification (W-2 vs 1099)", priority_score: 8}
+  - {code: COMP_FRINGE_127, short_label: "§127 educational assistance", merged_from: EMPLOYMENT_PAYROLL_BENEFITS}
+  - {code: COMP_FRINGE_132, short_label: "§132 working condition and de minimis fringes", merged_from: EMPLOYMENT_PAYROLL_BENEFITS}
+  - {code: COMP_FRINGE_105, short_label: "§105 health reimbursement arrangements", merged_from: EMPLOYMENT_PAYROLL_BENEFITS}
+  - {code: COMP_FRINGE_125, short_label: "§125 cafeteria plans", merged_from: EMPLOYMENT_PAYROLL_BENEFITS}
+  - {code: COMP_DCAP, short_label: "Dependent care assistance programs", merged_from: EMPLOYMENT_PAYROLL_BENEFITS}
+  - {code: COMP_CHILDCARE_CREDIT_COORD, short_label: "Employer child care credit coordination", merged_from: EMPLOYMENT_PAYROLL_BENEFITS}
+  - code: COMP_OBBBA_TIP_EXCLUSION
+    short_label: "OBBBA qualified tip income exclusion"
+    obbba_touched: true
+    statutory_cite: "IRC provision added by OBBBA for qualified tip income"
+  - code: COMP_OBBBA_OT_PREMIUM_EXCLUSION
+    short_label: "OBBBA qualified overtime premium exclusion"
+    obbba_touched: true
+    statutory_cite: "IRC provision added by OBBBA for qualified overtime premium"

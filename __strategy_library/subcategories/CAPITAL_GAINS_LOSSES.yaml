@@ -1,0 +1,23 @@
+category_code: CAPITAL_GAINS_LOSSES
+category_sequence_order: 17
+subcategories:
+  - {code: CGL_TAX_LOSS_HARVEST, short_label: "Tax-loss harvesting", priority_score: 9}
+  - {code: CGL_DIRECT_INDEXING, short_label: "Direct indexing", priority_score: 5}
+  - {code: CGL_GAIN_BUNCHING, short_label: "Gain bunching", priority_score: 8}
+  - {code: CGL_GAIN_DEFERRAL_TIMING, short_label: "Gain deferral timing"}
+  - {code: CGL_WASH_SALES, short_label: "Wash sale management", priority_score: 7}
+  - {code: CGL_CRYPTO_LOSS, short_label: "Crypto loss timing"}
+  - {code: CGL_WORTHLESS_SECURITIES, short_label: "Worthless securities", priority_score: 5}
+  - {code: CGL_1244, short_label: "§1244 stock ordinary loss", priority_score: 4}
+  - {code: CGL_CARRYFORWARDS, short_label: "Capital loss carryforward usage", priority_score: 8}
+  - {code: CGL_NETTING, short_label: "Netting strategies"}
+  - {code: CGL_INSTALL_SPREADING, short_label: "Installment sale gain spreading", cross_references: [INSTALLMENT_AND_DEFERRED_SALES.INST_STANDARD_453]}
+  - {code: CGL_CHAR_GIFTING_APPREC, short_label: "Charitable gifting of appreciated assets", cross_references: [CHARITABLE.CHAR_APPREC_SECURITIES]}
+  - {code: CGL_QDI_VS_ORDINARY, short_label: "Qualified dividend vs ordinary income arbitrage"}
+  - {code: CGL_NIIT_INTERACT, short_label: "NIIT interaction", cross_references: [NIIT_1411]}
+  - {code: CGL_STATE_SOURCING, short_label: "State sourcing of gain"}
+  - {code: CGL_1061_CARRIED, short_label: "Carried interest §1061", priority_score: 4}
+  - {code: CGL_COLLECTIBLES, short_label: "Collectibles gain"}
+  - {code: CGL_1250_UNRECAPTURED, short_label: "Unrecaptured §1250 gain", priority_score: 7}
+  - {code: CGL_1231, short_label: "§1231 planning", priority_score: 7}
+  - {code: CGL_DEALER_VS_INVESTOR, short_label: "Dealer vs investor characterization"}

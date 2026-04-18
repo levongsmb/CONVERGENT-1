@@ -1,0 +1,13 @@
+category_code: RELATED_PARTY_AND_FAMILY_SHIFTING
+category_sequence_order: 34
+subcategories:
+  - {code: RP_267_LOSSES, short_label: "§267 related-party loss disallowance"}
+  - {code: RP_267A_HYBRIDS, short_label: "§267A hybrid payment rules"}
+  - {code: RP_707_DISGUISED_SALE, short_label: "§707 disguised sales"}
+  - {code: RP_FAMILY_EMPLOYMENT, short_label: "Family employment"}
+  - {code: RP_FAMILY_LOANS, short_label: "Family loans and AFR compliance"}
+  - {code: RP_FAMILY_RENT, short_label: "Family rental arrangements"}
+  - {code: RP_MGMT_FEES, short_label: "Related-party management fees"}
+  - {code: RP_INCOME_SHIFTING, short_label: "Intrafamily income shifting"}
+  - {code: RP_GIFT_LEASEBACK, short_label: "Gift-leaseback strategies"}
+  - {code: RP_ATTRIBUTION, short_label: "Attribution rules under §318 and §267"}

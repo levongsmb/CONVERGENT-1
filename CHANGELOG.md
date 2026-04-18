@@ -6,6 +6,43 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### G2 + G3 — Phase 1b Strategy Library Inventory (2026-04-18)
+
+G1 signed off by Levon Galstian, CPA on 2026-04-18. Phase 1b produced
+per spec Sections 3.1 through 3.4. G2 is informational per spec Section 8
+(all category decisions already approved in the master build spec). G3
+sign-off pending at `__strategy_library/LIBRARY_SIGNOFF.md`.
+
+- **Added:** `__strategy_library/subcategories/MANIFEST.yaml` matching
+  spec §3.1 line-for-line (40 categories with sequence orders 1-40).
+- **Added:** 40 category YAML files at
+  `__strategy_library/subcategories/<CATEGORY_CODE>.yaml` per spec §3.3.
+  Total subcategory count: 616 (spec references ~590; falls within
+  the test band 550-650).
+- **Added:** 40 per-category `_SIGNOFF.md` companion files per spec §3.4
+  with the six-checkbox structure awaiting per-category review.
+- **Added:** `__strategy_library/_staging/CATEGORY_DECISIONS_SIGNOFF.md`
+  — informational G2 record documenting the eight category-level merges
+  (IRS_CONTROVERSY_DEFENSE, INFORMATION_REPORTING_WITHHOLDING,
+  NEW_YORK_SPECIFIC, NEW_JERSEY_HAWAII_DC_SPECIFIC,
+  EMPLOYMENT_PAYROLL_BENEFITS, ENERGY_CREDITS_INCENTIVES,
+  EXIT_AND_SUCCESSION, DEFERRED_COMPENSATION_409A).
+- **Added:** `__strategy_library/LIBRARY_SIGNOFF.md` — overall G3 gate
+  document with integrity metrics, OBBBA coverage inventory, and the
+  six spec-mandated sign-off checkboxes.
+- **Added:** `app/tests/strategy_library/test_library_parses.py` with
+  ten integrity tests: MANIFEST structure, file presence,
+  no-orphan-file, code/sequence consistency, global subcategory
+  uniqueness, cross_references resolution, merged_from legacy-only
+  check, OBBBA statutory_cite well-formedness, total subcategory count
+  in expected range, and evaluator_path format. Result:
+  `pytest app/tests/strategy_library/` -> 10 passed in 0.96s.
+- **Changed:** `app/scenario/SCHEMA_SIGNOFF.md` signed 2026-04-18 by
+  Levon Galstian, CPA with all five spec §2.4 boxes checked.
+- **Gate status:** G1 closed. G2 informational (no sign-off required).
+  G3 sign-off pending. Phase 2 (cross-check protocol) blocked until G3
+  signed.
+
 ### G1 — Phase 1a Client Scenario Schema (2026-04-18)
 
 G0 signed off by Levon Galstian, CPA on 2026-04-18. Phase 1a produced.

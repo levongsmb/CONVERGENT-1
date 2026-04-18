@@ -1,0 +1,17 @@
+category_code: INTERNATIONAL_OUTBOUND
+category_sequence_order: 38
+subcategories:
+  - {code: IO_CFC, short_label: "Controlled foreign corporation rules"}
+  - {code: IO_SUBPART_F, short_label: "Subpart F income"}
+  - {code: IO_GILTI, short_label: "GILTI under §951A"}
+  - {code: IO_962_ELECTION, short_label: "§962 election"}
+  - {code: IO_FDII, short_label: "FDII under §250"}
+  - {code: IO_FTC_BASKETS, short_label: "Foreign tax credit baskets", cross_references: [CREDITS.CR_FTC]}
+  - {code: IO_SOURCING_INCOME, short_label: "Source of income rules"}
+  - {code: IO_WITHHOLDING_OUTBOUND, short_label: "Outbound withholding"}
+  - {code: IO_FOREIGN_BRANCH, short_label: "Foreign branch income"}
+  - {code: IO_PFIC, short_label: "PFIC rules and QEF"}
+  - {code: IO_5471_5472, short_label: "Form 5471 and 5472 reporting"}
+  - {code: IO_8858_8865, short_label: "Form 8858 and 8865 reporting"}
+  - {code: IO_877A_EXIT_TAX, short_label: "§877A expatriation exit tax"}
+  - {code: IO_FBAR_FATCA, short_label: "FBAR and FATCA compliance"}

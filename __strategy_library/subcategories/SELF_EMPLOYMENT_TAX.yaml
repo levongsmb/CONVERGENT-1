@@ -1,0 +1,16 @@
+category_code: SELF_EMPLOYMENT_TAX
+category_sequence_order: 6
+subcategories:
+  - {code: SET_SCORP_CONVERSION, short_label: "S corp conversion to reduce SE tax"}
+  - {code: SET_LIMITED_PARTNER_EXCEPT, short_label: "Limited partner exception under §1402(a)(13)"}
+  - {code: SET_GP_VS_DIST_SHARE, short_label: "Guaranteed payments vs distributive share"}
+  - {code: SET_LLC_MEMBER_CLASS, short_label: "LLC member classification"}
+  - {code: SET_MATERIAL_PARTIC, short_label: "Material participation impact on SE tax"}
+  - {code: SET_FLP_STRUCTURES, short_label: "Family limited partnership structures", cross_references: [ESTATE_GIFT_GST.EGG_FLP]}
+  - {code: SET_RENTAL_EXCLUSION, short_label: "Rental income exclusion analysis"}
+  - {code: SET_SELF_RENTAL, short_label: "Self-rental issues"}
+  - {code: SET_MGMT_COMPANY_BIFURC, short_label: "Management company bifurcation"}
+  - {code: SET_RC_VS_SE_TRADEOFF, short_label: "Reasonable compensation vs SE tax tradeoff"}
+  - {code: SET_1402A13, short_label: "§1402(a)(13) planning"}
+  - {code: SET_SOROBAN_RISK, short_label: "Soroban / active limited partner risk monitoring"}
+  - {code: SET_RND_DISALLOW_INTERACT, short_label: "SE tax effect of R&D deduction disallowance interactions"}

@@ -1,0 +1,23 @@
+category_code: CREDITS
+category_sequence_order: 20
+subcategories:
+  - {code: CR_RND_41, short_label: "R&D credit under §41", priority_score: 8, cross_references: [RESEARCH_DEV_AND_IP.RND_41_QUALIFICATION]}
+  - {code: CR_STARTUP_PAYROLL_OFFSET, short_label: "R&D payroll offset for startups", priority_score: 5}
+  - {code: CR_WOTC, short_label: "Work opportunity credit", priority_score: 5}
+  - {code: CR_CHILDCARE_EMPLOYER, short_label: "Employer child care credit", priority_score: 3}
+  - {code: CR_PFML, short_label: "Paid family and medical leave credit", priority_score: 3}
+  - {code: CR_DISABLED_ACCESS, short_label: "Disabled access credit"}
+  - {code: CR_PENSION_STARTUP, short_label: "Small employer pension startup credits", priority_score: 6}
+  - {code: CR_ENERGY, short_label: "Energy credits", merged_from: ENERGY_CREDITS_INCENTIVES}
+  - {code: CR_ENERGY_TRANSFERABILITY, short_label: "Energy credit transferability", merged_from: ENERGY_CREDITS_INCENTIVES, obbba_touched: true}
+  - {code: CR_ENERGY_RECAPTURE, short_label: "Energy credit recapture", merged_from: ENERGY_CREDITS_INCENTIVES}
+  - {code: CR_ENERGY_DOMESTIC_CONTENT, short_label: "Domestic content bonus requirements", merged_from: ENERGY_CREDITS_INCENTIVES}
+  - {code: CR_ENERGY_OBBBA_PHASEOUTS, short_label: "OBBBA energy credit phaseouts", merged_from: ENERGY_CREDITS_INCENTIVES, obbba_touched: true}
+  - {code: CR_LIHTC, short_label: "Low-income housing credit", priority_score: 2}
+  - {code: CR_NMTC, short_label: "New markets tax credit", priority_score: 2}
+  - {code: CR_ADOPTION, short_label: "Adoption credit"}
+  - {code: CR_CHILD_DEP_CARE, short_label: "Child and dependent care credit"}
+  - {code: CR_FTC, short_label: "Foreign tax credits", priority_score: 5, cross_references: [INTERNATIONAL_OUTBOUND.IO_FTC_BASKETS]}
+  - {code: CR_GBC_CARRYFWD, short_label: "General business credit carryforward planning"}
+  - {code: CR_ORDERING_LIMITS, short_label: "Credit ordering and limitation modeling", priority_score: 6}
+  - {code: CR_280C_INTERACT, short_label: "Basis reduction and §280C interactions", cross_references: [RESEARCH_DEV_AND_IP.RND_280C_COORD]}

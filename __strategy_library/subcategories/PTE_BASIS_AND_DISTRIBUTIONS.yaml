@@ -1,0 +1,15 @@
+category_code: PTE_BASIS_AND_DISTRIBUTIONS
+category_sequence_order: 8
+subcategories:
+  - {code: PTE_OUTSIDE_BASIS, short_label: "Partnership outside basis tracking"}
+  - {code: PTE_INSIDE_BASIS, short_label: "Partnership inside basis and §743 adjustments"}
+  - {code: PTE_754_ELECTION, short_label: "§754 election and §743(b) step-up", cross_references: [SALE_TRANSACTION.SALE_754_IN_SALE, PARTNERSHIP_STRUCTURING]}
+  - {code: PTE_DEBT_BASIS, short_label: "Partner share of partnership debt"}
+  - {code: PTE_SCORP_STOCK_BASIS, short_label: "S corp stock basis"}
+  - {code: PTE_SCORP_DEBT_BASIS, short_label: "S corp shareholder debt basis"}
+  - {code: PTE_BASIS_CAPITAL_REPORTING, short_label: "Tax basis capital reporting"}
+  - {code: PTE_704D_LIMITATION, short_label: "§704(d) basis limitation on losses"}
+  - {code: PTE_DISTRIBUTION_TAXATION, short_label: "Distribution taxation and gain recognition"}
+  - {code: PTE_731_DISTRIBUTIONS, short_label: "§731 distribution rules"}
+  - {code: PTE_751B_HOT_ASSETS, short_label: "§751(b) disproportionate distribution analysis"}
+  - {code: PTE_AAA_TRACKING, short_label: "S corp AAA and OAA tracking"}

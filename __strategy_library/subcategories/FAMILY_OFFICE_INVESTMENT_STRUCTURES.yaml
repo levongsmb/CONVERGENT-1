@@ -1,0 +1,13 @@
+category_code: FAMILY_OFFICE_INVESTMENT_STRUCTURES
+category_sequence_order: 37
+subcategories:
+  - {code: FO_LENDER_V_FRANK, short_label: "Lender v Frank Aragona Trust implications"}
+  - {code: FO_MGMT_COMPANY, short_label: "Family office management company structures"}
+  - {code: FO_EXPENSE_ALLOCATION, short_label: "Expense allocation across family members"}
+  - {code: FO_TRADER_VS_INVESTOR, short_label: "Trader vs investor status"}
+  - {code: FO_475F_MTM, short_label: "§475(f) mark-to-market election"}
+  - {code: FO_PFIC_ISSUES, short_label: "PFIC issues in family office investments"}
+  - {code: FO_QEF_ELECTION, short_label: "QEF election and §1411 interaction"}
+  - {code: FO_PTE_BAKING, short_label: "PTE baking of investment income"}
+  - {code: FO_162_DEDUCTIBILITY, short_label: "§162 deductibility of family office expenses"}
+  - {code: FO_SINGLE_FAMILY_OFFICE_TAX, short_label: "Single family office tax structuring"}

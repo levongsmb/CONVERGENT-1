@@ -1,0 +1,23 @@
+category_code: ACCOUNTING_METHODS
+category_sequence_order: 13
+subcategories:
+  - {code: AM_CASH_VS_ACCRUAL, short_label: "Cash vs accrual", priority_score: 9}
+  - {code: AM_448_GROSS_RECEIPTS, short_label: "§448 gross receipts test", priority_score: 7}
+  - {code: AM_471C_INVENTORY, short_label: "§471(c) inventory simplification", priority_score: 7}
+  - {code: AM_NON_INCIDENTAL, short_label: "Non-incidental materials and supplies"}
+  - {code: AM_451C_ADVANCE_PAYMENTS, short_label: "Advance payment deferral under §451(c)", priority_score: 7}
+  - {code: AM_RECURRING_ITEM, short_label: "Recurring item exception"}
+  - {code: AM_PREPAID_12_MONTH, short_label: "Prepaid expense 12-month rule", priority_score: 6}
+  - {code: AM_REPAIR_REGS, short_label: "Repair regulations and capitalization", priority_score: 8}
+  - {code: AM_PARTIAL_ASSET_DISP, short_label: "Partial asset dispositions", priority_score: 6}
+  - {code: AM_263A_UNICAP, short_label: "UNICAP under §263A"}
+  - {code: AM_LONG_TERM_CONTRACTS, short_label: "Long-term contract methods", priority_score: 7}
+  - {code: AM_PCM_VS_CCM, short_label: "PCM vs CCM analysis"}
+  - {code: AM_RESIDENTIAL_EXCEPTION, short_label: "Residential construction contract exception"}
+  - {code: AM_BAD_DEBT, short_label: "Bad debt methods"}
+  - {code: AM_WARRANTY_ACCRUAL, short_label: "Warranty accruals"}
+  - {code: AM_REBATES, short_label: "Rebates and allowances"}
+  - {code: AM_SUCCESS_FEES, short_label: "Success-based fees", priority_score: 5}
+  - {code: AM_174A_DOMESTIC_RE, short_label: "Domestic R&E expensing under §174A", obbba_touched: true, priority_score: 8, cross_references: [RESEARCH_DEV_AND_IP.RND_174A_DOMESTIC]}
+  - {code: AM_FOREIGN_RE_AMORT, short_label: "Foreign R&E amortization"}
+  - {code: AM_481A_PLANNING, short_label: "§481(a) spread planning", priority_score: 7}

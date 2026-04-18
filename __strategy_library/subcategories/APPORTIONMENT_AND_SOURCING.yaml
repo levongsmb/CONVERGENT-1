@@ -1,0 +1,13 @@
+category_code: APPORTIONMENT_AND_SOURCING
+category_sequence_order: 33
+subcategories:
+  - {code: APP_MARKET_SOURCING, short_label: "Market-based sourcing for services"}
+  - {code: APP_COST_OF_PERFORMANCE, short_label: "Cost-of-performance sourcing"}
+  - {code: APP_NEXUS_ANALYSIS, short_label: "Economic and physical nexus analysis"}
+  - {code: APP_APPORTIONMENT_FACTORS, short_label: "Sales, property, payroll factor composition"}
+  - {code: APP_SINGLE_SALES_FACTOR, short_label: "Single sales factor states"}
+  - {code: APP_THROWBACK_THROWOUT, short_label: "Throwback and throwout rules"}
+  - {code: APP_NONRESIDENT_ALLOC, short_label: "Nonresident allocation"}
+  - {code: APP_UDITPA, short_label: "UDITPA / MTC uniform rules"}
+  - {code: APP_FINANCIAL_INST, short_label: "Financial institution sourcing (CA SB 132 single sales factor)"}
+  - {code: APP_COMBINED_REPORTING, short_label: "Combined and unitary reporting"}

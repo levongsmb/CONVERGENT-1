@@ -1,0 +1,17 @@
+category_code: TRUSTS_INCOME_SHIFTING
+category_sequence_order: 29
+subcategories:
+  - {code: TIS_DNI_MGMT, short_label: "DNI management"}
+  - {code: TIS_DISTRIBUTION_TIMING, short_label: "Distribution timing"}
+  - {code: TIS_65_DAY_ELECTION, short_label: "65-day election"}
+  - {code: TIS_GRANTOR_TOGGLE, short_label: "Grantor vs nongrantor trust toggles"}
+  - {code: TIS_ING_TRUSTS, short_label: "ING (incomplete gift nongrantor) trusts"}
+  - {code: TIS_QSST_ESBT, short_label: "QSST and ESBT planning"}
+  - {code: TIS_BENEF_BRACKET_ARB, short_label: "Beneficiary bracket arbitrage"}
+  - {code: TIS_NIIT_SHIFTING, short_label: "NIIT shifting to beneficiaries"}
+  - {code: TIS_CAP_GAIN_DNI, short_label: "Capital gain inclusion in DNI"}
+  - {code: TIS_TRUST_RESIDENCY, short_label: "Trust state residency planning"}
+  - {code: TIS_TRUST_SITUS_MIGRATE, short_label: "Trust situs migration"}
+  - {code: TIS_TRUST_SALT, short_label: "SALT deduction planning at trust level"}
+  - {code: TIS_TRUST_CHARITABLE, short_label: "Charitable deduction in trusts"}
+  - {code: TIS_QSBS_THROUGH_TRUST, short_label: "QSBS stacking through trusts", cross_references: [QSBS_1202.QSBS_STACKING]}

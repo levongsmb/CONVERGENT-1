@@ -97,13 +97,13 @@ with spouse_dob); Decimal precision preserved end-to-end through YAML.
 
 ## Sign-off (spec §2.4 checklist)
 
-- [ ] Pydantic models cover all fact patterns in SMB CPA Group client base
-- [ ] Validators catch cross-field inconsistency (K-1 references,
+- [x] Pydantic models cover all fact patterns in SMB CPA Group client base
+- [x] Validators catch cross-field inconsistency (K-1 references,
       filing status / spouse)
-- [ ] State sourcing fields support CA nonconformity for QSBS, bonus
+- [x] State sourcing fields support CA nonconformity for QSBS, bonus
       depreciation, community property
-- [ ] Fixtures represent realistic scenarios for seven planning patterns
-- [ ] Decimal precision and type strictness appropriate for tax computation
+- [x] Fixtures represent realistic scenarios for seven planning patterns
+- [x] Decimal precision and type strictness appropriate for tax computation
 
-Signed: __________________________________
-Date: __________________________________
+Signed: Levon Galstian, CPA
+Date: 2026-04-18

@@ -1,0 +1,19 @@
+category_code: LOSS_LIMIT_NAVIGATION
+category_sequence_order: 14
+subcategories:
+  - {code: LL_461L, short_label: "§461(l) excess business loss limitation", obbba_touched: true, priority_score: 9, statutory_cite: "IRC §461(l) made permanent by OBBBA"}
+  - {code: LL_469_PASSIVE, short_label: "§469 passive activity loss rules", priority_score: 10}
+  - {code: LL_469_GROUPING, short_label: "§469 grouping and regrouping elections"}
+  - {code: LL_REP_STATUS, short_label: "Real estate professional status", priority_score: 9}
+  - {code: LL_STR_EXCEPTION, short_label: "Short-term rental exception", priority_score: 8}
+  - {code: LL_465_AT_RISK, short_label: "§465 at-risk limitations", priority_score: 8}
+  - {code: LL_163J_INTEREST, short_label: "§163(j) business interest limitation", obbba_touched: true, priority_score: 8}
+  - {code: LL_163J_EBITDA_OBBBA, short_label: "EBITDA restoration under OBBBA", obbba_touched: true}
+  - {code: LL_704D_BASIS, short_label: "§704(d) basis limitation", cross_references: [PTE_BASIS_AND_DISTRIBUTIONS.PTE_704D_LIMITATION]}
+  - {code: LL_SCORP_BASIS_LIMITS, short_label: "S corp stock and debt basis limitations", cross_references: [PTE_BASIS_AND_DISTRIBUTIONS.PTE_SCORP_STOCK_BASIS, PTE_BASIS_AND_DISTRIBUTIONS.PTE_SCORP_DEBT_BASIS]}
+  - {code: LL_SUSPENDED_LOSSES, short_label: "Suspended loss release planning", priority_score: 8}
+  - {code: LL_DISPOSITION_FREE_SL, short_label: "Disposition planning to free suspended losses"}
+  - {code: LL_COD_EXCLUSIONS, short_label: "COD income exclusions", priority_score: 6}
+  - {code: LL_INSOLVENCY, short_label: "Insolvency and bankruptcy exclusions"}
+  - {code: LL_NOL_USAGE, short_label: "NOL generation and usage", priority_score: 7}
+  - {code: LL_BUILT_IN_LOSS, short_label: "Built-in loss limitations after ownership changes"}

@@ -1,0 +1,9 @@
+category_code: MISCELLANEOUS
+category_sequence_order: 40
+subcategories:
+  - {code: MISC_DIGITAL_ASSET, short_label: "Digital asset and crypto tax positions"}
+  - {code: MISC_CANNABIS_280E, short_label: "Cannabis §280E limitation"}
+  - {code: MISC_HOBBY_LOSS, short_label: "Hobby loss §183 analysis"}
+  - {code: MISC_GAMBLING, short_label: "Gambling income and losses"}
+  - {code: MISC_PERSONAL_USE_CONV, short_label: "Personal use property conversion"}
+  - {code: MISC_RESEARCH_RULES, short_label: "Niche industry-specific rules"}

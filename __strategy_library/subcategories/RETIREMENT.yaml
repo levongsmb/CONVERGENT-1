@@ -1,0 +1,28 @@
+category_code: RETIREMENT
+category_sequence_order: 7
+subcategories:
+  - {code: RET_SEP_IRA, short_label: "SEP IRA", priority_score: 8}
+  - {code: RET_SIMPLE_IRA, short_label: "SIMPLE IRA", priority_score: 6}
+  - {code: RET_SOLO_401K, short_label: "Solo 401(k)", priority_score: 9}
+  - {code: RET_SAFE_HARBOR_401K, short_label: "Safe harbor 401(k)", priority_score: 7}
+  - {code: RET_CROSS_TESTED, short_label: "New comparability and cross-tested plans"}
+  - {code: RET_CASH_BALANCE, short_label: "Cash balance plans", priority_score: 8}
+  - {code: RET_DEFINED_BENEFIT, short_label: "Defined benefit plans", priority_score: 6}
+  - {code: RET_COMBO_PLANS, short_label: "Combo plan designs"}
+  - {code: RET_MEGA_BACKDOOR_ROTH, short_label: "Mega backdoor Roth"}
+  - {code: RET_BACKDOOR_ROTH, short_label: "Backdoor Roth IRA", priority_score: 7}
+  - {code: RET_ROTH_CONVERSION, short_label: "Roth conversion timing", priority_score: 8}
+  - {code: RET_MATCH_DESIGN, short_label: "Employer match design"}
+  - {code: RET_SPOUSAL_PARTIC, short_label: "Spousal participation"}
+  - {code: RET_CTRL_GROUP, short_label: "Controlled group and affiliated service group testing", priority_score: 7}
+  - {code: RET_LATE_ADOPTION, short_label: "Late adoption opportunities under SECURE 2.0"}
+  - {code: RET_SECURE20_CORRECTIONS, short_label: "SECURE 2.0 correction opportunities"}
+  - {code: RET_RMD, short_label: "RMD planning"}
+  - {code: RET_QCD, short_label: "QCD planning", cross_references: [CHARITABLE.CHAR_QCD]}
+  - {code: RET_DEDUCTION_TIMING, short_label: "Retirement plan deduction timing"}
+  - {code: RET_PLAN_TERMINATION, short_label: "Plan termination, spin-off, or merger planning"}
+  - code: RET_OBBBA_SENIOR_DEDUCTION
+    short_label: "OBBBA §151(f) senior deduction planning ($6,000 per qualifying age-65+ taxpayer)"
+    obbba_touched: true
+    statutory_cite: "IRC §151(f) as added by OBBBA"
+    detailed_description: "Temporary senior deduction 2025-2028. $6,000 per qualifying taxpayer age 65 or older. 6% phaseout above $75,000 Single / $150,000 MFJ. Planning focus: coordinate with Roth conversion timing, Social Security benefit timing, and retirement plan distribution sequencing to stay below phaseout threshold."

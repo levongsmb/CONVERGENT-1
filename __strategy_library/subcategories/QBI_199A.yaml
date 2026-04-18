@@ -1,0 +1,29 @@
+category_code: QBI_199A
+category_sequence_order: 4
+subcategories:
+  - {code: QBI_THRESHOLD_MGMT, short_label: "Threshold management"}
+  - {code: QBI_INCOME_COMPRESSION, short_label: "Taxable income compression to preserve deduction"}
+  - {code: QBI_SSTB_AVOIDANCE, short_label: "SSTB avoidance and segregation analysis"}
+  - {code: QBI_AGGREGATION, short_label: "Aggregation elections"}
+  - {code: QBI_W2_WAGE_OPT, short_label: "W-2 wage optimization"}
+  - {code: QBI_UBIA_OPT, short_label: "UBIA optimization"}
+  - {code: QBI_RENTAL_SAFE_HARBOR, short_label: "Rental real estate safe harbor"}
+  - {code: QBI_TRIPLE_NET, short_label: "Triple-net lease analysis"}
+  - {code: QBI_COOP_RULES, short_label: "Cooperative rules"}
+  - {code: QBI_REIT_DIVIDENDS, short_label: "REIT dividend planning"}
+  - {code: QBI_PTP_INCOME, short_label: "PTP income planning"}
+  - {code: QBI_GP_MINIMIZE, short_label: "Guaranteed payment minimization"}
+  - {code: QBI_SCORP_WAGE_BALANCE, short_label: "S corp officer wage balancing against QBI", priority_score: 10}
+  - {code: QBI_707_CHARACTERIZATION, short_label: "Partnership payment characterization under §707"}
+  - {code: QBI_LOSS_CARRYOVER, short_label: "QBI loss carryover management"}
+  - {code: QBI_ACTIVE_TB_QUAL, short_label: "Active trade or business qualification"}
+  - {code: QBI_MATERIAL_PARTIC_MIN, short_label: "Material participation to qualify for minimum deduction"}
+  - code: QBI_199AI_MINIMUM
+    short_label: "§199A(i) minimum deduction ($400 floor if aggregate active QBI at least $1,000)"
+    obbba_touched: true
+    statutory_cite: "IRC §199A(i) as added by OBBBA"
+    detailed_description: "Starting tax year 2026, taxpayer with at least $1,000 aggregate qualified business income from active trades or businesses in which taxpayer materially participates receives greater of computed QBI deduction or $400. Both $1,000 threshold and $400 minimum indexed for inflation after 2026."
+  - code: QBI_OBBBA_PHASEIN
+    short_label: "OBBBA expanded phase-in thresholds ($75K single / $150K joint above threshold)"
+    obbba_touched: true
+    statutory_cite: "IRC §199A(b)(3) as amended by OBBBA"

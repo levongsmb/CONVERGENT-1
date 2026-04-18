@@ -1,0 +1,27 @@
+category_code: FARM_RANCH_AG
+category_sequence_order: 35
+subcategories:
+  - code: FRA_1062_FARMLAND_INSTALL
+    short_label: "Qualified farmland four-year tax installment election under §1062"
+    obbba_touched: true
+    statutory_cite: "IRC §1062 as added by OBBBA; Notice 2026-3"
+    detailed_description: "Seller of qualified farmland to a qualified farmer may elect to pay the federal income tax attributable to gain in four equal annual installments. Not a §453 installment sale — gain is recognized fully in year of sale; only the resulting tax liability is deferred. First installment due with the return for year of sale (original due date, no extension); subsequent installments due with returns for the next three years. Effective for sales in taxable years beginning after July 4, 2025."
+  - code: FRA_NOTICE_2026_3
+    short_label: "Notice 2026-3 estimated tax penalty relief for §1062 elections"
+    obbba_touched: true
+    statutory_cite: "Notice 2026-3 (December 22, 2025); relief under IRC §6654 and §6655"
+    detailed_description: "IRS Notice 2026-3 provides relief from estimated tax penalties that would otherwise undermine §1062. Only 25% of the net tax liability attributable to the qualified farmland sale needs to be included in the required annual payment calculation for the year of sale."
+  - code: FRA_139L_LENDER_EXCLUSION
+    short_label: "§139L qualified lender 25% interest income exclusion on agricultural loans"
+    obbba_touched: true
+    statutory_cite: "IRC §139L as added by OBBBA"
+    detailed_description: "Qualified lender may exclude 25% of interest income from loans secured by agricultural real estate. Intended to encourage lower rates for farmers. AFR thresholds and imputed interest rules under §483 and §1274 continue to apply."
+  - {code: FRA_FARM_INCOME_AVG, short_label: "Farm income averaging"}
+  - {code: FRA_CONSERVATION, short_label: "Conservation easement and reserve programs"}
+  - {code: FRA_LIVESTOCK_SALE, short_label: "Involuntary livestock sales and weather deferral"}
+  - {code: FRA_PREPAID_FEED, short_label: "Prepaid feed and farm supplies"}
+  - {code: FRA_SOIL_WATER, short_label: "Soil and water conservation expenses §175"}
+  - {code: FRA_175_ELECTION, short_label: "§175 election timing"}
+  - {code: FRA_2032A_SPECIAL_USE, short_label: "§2032A special use valuation"}
+  - {code: FRA_6166_ESTATE_DEFERRAL, short_label: "§6166 estate tax deferral for closely held farm"}
+  - {code: FRA_FARM_NOL_CARRYBACK, short_label: "Farming NOL carryback rules"}

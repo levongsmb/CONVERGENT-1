@@ -1,0 +1,39 @@
+category_code: CHARITABLE
+category_sequence_order: 22
+subcategories:
+  - {code: CHAR_APPREC_SECURITIES, short_label: "Appreciated securities gifting", priority_score: 9}
+  - {code: CHAR_REAL_ESTATE_GIFTS, short_label: "Real estate gifting", priority_score: 6}
+  - {code: CHAR_BUNCHING, short_label: "Charitable bunching", priority_score: 8}
+  - {code: CHAR_DAF, short_label: "Donor advised funds", priority_score: 9}
+  - {code: CHAR_PRIVATE_FOUNDATION, short_label: "Private foundations", priority_score: 4}
+  - {code: CHAR_SUPPORTING_ORG, short_label: "Supporting organizations"}
+  - {code: CHAR_CRT, short_label: "Charitable remainder trusts", priority_score: 6}
+  - {code: CHAR_CLT, short_label: "Charitable lead trusts", priority_score: 4}
+  - {code: CHAR_CHARITABLE_LLC, short_label: "Charitable LLC / FLP funding"}
+  - {code: CHAR_QCD, short_label: "Qualified charitable distributions", priority_score: 6}
+  - {code: CHAR_CONSERVATION, short_label: "Conservation easements"}
+  - {code: CHAR_FRACTIONAL_GIFTS, short_label: "Fractional interest gifts"}
+  - {code: CHAR_BUSINESS_INTEREST, short_label: "Business interest gifts"}
+  - {code: CHAR_PRE_SALE, short_label: "Pre-sale charitable planning", priority_score: 9}
+  - {code: CHAR_CRT_FLIP, short_label: "Charitable remainder flip trusts"}
+  - {code: CHAR_AGI_LIMITS, short_label: "AGI limitation management", priority_score: 7}
+  - code: CHAR_OBBBA_05_FLOOR
+    short_label: "OBBBA 0.5% AGI floor for individual itemized charitable deductions (effective 2026)"
+    obbba_touched: true
+    statutory_cite: "IRC §170 as amended by OBBBA"
+    detailed_description: "Individual itemizers may deduct charitable contributions only to the extent total contributions exceed 0.5% of AGI. First 0.5% of AGI in contributions is nondeductible. Disallowed amount increases the carryforward balance subject to the 0.5% floor in future years."
+  - code: CHAR_OBBBA_ABOVE_LINE
+    short_label: "OBBBA above-the-line charitable deduction for non-itemizers ($1,000 Single / $2,000 MFJ)"
+    obbba_touched: true
+    statutory_cite: "IRC provision as added by OBBBA"
+    detailed_description: "Non-itemizers may deduct up to $1,000 (Single) or $2,000 (MFJ) of direct cash contributions to qualified 501(c)(3) public charities as an above-the-line deduction. Contributions to donor-advised funds and non-operating private foundations are excluded."
+  - code: CHAR_OBBBA_37_CAP
+    short_label: "OBBBA 35% tax-benefit cap on itemized deductions for 37% bracket taxpayers"
+    obbba_touched: true
+    statutory_cite: "IRC §68 as amended by OBBBA"
+    detailed_description: "For taxpayers in the 37% bracket, itemized deductions are reduced by 2/37ths of the lesser of (a) total itemized deductions or (b) the amount by which taxable income plus itemized deductions exceeds the 37% bracket threshold. Effective cap on itemized deduction value at 35% rather than marginal 37% rate. Note §199A deduction is computed without regard to this limitation."
+  - code: CHAR_OBBBA_CORPORATE_FLOOR
+    short_label: "OBBBA 1% corporate taxable income floor on charitable deductions"
+    obbba_touched: true
+    statutory_cite: "IRC §170 as amended by OBBBA"
+    detailed_description: "Corporate charitable contributions deductible only to the extent total contributions exceed 1% of taxable income. Parallels the individual 0.5% AGI floor."

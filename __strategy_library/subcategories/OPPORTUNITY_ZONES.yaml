@@ -1,0 +1,21 @@
+category_code: OPPORTUNITY_ZONES
+category_sequence_order: 28
+subcategories:
+  - {code: OZ_DEFERRAL_ELECTION, short_label: "Gain deferral election on eligible gain"}
+  - {code: OZ_QOF_FORMATION, short_label: "QOF formation and operating rules"}
+  - {code: OZ_SUBSTANTIAL_IMPROVEMENT, short_label: "Substantial improvement requirement"}
+  - {code: OZ_TEN_YEAR_EXCLUSION, short_label: "10-year exclusion and basis step-up to FMV"}
+  - {code: OZ_OBBBA_PERMANENT, short_label: "OBBBA permanent regime and revised rules", obbba_touched: true}
+  - {code: OZ_WORKING_CAPITAL_SAFE_HARBOR, short_label: "31-month working capital safe harbor"}
+  - {code: OZ_QOZB_PROPERTY_TEST, short_label: "QOZ business property test (90% / 70%)"}
+  - {code: OZ_QOZB_ACTIVE_TB, short_label: "QOZ business active trade or business requirement"}
+  - {code: OZ_QOZB_INCOME_TEST, short_label: "50% gross income from active QOZ conduct test"}
+  - {code: OZ_INTANGIBLES_TEST, short_label: "40% intangibles used in active business test"}
+  - {code: OZ_CASH_LIMITATION, short_label: "Cash and investment asset limitation"}
+  - {code: OZ_DEFERRAL_PERIOD_TIMING, short_label: "Deferral period and inclusion year timing", obbba_touched: true}
+  - {code: OZ_INCLUSION_EVENTS, short_label: "Inclusion events (transfers, debt-financed distributions)"}
+  - {code: OZ_ZERO_BASIS_AT_INVEST, short_label: "Zero basis at investment in QOF"}
+  - {code: OZ_INTEREST_ON_DEFERRED_TAX, short_label: "Interest accrual on deferred tax under revised regime", obbba_touched: true}
+  - {code: OZ_DECENNIAL_REDESIGNATION, short_label: "Decennial redesignation mechanism under OBBBA", obbba_touched: true}
+  - {code: OZ_STATE_CONFORMITY, short_label: "State conformity review (especially CA nonconformity)"}
+  - {code: OZ_EXIT_PLANNING, short_label: "Exit planning and holding period election"}

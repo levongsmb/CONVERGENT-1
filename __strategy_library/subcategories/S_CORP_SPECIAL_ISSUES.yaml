@@ -1,0 +1,13 @@
+category_code: S_CORP_SPECIAL_ISSUES
+category_sequence_order: 10
+subcategories:
+  - {code: SCSI_ONE_CLASS_STOCK, short_label: "One class of stock compliance"}
+  - {code: SCSI_DEBT_VS_EQUITY, short_label: "Debt vs equity characterization"}
+  - {code: SCSI_AAA_TRACKING, short_label: "AAA tracking and distribution ordering"}
+  - {code: SCSI_BIG_1374, short_label: "Built-in gains tax under §1374"}
+  - {code: SCSI_SHAREHOLDER_BASIS, short_label: "Shareholder stock and debt basis"}
+  - {code: SCSI_DISTRIBUTIONS, short_label: "Distribution taxation"}
+  - {code: SCSI_INADVERT_TERMINATION, short_label: "Inadvertent termination relief under §1362(f)"}
+  - {code: SCSI_QSUB_ELECTION, short_label: "QSub elections"}
+  - {code: SCSI_F_REORG_SALE, short_label: "F reorganization pre-sale", cross_references: [M_A_AND_REORGANIZATIONS.MA_F_REORG, SALE_TRANSACTION.SALE_F_REORG]}
+  - {code: SCSI_ESBT_QSST, short_label: "ESBT and QSST planning"}

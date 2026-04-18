@@ -1,0 +1,15 @@
+category_code: INTERNATIONAL_INBOUND
+category_sequence_order: 39
+subcategories:
+  - {code: II_ECI, short_label: "Effectively connected income"}
+  - {code: II_FDAP, short_label: "FDAP withholding"}
+  - {code: II_1446F, short_label: "§1446(f) partnership withholding on foreign partner transfers"}
+  - {code: II_FIRPTA, short_label: "FIRPTA"}
+  - {code: II_BRANCH_PROFITS, short_label: "Branch profits tax"}
+  - {code: II_BLOCKER_STRUCTURES, short_label: "Blocker corporation structures"}
+  - {code: II_TREATY_BENEFITS, short_label: "Treaty benefit planning"}
+  - {code: II_1441_1442, short_label: "§1441 and §1442 withholding"}
+  - {code: II_1060_ALLOCATION, short_label: "§1060 allocation on foreign-seller asset sales"}
+  - {code: II_ESTATE_TAX_NRA, short_label: "Nonresident alien estate tax"}
+  - {code: II_US_REAL_PROPERTY, short_label: "U.S. real property holding company structures"}
+  - {code: II_W8BEN_WRITTEN_CERT, short_label: "W-8BEN and W-8BEN-E substantiation"}

@@ -1,0 +1,13 @@
+category_code: INSURANCE_RISK_TRANSFER
+category_sequence_order: 36
+subcategories:
+  - {code: IRT_CAPTIVE_831B, short_label: "§831(b) micro-captive insurance"}
+  - {code: IRT_CAPTIVE_LARGE, short_label: "Large captive structures"}
+  - {code: IRT_PPLI, short_label: "Private placement life insurance"}
+  - {code: IRT_SPLIT_DOLLAR, short_label: "Split-dollar arrangements"}
+  - {code: IRT_BUYSELL_FUNDING, short_label: "Buy-sell funding with life insurance"}
+  - {code: IRT_KEY_PERSON, short_label: "Key person insurance"}
+  - {code: IRT_7702_COMPLIANCE, short_label: "§7702 life insurance definition"}
+  - {code: IRT_MEC_AVOIDANCE, short_label: "Modified endowment contract avoidance"}
+  - {code: IRT_101J_REQUIREMENTS, short_label: "§101(j) employer-owned life insurance notice"}
+  - {code: IRT_AUDIT_DEFENSE_CAPTIVE, short_label: "Captive audit defense and IRS Dirty Dozen exposure"}

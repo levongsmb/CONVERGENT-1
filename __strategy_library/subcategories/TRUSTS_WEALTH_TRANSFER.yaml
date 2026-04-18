@@ -1,0 +1,16 @@
+category_code: TRUSTS_WEALTH_TRANSFER
+category_sequence_order: 30
+subcategories:
+  - {code: TWT_SLAT, short_label: "Spousal lifetime access trust"}
+  - {code: TWT_GRAT, short_label: "Grantor retained annuity trust", cross_references: [ESTATE_GIFT_GST]}
+  - {code: TWT_IDGT_SALE, short_label: "IDGT sales with promissory note"}
+  - {code: TWT_PREFERRED_FREEZE, short_label: "Preferred partnership freeze"}
+  - {code: TWT_CLAT_CLUT, short_label: "CLATs and CLUTs"}
+  - {code: TWT_DYNASTY_TRUST, short_label: "Dynasty trust funding"}
+  - {code: TWT_DECANTING, short_label: "Trust decanting"}
+  - {code: TWT_MODIFICATION, short_label: "Trust modification"}
+  - {code: TWT_PROTECTOR_POWERS, short_label: "Trust protector powers"}
+  - {code: TWT_SWAP_POWERS, short_label: "§675(4)(C) swap powers"}
+  - {code: TWT_BASIS_SUBSTITUTION, short_label: "Basis substitution planning"}
+  - {code: TWT_GRANTOR_BURN, short_label: "Grantor trust burn (tax paid by grantor)"}
+  - {code: TWT_ILIT, short_label: "Life insurance trust optimization"}

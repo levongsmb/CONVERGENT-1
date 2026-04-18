@@ -1,0 +1,20 @@
+category_code: EXECUTIVE_COMP_AND_EQUITY
+category_sequence_order: 26
+subcategories:
+  - {code: EXEC_ISO, short_label: "Incentive stock options"}
+  - {code: EXEC_NSO, short_label: "Nonqualified stock options"}
+  - {code: EXEC_RSU, short_label: "Restricted stock units"}
+  - {code: EXEC_RESTRICTED_83B, short_label: "Restricted stock and §83(b) election"}
+  - {code: EXEC_PROFITS_INTEREST, short_label: "Profits interests", cross_references: [PARTNERSHIP_STRUCTURING.PS_PROFITS_INTEREST_83B]}
+  - {code: EXEC_CARRIED_INTEREST, short_label: "Carried interests", cross_references: [CAPITAL_GAINS_LOSSES.CGL_1061_CARRIED]}
+  - {code: EXEC_PHANTOM_EQUITY, short_label: "Phantom equity"}
+  - {code: EXEC_SAR, short_label: "Stock appreciation rights"}
+  - {code: EXEC_409A_DEFERRED, short_label: "§409A deferred compensation", merged_from: DEFERRED_COMPENSATION_409A}
+  - {code: EXEC_409A_DOCUMENT_FAILURE, short_label: "§409A document failures and corrections", merged_from: DEFERRED_COMPENSATION_409A}
+  - {code: EXEC_409A_OPERATIONAL_FAILURE, short_label: "§409A operational failures", merged_from: DEFERRED_COMPENSATION_409A}
+  - {code: EXEC_280G, short_label: "Golden parachute §280G"}
+  - {code: EXEC_CHANGE_CONTROL, short_label: "Change-in-control bonuses"}
+  - {code: EXEC_PE_ROLLOVER, short_label: "Equity rollover in PE deals"}
+  - {code: EXEC_MIU, short_label: "Management incentive units"}
+  - {code: EXEC_DER, short_label: "Dividend equivalent rights"}
+  - {code: EXEC_REDEMPTION_TIMING, short_label: "Equity redemption timing"}

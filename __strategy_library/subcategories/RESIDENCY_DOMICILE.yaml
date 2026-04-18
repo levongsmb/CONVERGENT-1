@@ -1,0 +1,18 @@
+category_code: RESIDENCY_DOMICILE
+category_sequence_order: 32
+subcategories:
+  - {code: RD_CA_DOMICILE_BREAK, short_label: "California domicile break"}
+  - {code: RD_NY_STATUTORY_RES, short_label: "New York statutory residency", cross_references: [STATE_SALT]}
+  - {code: RD_NY_PPA, short_label: "New York permanent place of abode", cross_references: [STATE_SALT]}
+  - {code: RD_NJ_TIEBREAKERS, short_label: "New Jersey residency tie-breakers", cross_references: [STATE_SALT]}
+  - {code: RD_HI_TEMP_ABSENCE, short_label: "Hawaii residency and temporary absence", cross_references: [STATE_SALT]}
+  - {code: RD_DC_DOMICILE_ABANDON, short_label: "DC domicile abandonment", cross_references: [STATE_SALT]}
+  - {code: RD_DAY_COUNT_SUBSTANT, short_label: "Day count substantiation"}
+  - {code: RD_ELECTRONIC_EVIDENCE, short_label: "Cell phone / credit card / EZ Pass audit defense"}
+  - {code: RD_HOME_SALE_TIMING, short_label: "Home sale and lease timing"}
+  - {code: RD_FAMILY_MOVE_SEQ, short_label: "Family move sequencing"}
+  - {code: RD_TRUST_RESIDENCY_IMPL, short_label: "Trust residency implications"}
+  - {code: RD_REMOTE_WORK_SOURCING, short_label: "Remote work sourcing"}
+  - {code: RD_EXIT_TAX_EXPOSURE, short_label: "Exit tax exposure review"}
+  - {code: RD_PART_YEAR, short_label: "Part-year residency planning"}
+  - {code: RD_COMMUNITY_PROP_MOVE, short_label: "Community property implications on move"}

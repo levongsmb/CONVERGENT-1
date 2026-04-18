@@ -1,0 +1,18 @@
+category_code: REAL_ESTATE_DISPOSITIONS_1031
+category_sequence_order: 16
+subcategories:
+  - {code: RED1031_FORWARD, short_label: "Forward exchange"}
+  - {code: RED1031_REVERSE, short_label: "Reverse exchange"}
+  - {code: RED1031_IMPROVEMENT, short_label: "Improvement exchange"}
+  - {code: RED1031_PARTIAL, short_label: "Partial exchange"}
+  - {code: RED1031_DROP_SWAP, short_label: "Drop-and-swap"}
+  - {code: RED1031_SWAP_DROP, short_label: "Swap-and-drop"}
+  - {code: RED1031_TIC_DST, short_label: "TIC and DST structures"}
+  - {code: RED1031_RELATED_PARTY, short_label: "Related-party exchange restrictions"}
+  - {code: RED1031_BOOT_MIN, short_label: "Boot minimization"}
+  - {code: RED1031_DEBT_REPLACE, short_label: "Debt replacement"}
+  - {code: RED1031_QI_CONTROLS, short_label: "Qualified intermediary controls"}
+  - {code: RED1031_VACATION_CONV, short_label: "Vacation home conversion"}
+  - {code: RED1031_MIXED_USE, short_label: "Mixed-use property allocation"}
+  - {code: RED1031_PSHIP_COMPLICATIONS, short_label: "Partnership exchange complications"}
+  - {code: RED1031_CA_CLAWBACK, short_label: "California clawback tracking", cross_references: [CALIFORNIA_SPECIFIC.CA_1031_CLAWBACK]}

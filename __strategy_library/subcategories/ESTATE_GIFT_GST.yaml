@@ -1,0 +1,21 @@
+category_code: ESTATE_GIFT_GST
+category_sequence_order: 31
+subcategories:
+  - {code: EGG_ANNUAL_EXCLUSION, short_label: "Annual exclusion gifting ($19,000 for 2026)"}
+  - {code: EGG_LIFETIME_EXEMPTION, short_label: "Lifetime exemption use"}
+  - {code: EGG_OBBBA_15M_EXEMPTION, short_label: "OBBBA $15M basic exclusion post-2025", obbba_touched: true, statutory_cite: "IRC §2010 as amended by OBBBA (permanent)"}
+  - {code: EGG_PORTABILITY, short_label: "Portability elections"}
+  - {code: EGG_GST_ALLOCATION, short_label: "GST exemption allocation"}
+  - {code: EGG_FORMULA_GIFTS, short_label: "Formula gifts"}
+  - {code: EGG_DEFINED_VALUE, short_label: "Defined value clauses"}
+  - {code: EGG_FLP, short_label: "Family limited partnerships"}
+  - {code: EGG_LLC_RECAP, short_label: "LLC recapitalizations"}
+  - {code: EGG_VALUATION_DISCOUNTS, short_label: "Valuation discounts"}
+  - {code: EGG_INTRAFAMILY_LOANS, short_label: "Intrafamily loans"}
+  - {code: EGG_SCIN, short_label: "Self-canceling installment notes"}
+  - {code: EGG_PRIVATE_ANNUITY, short_label: "Private annuities"}
+  - {code: EGG_CHARITABLE_LEAD, short_label: "Charitable lead structures", cross_references: [CHARITABLE.CHAR_CLT]}
+  - {code: EGG_BASIS_STEPUP, short_label: "Basis step-up planning"}
+  - {code: EGG_COMMUNITY_PROP_BASIS, short_label: "Community property basis planning"}
+  - {code: EGG_ESTATE_FREEZE, short_label: "Estate freeze transactions"}
+  - {code: EGG_BUYSELL_VALUATION, short_label: "Buy-sell agreement valuation planning"}

@@ -1,0 +1,24 @@
+category_code: SALE_TRANSACTION
+category_sequence_order: 23
+subcategories:
+  - {code: SALE_ASSET_VS_STOCK, short_label: "Asset sale vs stock sale", priority_score: 10}
+  - {code: SALE_REDEMPTION, short_label: "Equity sale vs redemption", priority_score: 7}
+  - {code: SALE_F_REORG, short_label: "F reorganization pre-sale", priority_score: 6, cross_references: [M_A_AND_REORGANIZATIONS.MA_F_REORG]}
+  - {code: SALE_DROP_DOWN, short_label: "Drop-down and drop-and-check"}
+  - {code: SALE_BASIS_CLEANUP, short_label: "Pre-sale basis cleanup", priority_score: 9}
+  - {code: SALE_WORKING_CAPITAL_TRUE_UP, short_label: "Working capital true-up planning"}
+  - {code: SALE_EARNOUTS, short_label: "Earnout structuring", priority_score: 6}
+  - {code: SALE_ROLLOVER_EQUITY, short_label: "Rollover equity", priority_score: 5}
+  - {code: SALE_MGMT_CARVE_OUTS, short_label: "Management carve-outs", merged_from: EXIT_AND_SUCCESSION}
+  - {code: SALE_INSTALLMENT, short_label: "Installment sale", cross_references: [INSTALLMENT_AND_DEFERRED_SALES.INST_STANDARD_453]}
+  - {code: SALE_CONTINGENT, short_label: "Contingent payment sale"}
+  - {code: SALE_338H10, short_label: "§338(h)(10) election", cross_references: [M_A_AND_REORGANIZATIONS.MA_338_ELECTION]}
+  - {code: SALE_336E, short_label: "§336(e) election", cross_references: [M_A_AND_REORGANIZATIONS.MA_336E_ELECTION]}
+  - {code: SALE_754_IN_SALE, short_label: "§754 election in sale context", priority_score: 7, cross_references: [PTE_BASIS_AND_DISTRIBUTIONS.PTE_754_ELECTION]}
+  - {code: SALE_751_HOT_ASSETS, short_label: "§751 hot asset analysis", priority_score: 7, cross_references: [PARTNERSHIP_STRUCTURING.PS_751_HOT_ASSETS]}
+  - {code: SALE_STATE_SOURCING, short_label: "State sourcing of sale gain"}
+  - {code: SALE_FIRPTA, short_label: "FIRPTA and foreign seller issues", cross_references: [INTERNATIONAL_INBOUND.II_FIRPTA]}
+  - {code: SALE_SUCCESSOR_LIABILITY, short_label: "Successor liability review"}
+  - {code: SALE_TXN_COST_DEDUCT, short_label: "Transaction cost deductibility", priority_score: 6}
+  - {code: SALE_TERMINATION_FEE, short_label: "Termination fee treatment"}
+  - {code: SALE_SUCCESSION_TRANSFERS, short_label: "Succession transfers", merged_from: EXIT_AND_SUCCESSION}

@@ -1,0 +1,14 @@
+category_code: PARTNERSHIP_STRUCTURING
+category_sequence_order: 11
+subcategories:
+  - {code: PS_704B_ALLOCATIONS, short_label: "§704(b) substantial economic effect"}
+  - {code: PS_704C_BUILT_IN, short_label: "§704(c) built-in gain/loss methods"}
+  - {code: PS_TARGETED_ALLOC, short_label: "Targeted allocations"}
+  - {code: PS_WATERFALLS, short_label: "Waterfall structures"}
+  - {code: PS_CARRIED_INTEREST, short_label: "Carried interest structuring", cross_references: [CAPITAL_GAINS_LOSSES.CGL_1061_CARRIED, EXECUTIVE_COMP_AND_EQUITY.EXEC_CARRIED_INTEREST]}
+  - {code: PS_PROFITS_INTEREST_83B, short_label: "Profits interests and §83(b)"}
+  - {code: PS_707_PAYMENTS, short_label: "§707 disguised sales and partner payments"}
+  - {code: PS_SPECIAL_ALLOCATIONS, short_label: "Special allocations"}
+  - {code: PS_MIXING_BOWL, short_label: "§737 and §704(c)(1)(B) mixing bowl rules"}
+  - {code: PS_751_HOT_ASSETS, short_label: "§751 hot asset characterization"}
+  - {code: PS_LAYERING, short_label: "Tiered partnership structures"}

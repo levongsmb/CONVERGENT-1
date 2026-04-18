@@ -1,0 +1,25 @@
+category_code: QSBS_1202
+category_sequence_order: 27
+subcategories:
+  - {code: QSBS_ORIGINAL_ISSUANCE, short_label: "Original issuance requirement", priority_score: 8}
+  - {code: QSBS_ACTIVE_BUSINESS, short_label: "Active business requirement", priority_score: 8}
+  - {code: QSBS_GROSS_ASSETS, short_label: "Gross asset testing", priority_score: 7, obbba_touched: true}
+  - {code: QSBS_REDEMPTIONS, short_label: "Redemption taint analysis", priority_score: 6}
+  - code: QSBS_HOLDING_PERIOD
+    short_label: "Holding period tracking — pre-OBBBA 5-year rule / post-OBBBA 3/4/5-year tiers"
+    obbba_touched: true
+    priority_score: 8
+    statutory_cite: "IRC §1202(a) and (b)(4) as amended by OBBBA §70431"
+    detailed_description: "Pre-OBBBA QSBS (stock issued on or before July 4, 2025): strict 5-year hold required for 100% exclusion. Post-OBBBA QSBS (stock issued after July 4, 2025): tiered exclusion at 50% (3-year hold), 75% (4-year hold), 100% (5-year hold). Track holding periods separately for pre- and post-OBBBA lots; tacking rules apply to gifts and reorganizations."
+  - {code: QSBS_TACKING, short_label: "Tacking in gifts and reorganizations", priority_score: 6}
+  - {code: QSBS_STACKING, short_label: "Trust and family stacking", priority_score: 7, cross_references: [TRUSTS_INCOME_SHIFTING.TIS_QSBS_THROUGH_TRUST]}
+  - {code: QSBS_GIFT_AND_STACK, short_label: "Gift-and-stack planning"}
+  - {code: QSBS_PRE_CONVERSION, short_label: "Pre-conversion from pass-through to C corp", priority_score: 7, cross_references: [ENTITY_SELECTION.ENT_QSBS_DRIVEN]}
+  - {code: QSBS_PSHIP_PRE_GROWTH, short_label: "Partnership or LLC incorporation before growth"}
+  - {code: QSBS_1045_ROLLOVER, short_label: "§1045 rollover", priority_score: 4}
+  - {code: QSBS_OBBBA_TIERED, short_label: "OBBBA tiered exclusion 50/75/100%", obbba_touched: true}
+  - {code: QSBS_OBBBA_15M_CAP, short_label: "OBBBA $15M cap and $75M gross asset threshold", obbba_touched: true, statutory_cite: "IRC §1202(b)(4) and (d) as amended by OBBBA §70431"}
+  - {code: QSBS_STATE_CONFORMITY, short_label: "State conformity review (especially CA nonconformity)", priority_score: 8}
+  - {code: QSBS_ASSET_CLEANSING, short_label: "Asset cleansing before issuance"}
+  - {code: QSBS_QTB_EXCLUSIONS, short_label: "Qualified trade or business exclusions"}
+  - {code: QSBS_SAFE_CONVERTIBLE, short_label: "Preferred stock, SAFE, convertible note issues"}
