@@ -6,6 +6,45 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### Phase 3a batch 4 — evaluators 26-35 (2026-04-18)
+
+Ten MVP evaluators per spec §5.5; 59 new tests. Cumulative suite
+270 passed; registry 35 evaluators.
+
+- **Added:** `CGL_GAIN_BUNCHING` (6 tests) — §1(h) bracket-targeting
+  with graceful degradation when §1(h) breakpoints awaiting Rev. Proc.
+  Surfaces unrealized-gain inventory and multi-year planning windows.
+- **Added:** `CGL_1231` (5 tests) — §1231 netting with gain/loss
+  character classification. Deterministic: $100K §1231 gain at
+  (37% − 23.8%) = $13,200 rate differential; $50K loss at 37% = $18,500.
+- **Added:** `CGL_1250_UNRECAPTURED` (5 tests) — §1(h)(6) 25% rate +
+  §1411 NIIT tracking. Deterministic: $200K × 25% + $200K × 3.8% =
+  $57,600 total federal tax.
+- **Added:** `CHAR_DAF` (6 tests) — DAF bunching with 2-year stacked
+  itemization math. Deterministic: MFJ fixture $30K charitable × 32%
+  = $9,600 federal save; liquidity fixture $255K × 32% = $81,600.
+- **Added:** `CHAR_PRE_SALE` (6 tests) — anticipatory-assignment
+  avoidance on pre-liquidity gift. Humacid / Palmer / Ferguson pin
+  cites. Surfaces dual benefit of avoided gain + FMV deduction.
+- **Added:** `CHAR_APPREC_SECURITIES` (6 tests) — §170(e)(1)(A) direct
+  gifting of publicly-traded LT stock. Excludes short-term holdings and
+  non-publicly-traded stock.
+- **Added:** `CHAR_OBBBA_05_FLOOR` (6 tests) — §170(a) 0.5% AGI floor
+  effective 2026. Deterministic: MFJ AGI $947,940 × 0.5% = $4,739.70
+  floor; full $4,739.70 disallowed → $25,260.30 allowed.
+- **Added:** `CHAR_OBBBA_37_CAP` (6 tests) — §68 35% tax-benefit cap
+  using 2/37ths limitation formula. Deterministic: $50K itemized at
+  income well above top bracket → 2/37 × $50,000 = $2,702.70 reduction.
+- **Added:** `QSBS_ORIGINAL_ISSUANCE` (6 tests) — §1202(c)(1)(B)
+  documentation check with §1202(h) tacking recognition. Pin cites
+  Humacid, Rev. Rul. 71-572.
+- **Added:** `QSBS_HOLDING_PERIOD` (7 tests) — calendar-day counter
+  with pre-OBBBA 5-year strict and post-OBBBA 50/75/100% tiers.
+  Computes next_tier_vest_date per lot.
+
+Test suite totals: `pytest app/tests/` → **270 passed in 3.52s**.
+Registry auto-discovery: **35 evaluators** registered.
+
 ### Phase 3a batch 3 — evaluators 16-25 (2026-04-18)
 
 Ten MVP evaluators added per spec §5.5 order; 62 new tests. Cumulative
