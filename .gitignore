@@ -48,8 +48,10 @@ Desktop.ini
 *.key
 engagements/
 backups/
-authority_cache/
-rules_cache/
+# config/authorities/ and config/rules_cache/ are TRACKED — the runtime
+# caches those trees ship with the repo. Only runtime-written derivatives
+# (under app-level writable paths) should be ignored; add narrower paths
+# here if such a cache is introduced later.
 
 # Anthropic logs / keys (belt-and-suspenders — keyring is the real store)
 .anthropic/
