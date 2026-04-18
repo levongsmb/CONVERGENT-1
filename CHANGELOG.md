@@ -6,6 +6,38 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### G7 — COMPLIANCE_AND_PROCEDURAL complete (Phase 3b, category 1 of 40, 2026-04-18)
+
+Phase 3b opens with the first category in MANIFEST sequence order.
+All 27 COMPLIANCE_AND_PROCEDURAL subcategories now have evaluators
+and tests. Halts at G7 for per-category sign-off before STATE_SALT
+(sequence 2) opens.
+
+- **Added:** 26 new evaluators closing out the category (plus the 1
+  MVP evaluator already in place):
+  - Penalty / procedural: CAP_PENALTY_ABATEMENT, CAP_FIRST_TIME_ABATE,
+    CAP_REASONABLE_CAUSE, CAP_PROTECTIVE_ELECTIONS,
+    CAP_SUPERSEDING_VS_AMENDED, CAP_STATUTE_MGMT, CAP_3115_METHOD_CHANGE,
+    CAP_8275_DISCLOSURE, CAP_ELECTION_CALENDAR, CAP_RECORD_RECONSTRUCTION,
+    CAP_7508A_DISASTER, CAP_IDENTITY_POA.
+  - BBA audit regime: CAP_BBA_AUDIT_REGIME, CAP_PUSH_OUT_ELECTION,
+    CAP_PR_CONTROLS.
+  - Election management: CAP_453D_ELECTION_OUT.
+  - Exam defense: CAP_EXAMS_APPEALS, CAP_ACCOUNTING_METHOD_DEFENSE,
+    CAP_ERC_DEFENSE.
+  - Information reporting: CAP_1099, CAP_BACKUP_WITHHOLDING, CAP_W8_W9,
+    CAP_PAYROLL_REPORTING, CAP_K2_K3, CAP_FORM_8308.
+  - OBBBA-specific: CAP_NOTICE_2026_3 (§1062 estimated-tax relief).
+- **Added:** 130 new test cases (5 per evaluator average).
+- **Added:** `__strategy_library/subcategories/COMPLIANCE_AND_PROCEDURAL_EVALUATORS_SIGNOFF.md`
+  per spec §5.6 — authority inventory, cross-strategy coverage,
+  architectural invariants, and G7 sign-off checklist.
+- **Test suite totals:** `pytest app/tests/` → **490 passed in 5.41s**.
+- **Registry totals:** **76 evaluators** registered (50 MVP + 26 new).
+- **Gate status:** G6 closed. G7 sign-off pending at
+  `__strategy_library/subcategories/COMPLIANCE_AND_PROCEDURAL_EVALUATORS_SIGNOFF.md`.
+  STATE_SALT (sequence 2) blocked until G7 signed.
+
 ### G6 — Phase 3a MVP complete (2026-04-18)
 
 All 50 MVP evaluators per spec §5.5 built, tested, and registered.
