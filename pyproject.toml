@@ -81,7 +81,6 @@ dev = [
 [project.scripts]
 convergent = "convergent.__main__:main"
 convergent-bootstrap = "convergent.authority_layer.statutory_mining.bootstrap:run"
-convergent-mine = "convergent.authority_layer.statutory_mining.scheduler:run_once"
 
 [build-system]
 requires = ["setuptools>=75", "wheel"]
