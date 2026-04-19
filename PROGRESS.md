@@ -2,7 +2,7 @@
 
 ## RESUME HERE (last updated 2026-04-19)
 
-**Checkpoint SHA:** f33de9b on origin/main
+**Checkpoint SHA:** a5b9b4c (self-referential; latest on origin/main at session open)
 **Branch:** main (single authoritative branch; all claude/* branches pruned)
 **Test suite:** 613 passing, 100 evaluators (50 MVP + 26 COMPLIANCE_AND_PROCEDURAL + 24 STATE_SALT)
 **Gates closed:** G0–G7 signed. G8 backfilled (STATE_SALT) — signature recorded in governance reconciliation commit be2f44b.
@@ -17,7 +17,7 @@
 
 The project is in active Phase 3b development: building per-category
 deterministic evaluators with per-category G<N> sign-off gates. As of the
-most recent commit on `claude/review-project-docs-rKsSz`:
+most recent commit on `origin/main`:
 
 - **Phase 0** complete through G0 (hot-swappable config architecture,
   signed 2026-04-18).
@@ -50,6 +50,11 @@ Repo health: no uncommitted changes on the working branch. Test suite
 last reported green at 613 passing (post-G7-hardening).
 
 ## Pending / Next Step
+
+> **Superseded by RESUME HERE above.** The three options below were
+> the open slate at session close; RESUME HERE has since selected
+> option 2 (CALIFORNIA_SPECIFIC Phase 3b sequence 3) as the next
+> task. Preserved for audit context only.
 
 Awaiting direction on the branch task. Given the branch name
 `claude/check-continuity-files-O93vl`, the apparent intent is the
