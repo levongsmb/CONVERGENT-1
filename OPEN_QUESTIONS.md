@@ -4,13 +4,20 @@ Questions the user must answer before a blocked phase can continue.
 When a question is answered, it moves to `docs/decisions/`; it is
 removed here.
 
-## Phase 0 — blocking Phase 1 entry
+## Phase 0 — deferred; not blocking current work
 
 ### Q0.6 — Strategy Library category sequence (deferred on 2026-04-18)
 
 User deferred Q0.6 on 2026-04-18 pending paste-back of the 20-category
-list. The list is reproduced below. Send back either (a) an explicit
-"accept default order" or (b) a re-ordered sequence.
+list. Phase 3b has since proceeded using the default MANIFEST order
+(`__strategy_library/subcategories/MANIFEST.yaml`) — sequence 1
+COMPLIANCE_AND_PROCEDURAL signed at G7, sequence 2 STATE_SALT
+backfilled at G8, sequence 3 CALIFORNIA_SPECIFIC next. A reorder
+remains possible if priorities shift; completed categories would not
+be invalidated.
+
+Accept or reorder: send either (a) an explicit "accept default order"
+or (b) a re-ordered sequence.
 
 Default ordering criteria supplied with the deferral:
 1. April 2026 filing-season urgency
@@ -42,10 +49,11 @@ The 20 categories (current default order from `strategy_library/MANIFEST.yaml`):
 19. MISCELLANEOUS — remaining high-impact strategies
 20. COMPLIANCE_AND_PROCEDURAL — procedural and penalty-mitigation
 
-**Blocks:** Phase 1 sub-phase sequence. `strategy_library/MANIFEST.yaml`
-`sequence_order` keys reflect the default above; once user confirms or
-re-orders, the MANIFEST is updated to match and Phase 1 begins with the
-first category.
+**Blocks:** nothing currently. MANIFEST `sequence_order` keys already
+reflect the default above and Phase 3b is consuming them in order; a
+future reorder would update `__strategy_library/subcategories/MANIFEST.yaml`
+and re-sequence only the not-yet-started categories (4-40 as of this
+writing).
 
 ## Phase 0 — closed since last update
 

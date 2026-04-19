@@ -120,7 +120,6 @@ python -m app.cross_check --today-date 2026-04-18 --real   # spends API $
 CLI entry points (declared in `pyproject.toml`):
 - `convergent`                 — main app
 - `convergent-bootstrap`       — statutory mining bootstrap
-- `convergent-mine`            — one-off statutory mining run
 
 Installer build (Windows):
 ```

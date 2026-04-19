@@ -1,5 +1,13 @@
 # Repository layout
 
+> **Legacy/reference.** This file describes the original single-package
+> `convergent/` layout from pre-Phase-0 scaffolding. The active build
+> layer lives under `app/`, `config/`, and `__strategy_library/` per
+> Decision 0010. See `ARCHITECTURE.md` for the current authoritative
+> file-by-file map. This document is retained for historical reference
+> and for the `convergent/` subpackage (parts of which are still
+> scaffolded pending Phase 5+ wiring).
+
 Convergent is a single Python package (`convergent`) plus supporting assets.
 Every module boundary in the build prompt (§§6–15) maps to a sub-package.
 

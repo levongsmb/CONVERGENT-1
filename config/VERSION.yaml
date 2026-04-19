@@ -12,21 +12,17 @@ components:
   authorities_2026:
     path: "config/authorities/2026/"
     version: "2026.04.18"
-  forms_federal:
-    path: "config/forms/federal/"
-    version: "2026.04.18"
   forms_california:
     path: "config/forms/california/"
     version: "2026.04.18"
   prompts:
     path: "config/prompts/"
     version: "2026.04.18"
-  report_templates:
-    path: "config/report_templates/"
-    version: "2026.04.18"
-  cross_check_schemas:
-    path: "config/cross_check_schemas/"
-    version: "2026.04.18"
+
+# Planned components (not yet materialized on disk; add when created):
+#   forms_federal        → config/forms/federal/
+#   report_templates     → config/report_templates/
+#   cross_check_schemas  → config/cross_check_schemas/
 
 # Migration status (2026-04-18, Phase 3a opening):
 # rules_cache_bootstrap/federal/*.yaml and rules_cache_bootstrap/california/*.yaml

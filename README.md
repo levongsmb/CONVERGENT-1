@@ -1,6 +1,6 @@
 # Convergent — Strategic Tax Optimization Suite
 
-**Status:** Phase 0 scaffold. Not usable for engagement work.
+**Status:** Phase 3b in progress (per-category evaluator build). Not yet deployable for engagement work.
 
 Convergent is a Python-based, locally-run, multi-entity tax planning and
 scenario optimization application for closely-held business owners and their
@@ -38,12 +38,18 @@ The installer verifies presence and installs silently if missing.
 Currently: only ongoing paid dependency is an Anthropic API key (used by the
 Authority Layer). Stored in Windows Credential Manager via `keyring`.
 
-## Phase 0 acceptance gate
+## Build status
 
-Per §18 of the build prompt, Phase 0 is not complete until the user
-personally signs off every rule parameter in the bootstrapped rules cache.
-See `rules_cache_bootstrap/README.md` for the review workflow. Phase 1
-work does not begin until that sign-off lands.
+See `PROGRESS.md` for the current gate state and the next task.
+G0–G7 are signed; G8 (STATE_SALT) is backfilled per the 2026-04-19
+governance reconciliation. Phase 3b continues on the MANIFEST category
+sequence. Governance, sign-off workflow, and the Commit-and-Push Policy
+are documented in `CLAUDE.md`; per-gate history is in `CHANGELOG.md`;
+per-category sign-offs live under
+`__strategy_library/subcategories/<CATEGORY>_EVALUATORS_SIGNOFF.md`.
+
+Outstanding ◐/☐ rows in `rules_cache_bootstrap/review_checklist.md`
+remain open but do not block current Phase 3b evaluator work.
 
 ## Repository layout
 

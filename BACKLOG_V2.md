@@ -32,4 +32,18 @@ block the current build. User triages post-Phase-11.
 
 ## Items added during build
 
-(none yet)
+- **Dependency upgrade pass (post-Phase-5 golden-suite).** Audit
+  2026-04-19 flagged public advisories for pinned `nicegui==2.7.0`,
+  `jinja2==3.1.4`, `pillow==11.0.0`, `cryptography==43.0.3`,
+  `pytest==8.3.3`. Deferred per CLAUDE.md "Never auto-update
+  dependencies" standing rule and spec §18 (any upgrade requires
+  re-running the full golden-scenario suite, which is Phase 5+).
+  Revisit after the golden-suite harness exists. Scope: per-package
+  advisory review, targeted upgrade, lockfile introduction.
+- **Married-scenario validation hardening.** Audit 2026-04-19
+  flagged `app/scenario/models.py:334-339` requires `spouse_dob` for
+  MFJ/MFS but not `spouse_state_domicile`, and
+  `app/scenario/validators.py:146-164` only emits the
+  community-property reminder when `spouse_state_domicile` is present.
+  Deferred as optional — low impact today (scenarios parse); revisit
+  when community-property math becomes a real cross-check target.

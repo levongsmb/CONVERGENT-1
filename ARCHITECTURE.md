@@ -10,11 +10,10 @@ from `docs/REPO_LAYOUT.md`, partly stub).
 - `README.md` — Phase 0 status note, build prerequisites, installer platform
   targets, pointer to the master build spec.
 - `pyproject.toml` — Python 3.12 pinning, exact-version deps, ruff/mypy/pytest
-  config, CLI entry points (`convergent`, `convergent-bootstrap`,
-  `convergent-mine`).
+  config, CLI entry points (`convergent`, `convergent-bootstrap`).
 - `CHANGELOG.md` — phase-by-phase build log. Each G<N> gate has a subsection.
-- `OPEN_QUESTIONS.md` — questions blocking phase entry (Q0.6 deferred — the
-  strategy library category order awaiting user paste-back).
+- `OPEN_QUESTIONS.md` — deferred questions; Q0.6 (strategy-library
+  category reorder) remains open but does not block current work.
 - `BACKLOG_V2.md` — additive-only deferred-feature list.
 - `.gitignore` — excludes caches, venvs, installer artifacts.
 
@@ -85,15 +84,18 @@ Phase 0 (G0) introduced a hot-swappable configuration architecture.
 Per-category subdirectories (one folder per MANIFEST category code), each with
 evaluator modules and an `__init__.py`. Categories currently populated:
 `ACCOUNTING_METHODS/`, `CALIFORNIA_SPECIFIC/`, `CAPITAL_GAINS_LOSSES/`,
-`CHARITABLE/`, `COMPENSATION/`, `COMPLIANCE_AND_PROCEDURAL/` (G7 complete),
+`CHARITABLE/`, `COMPENSATION/`, `COMPLIANCE_AND_PROCEDURAL/` (G7 signed),
 `CREDITS/`, `ENTITY_SELECTION/`, `INSTALLMENT_AND_DEFERRED_SALES/`,
 `LOSS_LIMIT_NAVIGATION/`, `NIIT_1411/`, `PTE_BASIS_AND_DISTRIBUTIONS/`,
 `QBI_199A/`, `QSBS_1202/`, `REAL_ESTATE_DEPRECIATION/`, `RETIREMENT/`,
-`SALE_TRANSACTION/`, `SELF_EMPLOYMENT_TAX/`, `STATE_SALT/` (G8 in progress —
+`SALE_TRANSACTION/`, `SELF_EMPLOYMENT_TAX/`, `STATE_SALT/` (G8 backfilled —
 25 evaluator files).
 
-Current registry size: 76 evaluators (50 MVP from G6 + 26 from COMPLIANCE
-category G7). Test suite: 490 passed at G7 sign-off.
+Registry size and test-count totals evolve commit-by-commit — see
+`PROGRESS.md` for the live figures. At session close of the 2026-04-19
+governance reconciliation pass, totals were 100 evaluators registered
+(50 MVP + 26 COMPLIANCE_AND_PROCEDURAL + 24 STATE_SALT) and 613 tests
+passing.
 
 ### `app/tests/` — test suite
 
