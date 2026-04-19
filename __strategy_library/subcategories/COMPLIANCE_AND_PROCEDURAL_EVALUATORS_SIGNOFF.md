@@ -116,6 +116,11 @@ Every evaluator in this category follows the G5 pattern:
 - `pytest app/tests/evaluators/COMPLIANCE_AND_PROCEDURAL/` →
   **138 passed in 1.36s**
 - `pytest app/tests/` overall → **490 passed in 5.41s**
+
+  Post-signature update (2026-04-19): suite subsequently grew to 613
+  passing after G8 STATE_SALT backfill and G7 §6511(b)(2) remediation
+  in commit 321b98e. Original 490 figure preserved as point-in-time
+  audit record.
 - Registry auto-discovery: **76 evaluators** registered (50 MVP + 26 new)
 
 ## G7 sign-off checklist
@@ -132,5 +137,9 @@ Every evaluator in this category follows the G5 pattern:
 - [x] Authorization to proceed to the next category in MANIFEST
       sequence order (STATE_SALT, sequence_order 2)
 
-Signed: Levon Galstian, CPA
-Date: 2026-04-18
+Signed: Levon Galstian, CPA (License 146973)
+Date: 2026-04-19
+Note: G7 signed after substantive §6511(b)(2) remediation in
+commit 321b98e. G7 sign-off occurred after G8 STATE_SALT work
+had already been committed (8f9f518); gate-ordering violation
+reconciled in commit be2f44b.
