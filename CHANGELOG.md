@@ -6,6 +6,27 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### G8 — Phase 3b STATE_SALT complete (backfilled 2026-04-19, work committed 2026-04-18)
+
+24 STATE_SALT evaluators + 24 test modules landed in commit
+8f9f518, bringing registered evaluators to 100 and test suite to
+610 passing. This entry is a retroactive backfill: the work was
+committed before G7 (COMPLIANCE_AND_PROCEDURAL) was signed,
+violating the per-category sign-off ordering rule in spec §5.6.
+Governance reconciled here; evaluator code itself is unchanged.
+
+* Gate-ordering violation: 8f9f518 landed before G7 signature.
+  SIGNOFF at __strategy_library/subcategories/STATE_SALT_EVALUATORS_SIGNOFF.md
+  was originally mislabeled "G7" — renamed to "G8" in this commit.
+* Out-of-order remediation: G6 remediation commits 3bd0aae and
+  ebe6ad9 landed after 8f9f518, further scrambling gate sequence.
+  No code impact; noted for audit trail.
+* Test suite totals: pytest app/tests/ → 610 passed.
+* Registry: 100 evaluators (50 MVP + 26 COMPLIANCE_AND_PROCEDURAL +
+  24 STATE_SALT).
+* Lesson: session-close discipline must include git push to remote
+  after every gate close. Future sessions governed by CLAUDE.md.
+
 ### G7 — COMPLIANCE_AND_PROCEDURAL complete (Phase 3b, category 1 of 40, 2026-04-18)
 
 Phase 3b opens with the first category in MANIFEST sequence order.

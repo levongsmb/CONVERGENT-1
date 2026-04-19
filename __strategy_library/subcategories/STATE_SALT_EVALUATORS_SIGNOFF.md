@@ -1,4 +1,12 @@
-# G7 — STATE_SALT Evaluators Complete
+# G8 — STATE_SALT Evaluators Complete
+
+> **Governance note (added 2026-04-18):** This SIGNOFF was
+> originally labeled G7 in error. G7 is the
+> COMPLIANCE_AND_PROCEDURAL gate. STATE_SALT is the second Phase 3b
+> category and therefore G8. The evaluator work itself was
+> committed in 8f9f518 before G7 was signed, violating per-category
+> sign-off ordering. Retroactive reconciliation landed in the G8
+> CHANGELOG entry.
 
 Firm: SMB CPA Group, PC
 Reviewer of record: Levon Galstian, CPA (License 146973)
@@ -125,7 +133,7 @@ Every evaluator in this category follows the G5 pattern:
 - Registry auto-discovery: **100 evaluators** registered
   (50 MVP + 26 COMPLIANCE_AND_PROCEDURAL + 24 STATE_SALT new)
 
-## G7 sign-off checklist
+## G8 sign-off checklist
 
 - [x] All 25 subcategories in STATE_SALT.yaml have evaluator modules
 - [x] All 25 have test modules with at least 5 tests each

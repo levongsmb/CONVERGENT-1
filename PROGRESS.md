@@ -4,7 +4,7 @@
 
 The project is in active Phase 3b development: building per-category
 deterministic evaluators with per-category G<N> sign-off gates. As of the
-most recent commit on `claude/check-continuity-files-O93vl`:
+most recent commit on `claude/review-project-docs-rKsSz`:
 
 - **Phase 0** complete through G0 (hot-swappable config architecture,
   signed 2026-04-18).
@@ -19,8 +19,9 @@ most recent commit on `claude/check-continuity-files-O93vl`:
   359 → 490 tests passing, signed 2026-04-18).
 - **Phase 3b** in progress:
   - Category 1 of 40 — COMPLIANCE_AND_PROCEDURAL — complete through G7.
-    26 new evaluators (27 total in category), 130 new tests, 490 tests
-    passing. G7 sign-off document present at
+    26 new evaluators (27 total in category), 131 new tests
+    (CAP_K2_K3 = 6, all others = 5), 613 tests passing after G7
+    hardening commit 321b98e. G7 sign-off document present at
     `__strategy_library/subcategories/COMPLIANCE_AND_PROCEDURAL_EVALUATORS_SIGNOFF.md`.
   - Category 2 of 40 — STATE_SALT — complete per commit `8f9f518`
     ("Phase 3b — STATE_SALT complete (category 2 of 40)"). 25 evaluator
@@ -33,7 +34,7 @@ most recent commit on `claude/check-continuity-files-O93vl`:
   `ebe6ad9`) landed. Presumably more remediation tasks pending.
 
 Repo health: no uncommitted changes on the working branch. Test suite
-last reported green at 490 passing.
+last reported green at 613 passing (post-G7-hardening).
 
 ## Pending / Next Step
 
@@ -86,3 +87,12 @@ Per `OPEN_QUESTIONS.md`:
   rules/run-test), `ARCHITECTURE.md` (file-by-file map), and
   `PROGRESS.md` (this file).
 - Will commit as "Add session continuity documentation".
+
+### 2026-04-19 — Governance reconciliation session
+
+- Investigated and documented STATE_SALT gate-ordering violation
+- G7 hardening: added IRC §6511(b)(2) cap to CAP_PROTECTIVE_ELECTIONS
+- Fixed CAP_K2_K3 test-count typo in G7 SIGNOFF (5 → 6)
+- Cherry-picked session continuity docs from check-continuity-files
+- Backfilled G8 CHANGELOG entry; renamed STATE_SALT SIGNOFF G7 → G8
+- Test suite: 610 → 613 passing
