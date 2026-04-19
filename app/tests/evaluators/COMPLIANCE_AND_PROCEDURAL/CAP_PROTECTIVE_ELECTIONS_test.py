@@ -39,3 +39,27 @@ def test_assumptions_cover_contingent_event(rules):
     r = Evaluator().evaluate(load_scenario(FIXTURES_DIR / "scenario_single_1040.yaml"), rules, 2026)
     assumptions = " ".join(r.assumptions)
     assert "contingent" in assumptions.lower()
+
+
+def test_pin_cites_include_6511_b_2(rules):
+    r = Evaluator().evaluate(load_scenario(FIXTURES_DIR / "scenario_single_1040.yaml"), rules, 2026)
+    assert any("IRC §6511(b)(2)" in c for c in r.pin_cites)
+
+
+def test_cap_vs_deadline_distinction_surfaced(rules):
+    r = Evaluator().evaluate(load_scenario(FIXTURES_DIR / "scenario_single_1040.yaml"), rules, 2026)
+    combined = " ".join(r.assumptions) + " " + " ".join(r.risks_and_caveats)
+    assert "§6511(a)" in combined and "§6511(b)(2)" in combined
+    assert "filing" in combined.lower() or "deadline" in combined.lower()
+    assert "lookback" in combined.lower() or "cap" in combined.lower()
+
+
+def test_lookback_cap_qualitatively_surfaced_when_deadline_met(rules):
+    # Scenario premise: §6511(a) filing deadline is met, but the §6511(b)(2)
+    # lookback would cap recovery. Schema does not carry payment history,
+    # so the limitation must surface qualitatively in risks_and_caveats.
+    r = Evaluator().evaluate(load_scenario(FIXTURES_DIR / "scenario_single_1040.yaml"), rules, 2026)
+    risks = " ".join(r.risks_and_caveats)
+    assert "§6511(b)(2)" in risks
+    assert "lookback" in risks.lower() or "cap" in risks.lower()
+    assert "$0" in risks or "recover" in risks.lower()

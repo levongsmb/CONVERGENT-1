@@ -52,7 +52,7 @@ category:
 | 22 | CAP_BACKUP_WITHHOLDING | 5 | Phase 3b |
 | 23 | CAP_W8_W9 | 5 | Phase 3b |
 | 24 | CAP_PAYROLL_REPORTING | 5 | Phase 3b |
-| 25 | CAP_K2_K3 | 5 | Phase 3b |
+| 25 | CAP_K2_K3 | 6 | Phase 3b |
 | 26 | CAP_FORM_8308 | 5 | Phase 3b |
 | 27 | CAP_NOTICE_2026_3 | 5 | Phase 3b |
 
