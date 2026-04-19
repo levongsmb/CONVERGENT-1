@@ -1,5 +1,18 @@
 # PROGRESS.md — Convergent
 
+## RESUME HERE (last updated 2026-04-19)
+
+**Checkpoint SHA:** f33de9b on origin/main
+**Branch:** main (single authoritative branch; all claude/* branches pruned)
+**Test suite:** 613 passing, 100 evaluators (50 MVP + 26 COMPLIANCE_AND_PROCEDURAL + 24 STATE_SALT)
+**Gates closed:** G0–G7 signed. G8 backfilled (STATE_SALT) — signature recorded in governance reconciliation commit be2f44b.
+**Next task:** Begin Phase 3b category 3 — CALIFORNIA_SPECIFIC. One MVP evaluator (CA_PTET_ELECTION) already exists from G5; remaining subcategories per __strategy_library/subcategories/CALIFORNIA_SPECIFIC.yaml MANIFEST.
+**Open blockers:** Q0.6 (Strategy Library category sequence — accept default or reorder); outstanding ◐/☐ rows in rules_cache_bootstrap/review_checklist.md.
+**Session-close rule:** Every gate close must git push to origin/main. Local-only commits are not durable state.
+**Orientation order for new sessions:** CLAUDE.md → PROGRESS.md → CHANGELOG.md (last 3 entries) → OPEN_QUESTIONS.md → latest __strategy_library/subcategories/*_SIGNOFF.md.
+
+---
+
 ## Current State
 
 The project is in active Phase 3b development: building per-category
