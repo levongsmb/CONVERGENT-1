@@ -126,3 +126,50 @@ Installer build (Windows):
 ```
 .\scripts\build_installer.ps1
 ```
+
+## Commit and Push Policy
+
+Claude Code must commit and push at every logical stopping point without
+waiting to be asked. A logical stopping point is any of:
+
+1. **Gate close.** Any G-numbered gate signature lands. Commit + push
+   immediately after the signature commit.
+2. **Category complete.** A Phase 3b category (sequence_order 1-40) has
+   all evaluators, all tests green, and SIGNOFF drafted. Commit + push
+   before requesting user signature.
+3. **Evaluator batch complete.** A batch of 5+ new evaluators written,
+   all tests passing, registry auto-discovery verified. Commit + push.
+4. **Substantive refactor complete.** Any cross-cutting change to
+   _base.py, _registry.py, config/, or scenario/ that touches 3+ files
+   and leaves the suite green. Commit + push.
+5. **Governance fix.** Any CHANGELOG backfill, SIGNOFF correction, or
+   documentation reconciliation. Commit + push.
+6. **End of session.** Regardless of state. If there are uncommitted
+   changes at session close, stage and commit them with a WIP message,
+   then push.
+
+Pre-commit checklist — run silently before every commit:
+
+- [ ] pytest app/tests/ passes (or explicitly note "WIP: tests failing" in commit message)
+- [ ] git status shows only files I intended to change
+- [ ] Commit message has title under 60 chars + 2-4 bullet body
+- [ ] No Co-Authored-By trailer unless user instructs
+
+Push rule: `git push origin main` after every commit. Local-only commits
+are not durable state. The 2026-04-18 incident proved local chat + local
+commits can be lost simultaneously.
+
+Self-review gate before pushing: ask internally "would a fresh session
+reading only CHANGELOG + PROGRESS + the latest SIGNOFF understand what
+just happened?" If no, update those files in the same commit.
+
+Anti-patterns (do not do):
+- Bundling unrelated changes into one commit
+- Pushing without running tests
+- Skipping CHANGELOG/PROGRESS updates for "small" changes
+- Waiting for user approval on routine commits that fit this policy
+  (user approval still required for commit messages on substantive
+   changes affecting evaluator behavior, tax positions, or governance
+   state — when in doubt, ask)
+
+Commit now, commit often. Every push to origin/main is cheap insurance.
