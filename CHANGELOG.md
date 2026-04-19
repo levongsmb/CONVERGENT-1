@@ -6,6 +6,41 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### Housekeeping — Audit pass (2026-04-19)
+
+Addressed external-audit findings F1-F6 in four focused commits
+on 2026-04-19. F7 (dep upgrades) and F8 (spouse-domicile
+validation hardening) deferred to BACKLOG_V2.md per CLAUDE.md
+standing rule and resolutions brief. No evaluator behavior
+changed; test suite unchanged at 613 passing.
+
+- **Changed:** `pyproject.toml` — added `ruamel.yaml==0.18.6`
+  (closed undeclared-dep gap; was imported by
+  `app/cross_check/{merge,null_detection}.py` but missing from
+  the dependency list); scoped `testpaths` from `["tests"]` to
+  `["app/tests"]` so default `pytest` targets the active
+  Phase 3b suite instead of the legacy-scaffolding tests
+  (commit `f6a8777`).
+- **Removed:** `convergent-mine` entry from `[project.scripts]`
+  (previously raised `NotImplementedError` on invocation;
+  reintroduce when `scheduler.run_once` is implemented)
+  (commit `0e34fbf`).
+- **Changed:** Documentation truthfulness sweep across seven
+  files — `README.md`, `OPEN_QUESTIONS.md`, `ARCHITECTURE.md`,
+  `config/VERSION.yaml`, `docs/REPO_LAYOUT.md`, `CLAUDE.md`,
+  `BACKLOG_V2.md` — aligned with current Phase 3b state; removed
+  manifest references to non-existent `config/` directories
+  (`forms/federal/`, `report_templates/`, `cross_check_schemas/`);
+  retired stale "Phase 1 blocked" language throughout
+  (commit `0f6c51a`).
+- **Added:** Hygiene baseline — `LICENSE` (proprietary, All
+  Rights Reserved; matches `pyproject.toml` license metadata),
+  `SECURITY.md` (private internal-channel reporting; no public
+  bug bounty; documents absence-by-design of public CI),
+  `.gitattributes` (LF-default line endings, CRLF preserved for
+  Windows-only `.ps1`/`.bat`/`.cmd`/`.iss`, binary markers for
+  installer/vendor assets) (commit `90f6c90`).
+
 ### G8 — Phase 3b STATE_SALT complete (backfilled 2026-04-19, work committed 2026-04-18)
 
 24 STATE_SALT evaluators + 24 test modules landed in commit

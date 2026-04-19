@@ -2,12 +2,13 @@
 
 ## RESUME HERE (last updated 2026-04-19)
 
-**Checkpoint SHA:** a5b9b4c (self-referential; latest on origin/main at session open)
+**Checkpoint SHA:** 90f6c90 (audit-pass endpoint; this continuity commit advances main by one — run `git rev-parse origin/main` for the post-commit tip)
 **Branch:** main (single authoritative branch; all claude/* branches pruned)
-**Test suite:** 613 passing, 100 evaluators (50 MVP + 26 COMPLIANCE_AND_PROCEDURAL + 24 STATE_SALT)
+**Test suite:** 613 passing (verified 2026-04-19 via `pytest` after testpaths scoped to `app/tests/`); 100 evaluators (50 MVP + 26 COMPLIANCE_AND_PROCEDURAL + 24 STATE_SALT)
 **Gates closed:** G0–G7 signed. G8 backfilled (STATE_SALT) — signature recorded in governance reconciliation commit be2f44b.
-**Next task:** Begin Phase 3b category 3 — CALIFORNIA_SPECIFIC. One MVP evaluator (CA_PTET_ELECTION) already exists from G5; remaining subcategories per __strategy_library/subcategories/CALIFORNIA_SPECIFIC.yaml MANIFEST.
-**Open blockers:** Q0.6 (Strategy Library category sequence — accept default or reorder); outstanding ◐/☐ rows in rules_cache_bootstrap/review_checklist.md.
+**Audit-pass milestone (2026-04-19):** 4 commits landed resolving 6 audit findings (F1-F6): pyproject deps+testpaths hygiene (f6a8777), convergent-mine CLI removal (0e34fbf), documentation truthfulness sweep (0f6c51a), hygiene baseline LICENSE+SECURITY.md+.gitattributes (90f6c90). F7 (dep upgrades) and F8 (spouse-domicile validation) recorded in BACKLOG_V2.md as deferred.
+**Next task:** Begin Phase 3b category 3 — CALIFORNIA_SPECIFIC. One MVP evaluator (CA_PTET_ELECTION) already exists from G5; remaining 14 subcategories per `__strategy_library/subcategories/CALIFORNIA_SPECIFIC.yaml` MANIFEST.
+**Open blockers:** Q0.6 (Strategy Library category sequence — accept default or reorder; not blocking current work per OPEN_QUESTIONS.md); outstanding ◐/☐ rows in `rules_cache_bootstrap/review_checklist.md`.
 **Session-close rule:** Every gate close must git push to origin/main. Local-only commits are not durable state.
 **Orientation order for new sessions:** CLAUDE.md → PROGRESS.md → CHANGELOG.md (last 3 entries) → OPEN_QUESTIONS.md → latest __strategy_library/subcategories/*_SIGNOFF.md.
 
@@ -114,3 +115,28 @@ Per `OPEN_QUESTIONS.md`:
 - Cherry-picked session continuity docs from check-continuity-files
 - Backfilled G8 CHANGELOG entry; renamed STATE_SALT SIGNOFF G7 → G8
 - Test suite: 610 → 613 passing
+
+### 2026-04-19 — Audit pass + session-close continuity
+
+- External audit flagged 8 findings (1-H, 6-M, 1-L). Addressed F1-F6
+  with 4 focused commits; F7 (dep upgrades) and F8 (spouse-domicile
+  validation) deferred to BACKLOG_V2.md per CLAUDE.md standing rule
+  and resolutions brief.
+- `pyproject.toml`: added `ruamel.yaml==0.18.6` (closed undeclared-dep
+  gap) and scoped `testpaths` to `["app/tests"]` (default `pytest`
+  now targets active suite, 613 passing).
+- Retired `convergent-mine` CLI entry point (previously raised
+  `NotImplementedError` on invocation).
+- Documentation truthfulness sweep across 7 files: README,
+  OPEN_QUESTIONS, ARCHITECTURE, `config/VERSION.yaml`,
+  `docs/REPO_LAYOUT.md`, CLAUDE.md, BACKLOG_V2 — all aligned with
+  current Phase 3b state; removed references to non-existent `config/`
+  directories from VERSION.yaml manifest.
+- Hygiene baseline added: `LICENSE` (Proprietary, All Rights
+  Reserved), `SECURITY.md` (private internal-channel reporting,
+  no public bug bounty), `.gitattributes` (LF-default, CRLF for
+  Windows-only scripts).
+- Test suite unchanged at 613 passing throughout the pass (no code
+  behavior touched).
+- Session-close continuity commit refreshes this RESUME HERE block
+  and adds a CHANGELOG Housekeeping entry.

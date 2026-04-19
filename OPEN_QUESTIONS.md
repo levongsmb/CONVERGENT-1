@@ -68,9 +68,9 @@ numbered decisions in `docs/decisions/`:
 
 ## Sign-off companions still outstanding
 
-The Phase 0 acceptance gate (§18) additionally requires every row in
+The Phase 0 acceptance gate (§18) requires every row in
 `rules_cache_bootstrap/review_checklist.md` to reach the ✓ state. The
 user's 2026-04-18 answer delivered confirmed values for several critical
-YAMLs; remaining ◐ and ☐ rows require further user input before Phase 0
-fully closes. Claude Code does **not** advance to Phase 1 until the
-master sign-off line is added to the review checklist.
+YAMLs; remaining ◐ and ☐ rows still require further user input to
+formally close Phase 0. These rows do not block current Phase 3b
+evaluator work but remain on the audit ledger.
