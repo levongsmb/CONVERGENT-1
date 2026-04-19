@@ -2,11 +2,14 @@
 
 ## RESUME HERE (last updated 2026-04-19)
 
-**Checkpoint SHA:** 90f6c90 (audit-pass endpoint; this continuity commit advances main by one — run `git rev-parse origin/main` for the post-commit tip)
-**Branch:** main (single authoritative branch; all claude/* branches pruned)
-**Test suite:** 613 passing (verified 2026-04-19 via `pytest` after testpaths scoped to `app/tests/`); 100 evaluators (50 MVP + 26 COMPLIANCE_AND_PROCEDURAL + 24 STATE_SALT)
+**Checkpoint SHA:** 4f54b1a (prior audit-pass endpoint; the PRD-audit
+continuity commit on branch `claude/audit-codebase-prd-GnuwP` advances
+HEAD by one — run `git rev-parse HEAD` on the branch for the post-commit
+tip)
+**Branch:** `claude/audit-codebase-prd-GnuwP` (PRD-audit pass; not yet merged to main)
+**Test suite:** 613 passing as of last verified run on main (audit branch changes are documentation-only — comments/markdown/backlog entries; no evaluator or YAML structure touched)
 **Gates closed:** G0–G7 signed. G8 backfilled (STATE_SALT) — signature recorded in governance reconciliation commit be2f44b.
-**Audit-pass milestone (2026-04-19):** 4 commits landed resolving 6 audit findings (F1-F6): pyproject deps+testpaths hygiene (f6a8777), convergent-mine CLI removal (0e34fbf), documentation truthfulness sweep (0f6c51a), hygiene baseline LICENSE+SECURITY.md+.gitattributes (90f6c90). F7 (dep upgrades) and F8 (spouse-domicile validation) recorded in BACKLOG_V2.md as deferred.
+**Audit-pass milestone (2026-04-19):** 4 commits on main resolved audit findings F1–F6. A second audit pass on branch `claude/audit-codebase-prd-GnuwP` (this one) ran the PRD against the repo and landed three additional documentation reconciliations: convergence-engine and §1401 SECA placeholders added to BACKLOG_V2.md; OPEN_QUESTIONS.md Q0.6 cleaned of 20-cat vs 40-cat drift; legacy `strategy_library/MANIFEST.yaml` + README + ARCHITECTURE.md section explicitly marked DEPRECATED per Decision 0010. No code, no rules_cache, no authorities touched.
 **Next task:** Begin Phase 3b category 3 — CALIFORNIA_SPECIFIC. One MVP evaluator (CA_PTET_ELECTION) already exists from G5; remaining 14 subcategories per `__strategy_library/subcategories/CALIFORNIA_SPECIFIC.yaml` MANIFEST.
 **Open blockers:** Q0.6 (Strategy Library category sequence — accept default or reorder; not blocking current work per OPEN_QUESTIONS.md); outstanding ◐/☐ rows in `rules_cache_bootstrap/review_checklist.md`.
 **Session-close rule:** Every gate close must git push to origin/main. Local-only commits are not durable state.

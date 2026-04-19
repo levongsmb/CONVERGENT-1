@@ -47,3 +47,23 @@ block the current build. User triages post-Phase-11.
   community-property reminder when `spouse_state_domicile` is present.
   Deferred as optional — low impact today (scenarios parse); revisit
   when community-property math becomes a real cross-check target.
+- **Convergence engine (PRD §5.4) tracking placeholder.** The
+  fixed-point iteration that resolves officer-comp ↔ §199A ↔ taxable-
+  income ↔ threshold ↔ W-2 wage-limit ↔ retirement-base ↔ PTET-base
+  interactions is the namesake computation of the product. No
+  scaffolding, regression harness, or decision record exists yet.
+  Per the PRD it is the highest-risk component (wrong convergence
+  silently corrupts every downstream scenario). Target landing is
+  Phase 5 (Scenario Engine and Optimizer); adding here for visibility
+  until a Phase 5 decision file and test harness exist. Prereqs:
+  tolerance/max-iteration/damping parameterization, golden-scenario
+  regression suite (Phase 5 gate blocks UI work until green), and an
+  OPEN_QUESTIONS entry for the default damping factor in pathological-
+  cycle cases.
+- **§1401 (SECA) explicit entry in `config/authorities/2026/irc_sections.yaml`.**
+  SECA is referenced by 100+ evaluator assertions but not listed
+  explicitly in the IRC-sections authority YAML. Non-blocking
+  (evaluators read parameters from `rules_cache/` without authority
+  dependence), but asymmetric relative to §1411, §199A, etc.
+  Add an entry when the authority cross-check begins consuming
+  payroll-tax authorities.

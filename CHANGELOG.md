@@ -6,6 +6,42 @@ test additions live in git history.
 
 ## [Unreleased]
 
+### Housekeeping — PRD audit pass (2026-04-19)
+
+External PRD-vs-codebase audit (`CONVERGENT Product Requirements
+Document v1, April 2026`) run against the current repo on
+`claude/audit-codebase-prd-GnuwP`. Codebase found substantially
+compliant; three documentation drifts reconciled. No evaluator
+behavior, no rules_cache, no authority content touched.
+
+- **Added:** `BACKLOG_V2.md` — convergence engine placeholder
+  (PRD §5.4 — fixed-point iteration for officer comp ↔ §199A ↔
+  taxable income ↔ threshold ↔ wage limit ↔ retirement base ↔
+  PTET base). The namesake computation of the product has no
+  scaffolding, regression harness, or decision record yet; target
+  landing is Phase 5. Added for visibility until Phase 5 opens.
+- **Added:** `BACKLOG_V2.md` — §1401 (SECA) entry in
+  `config/authorities/2026/irc_sections.yaml`. Referenced by 100+
+  evaluator assertions but asymmetrically absent from the IRC
+  authority YAML (§1411 et al. are present). Non-blocking; add
+  when authority cross-check begins consuming payroll authorities.
+- **Changed:** `OPEN_QUESTIONS.md` Q0.6 — reconciled drift between
+  the legacy 20-category `strategy_library/MANIFEST.yaml` (listed
+  as "default" in the old question body) and the authoritative
+  40-category `__strategy_library/subcategories/MANIFEST.yaml` that
+  Phase 3b has actually been consuming since G7. Q0.6 now cites
+  Decision 0010 supersession explicitly and presents the 40-category
+  default in the order Phase 3b is walking.
+- **Changed:** `strategy_library/MANIFEST.yaml` and
+  `strategy_library/README.md` — added explicit DEPRECATED banner
+  pointing to the 40-category successor at `__strategy_library/`.
+  No YAML structure altered (comments only); both manifests still
+  parse cleanly. Removal deferred to post-Phase-11 cleanup to
+  preserve the Phase 0 / Phase 1 audit trail.
+- **Changed:** `ARCHITECTURE.md` — legacy-`strategy_library/`
+  section now marked DEPRECATED with pointer to Decision 0010,
+  matching the banner added to the legacy files.
+
 ### Housekeeping — Audit pass (2026-04-19)
 
 Addressed external-audit findings F1-F6 in four focused commits

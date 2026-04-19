@@ -8,16 +8,19 @@ removed here.
 
 ### Q0.6 — Strategy Library category sequence (deferred on 2026-04-18)
 
-User deferred Q0.6 on 2026-04-18 pending paste-back of the 20-category
-list. Phase 3b has since proceeded using the default MANIFEST order
-(`__strategy_library/subcategories/MANIFEST.yaml`) — sequence 1
-COMPLIANCE_AND_PROCEDURAL signed at G7, sequence 2 STATE_SALT
-backfilled at G8, sequence 3 CALIFORNIA_SPECIFIC next. A reorder
-remains possible if priorities shift; completed categories would not
-be invalidated.
+User deferred Q0.6 on 2026-04-18 pending paste-back of a category
+ordering. Phase 3b has since proceeded using the **40-category default
+MANIFEST order** in `__strategy_library/subcategories/MANIFEST.yaml`
+(per Decision 0010, which supersedes the legacy 20-category
+`strategy_library/MANIFEST.yaml`). Sequences signed to date:
+sequence 1 COMPLIANCE_AND_PROCEDURAL at G7, sequence 2 STATE_SALT
+backfilled at G8, sequence 3 CALIFORNIA_SPECIFIC is next. A reorder
+remains possible for not-yet-started sequences; completed categories
+would not be invalidated.
 
 Accept or reorder: send either (a) an explicit "accept default order"
-or (b) a re-ordered sequence.
+or (b) a re-ordered sequence over the 40-category `__strategy_library/`
+MANIFEST.
 
 Default ordering criteria supplied with the deferral:
 1. April 2026 filing-season urgency
@@ -26,34 +29,57 @@ Default ordering criteria supplied with the deferral:
 4. Cross-category dependency (brackets and standard deduction before
    anything referencing AGI or taxable-income thresholds)
 
-The 20 categories (current default order from `strategy_library/MANIFEST.yaml`):
+The current default order (40 categories, from
+`__strategy_library/subcategories/MANIFEST.yaml`):
 
-1. COMPENSATION — §162 / §1366 / §119 / §132 / §105 / §106 / §125 (officer comp and fringe benefits)
-2. QBI_199A — §199A qualified business income optimization
-3. RETIREMENT — qualified and non-qualified retirement plan optimization
-4. ENTITY_SELECTION — choice of entity and entity conversion
-5. STATE_SALT — state tax and PTET optimization including CA
-6. REAL_ESTATE_DEPRECIATION — depreciation and real-estate structural planning
-7. QSBS_1202 — §1202 original issuance, gifting, and rollover
-8. TRUSTS_INCOME_SHIFTING — non-grantor trust income shifting and related
-9. TRUSTS_WEALTH_TRANSFER — wealth-transfer trust structures
-10. ESTATE_GIFT_GST — estate, gift, and GST planning
-11. CHARITABLE — charitable giving structures and timing
-12. INSTALLMENT_DEFERRAL — §453 and deferral structures
-13. CAPITAL_GAINS_LOSSES — capital gain / loss timing and character
-14. LOSS_LIMIT_NAVIGATION — §461(l) / §163(j) / §465 / §469 planning
-15. ACCOUNTING_METHODS — method elections and changes
-16. CREDITS — federal business and incentive credits
-17. SALE_TRANSACTION — liquidity-event planning
-18. INTERNATIONAL — cross-border
-19. MISCELLANEOUS — remaining high-impact strategies
-20. COMPLIANCE_AND_PROCEDURAL — procedural and penalty-mitigation
+1. COMPLIANCE_AND_PROCEDURAL (signed G7)
+2. STATE_SALT (signed G8)
+3. CALIFORNIA_SPECIFIC
+4. QBI_199A
+5. COMPENSATION
+6. SELF_EMPLOYMENT_TAX
+7. RETIREMENT
+8. PTE_BASIS_AND_DISTRIBUTIONS
+9. ENTITY_SELECTION
+10. S_CORP_SPECIAL_ISSUES
+11. PARTNERSHIP_STRUCTURING
+12. C_CORP_SPECIAL_ISSUES
+13. ACCOUNTING_METHODS
+14. LOSS_LIMIT_NAVIGATION
+15. REAL_ESTATE_DEPRECIATION
+16. REAL_ESTATE_DISPOSITIONS_1031
+17. CAPITAL_GAINS_LOSSES
+18. NIIT_1411
+19. DEBT_RECAPITALIZATION
+20. CREDITS
+21. RESEARCH_DEV_AND_IP
+22. CHARITABLE
+23. SALE_TRANSACTION
+24. M_A_AND_REORGANIZATIONS
+25. INSTALLMENT_AND_DEFERRED_SALES
+26. EXECUTIVE_COMP_AND_EQUITY
+27. QSBS_1202
+28. OPPORTUNITY_ZONES
+29. (sequences 29-40 per MANIFEST.yaml — RESIDENCY_DOMICILE,
+    APPORTIONMENT_AND_SOURCING, INTERNATIONAL_INBOUND,
+    INTERNATIONAL_OUTBOUND, ESTATE_GIFT_GST,
+    RELATED_PARTY_AND_FAMILY_SHIFTING, INSURANCE_RISK_TRANSFER,
+    FARM_RANCH_AG, FAMILY_OFFICE_INVESTMENT_STRUCTURES,
+    MISCELLANEOUS — consult MANIFEST.yaml for the authoritative
+    ordering.)
+
+Note: the legacy `strategy_library/MANIFEST.yaml` (20 categories,
+187 strategy IDs) is retained as an audit artifact only and is
+superseded by the 40-category `__strategy_library/` MANIFEST above.
+See `strategy_library/MANIFEST.yaml` header for deprecation banner
+and `docs/decisions/0010-master-build-supersession.md` for the
+governing decision.
 
 **Blocks:** nothing currently. MANIFEST `sequence_order` keys already
 reflect the default above and Phase 3b is consuming them in order; a
-future reorder would update `__strategy_library/subcategories/MANIFEST.yaml`
-and re-sequence only the not-yet-started categories (4-40 as of this
-writing).
+future reorder would update
+`__strategy_library/subcategories/MANIFEST.yaml` and re-sequence only
+the not-yet-started categories (3-40 as of this writing).
 
 ## Phase 0 — closed since last update
 

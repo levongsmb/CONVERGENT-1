@@ -187,12 +187,16 @@ Scaffolding laid during Phase 0. Many modules are stubs pending later phases.
 - `pitfalls.yaml` — runtime pitfalls index (includes the CA PTET SB 132
   shortfall-credit-reduction entry updated under Decision 0004).
 
-## Strategy library runtime assets — `strategy_library/`
+## Strategy library runtime assets — `strategy_library/` (DEPRECATED)
 
-- `MANIFEST.yaml` — 20-category sequence order (the "default" presented to
-  the user in Q0.6). Mirrored/superseded by `__strategy_library/subcategories/
-  MANIFEST.yaml` (40 categories).
-- `README.md` — loader intro.
+Legacy 20-category / 187-strategy scaffold from the original Phase 0 pass.
+Superseded 2026-04-18 by `__strategy_library/subcategories/` per
+Decision 0010; retained as audit artifact only. Removal deferred to
+post-Phase-11 cleanup.
+
+- `MANIFEST.yaml` — legacy 20-category sequence; deprecation banner in
+  header. Not consumed by Phase 3b or later phases.
+- `README.md` — legacy loader intro with deprecation note at top.
 
 ## Installer — `installer/`
 

@@ -1,3 +1,18 @@
+# ============================================================================
+# DEPRECATED — retained as audit artifact only.
+#
+# Per Decision 0010 (docs/decisions/0010-master-build-supersession.md,
+# 2026-04-18), this 20-category / 187-strategy manifest is SUPERSEDED by the
+# 40-category / 616-subcategory MANIFEST at
+#   __strategy_library/subcategories/MANIFEST.yaml
+# which is the single source of truth for Phase 3b evaluator sequencing and
+# Phase 4+ cross-check / optimizer consumption. Do not add new strategies
+# here; do not edit. Removal is deferred to post-Phase-11 cleanup to preserve
+# the Phase 0 / Phase 1 audit trail.
+# ============================================================================
+#
+# Historical header (preserved):
+#
 # Convergent Strategy Library Manifest — Phase 1 opening deliverable
 #
 # Per §12.5 of the build prompt, the MANIFEST enumerates at minimum 120

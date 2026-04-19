@@ -1,9 +1,16 @@
 # Strategy Library
 
-Per §12 of the build prompt, this directory is the deterministic catalog
-of tax planning strategies Convergent selects from. It is the **ground
+> **DEPRECATED as of 2026-04-18 (Decision 0010).** This directory holds
+> the legacy 20-category / 187-strategy manifest from the original Phase 0
+> scaffold. The active Strategy Library lives at
+> `__strategy_library/subcategories/` (40 categories, 616 subcategories).
+> This directory is retained only as an audit artifact; removal is
+> deferred to post-Phase-11 cleanup.
+
+Per §12 of the build prompt, this directory was the deterministic catalog
+of tax planning strategies Convergent selects from. It was the **ground
 truth** for Strategy matching (§13) and scenario bundle composition
-(§14).
+(§14). That role has migrated to `__strategy_library/subcategories/`.
 
 ## Structure
 
