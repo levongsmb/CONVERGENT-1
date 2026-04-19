@@ -22,14 +22,15 @@ most recent commit on `claude/check-continuity-files-O93vl`:
     26 new evaluators (27 total in category), 130 new tests, 490 tests
     passing. G7 sign-off document present at
     `__strategy_library/subcategories/COMPLIANCE_AND_PROCEDURAL_EVALUATORS_SIGNOFF.md`.
-  - Category 2 of 40 — STATE_SALT — evaluator work in progress. The
-    `app/evaluators/STATE_SALT/` directory contains 25 evaluator files
-    (including the prior MVP `SSALT_OBBBA_CAP_MODELING`). Sign-off
-    document exists at `STATE_SALT_EVALUATORS_SIGNOFF.md` — status not yet
-    verified.
-- **G6 remediation**: Task 0 (rules-cache migration commit + `.gitignore`
-  fix) and Task 1 (widen §199A phase-in ranges per OBBBA §70431) landed
-  on 2026-04-19.
+  - Category 2 of 40 — STATE_SALT — complete per commit `8f9f518`
+    ("Phase 3b — STATE_SALT complete (category 2 of 40)"). 25 evaluator
+    files under `app/evaluators/STATE_SALT/`. Sign-off at
+    `__strategy_library/subcategories/STATE_SALT_EVALUATORS_SIGNOFF.md`.
+  - Categories 3-40 not yet started.
+- **G6 remediation** (post-STATE_SALT, dated 2026-04-19): Task 0
+  (rules-cache migration commit + `.gitignore` fix, commit `3bd0aae`)
+  and Task 1 (widen §199A phase-in ranges per OBBBA §70431, commit
+  `ebe6ad9`) landed. Presumably more remediation tasks pending.
 
 Repo health: no uncommitted changes on the working branch. Test suite
 last reported green at 490 passing.
@@ -42,12 +43,11 @@ bootstrap that just ran — creating `CLAUDE.md`, `ARCHITECTURE.md`,
 `PROGRESS.md` themselves. After this commit, the logical next step for
 the underlying build is:
 
-1. Finish the STATE_SALT category: complete any remaining evaluators,
-   confirm 25 files align with MANIFEST count, finalize
-   `STATE_SALT_EVALUATORS_SIGNOFF.md`, and run `pytest app/tests/`.
-2. Continue G6 remediation — the 2026-04-19 commits indicate an
+1. Continue G6 remediation — the 2026-04-19 commits indicate an
    in-progress remediation task sequence (Task 0 and Task 1 landed;
-   Task 2+ may exist).
+   Task 2+ likely queued).
+2. Start Phase 3b category 3 per the MANIFEST sequence order
+   (after Q0.6 is resolved or the default order is confirmed).
 3. Resolve Q0.6 in `OPEN_QUESTIONS.md` (Strategy Library category order
    paste-back) if the user is ready.
 
